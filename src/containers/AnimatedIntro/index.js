@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styled from 'styled-components'
 import ProgressiveImage from 'react-progressive-image'
+import { Link } from 'react-router-dom'
 
 const Wrapper = styled.div`
     font-family: ${props => props.theme.fonts.retro};
@@ -41,7 +42,9 @@ const Glasses = styled.img.attrs({
     }    
 `
 
-const StartButton = styled.span`
+const StartButton = styled(Link)`
+    color: white;
+    text-decoration: none;
     animation: blink-animation 1s steps(5, start) infinite;
     -webkit-animation: blink-animation 1s steps(5, start) infinite;
     animation-delay: 3s;
@@ -59,7 +62,7 @@ const StartButton = styled.span`
     }
 `
 
-const Content = ({ heroes }) => (
+const Content = ({ heroes, onPressStart }) => (
     <React.Fragment>
         <audio src={require('media/intro.mp3')} autoPlay />
         <Wrapper>
@@ -68,19 +71,33 @@ const Content = ({ heroes }) => (
                 <img src={heroes} style={{ width: 250 }} alt="Iddqd" />
             </Images>
             <br />
-            <StartButton>{'PRESS START'}</StartButton>
+            <StartButton to="/home">{'PRESS START'}</StartButton>
         </Wrapper>
     </React.Fragment>
 )
 
-const AnimatedIntro = () => (
-    <ProgressiveImage src={require('media/contra.png')}>
-        {
-            (src, loading) => loading
-            ? null
-            : <Content heroes={src} />
+const AnimatedIntro = (props) => {
+    useEffect(() => {
+        document.addEventListener('keyup', onPressStart)
+
+        return () => {
+            document.removeEventListener('keyup', onPressStart)
         }
-    </ProgressiveImage>
-)
+    })
+    const onPressStart = (e) => {
+        if (e.keyCode === 32 || e.keyCode === 13) {
+            props.history.push('/home')
+        }
+    }
+    return (
+        <ProgressiveImage src={require('media/contra.png')}>
+            {
+                (src, loading) => loading
+                ? null
+                : <Content heroes={src} onPressStart={onPressStart} />
+            }
+        </ProgressiveImage>
+    )
+}
 
 export default AnimatedIntro

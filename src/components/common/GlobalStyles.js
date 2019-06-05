@@ -9,9 +9,6 @@ const GlobalStyles = createGlobalStyle`
         font-family: ${({ theme }) => theme.fonts.text};
         transition: all 300ms ease-in-out;
     }
-    a {
-        color: pink
-    }
     ::-moz-selection {
         background: ${({ theme }) => theme.colors.selection};
     }

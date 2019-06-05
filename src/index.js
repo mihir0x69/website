@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import ReactDOM from 'react-dom'
 import styled, { ThemeProvider } from 'styled-components'
 import GlobalStyles from 'components/common/GlobalStyles'
-import AnimatedIntro from 'components/AnimatedIntro'
+import App from './routes'
 import themes from './theme'
 import './styles.css'
 
@@ -12,14 +12,14 @@ const ThemeToggler = styled.a`
     top: 10px;
 `
 
-const App = () => {
+const Shell = () => {
     const [theme, setTheme] = useState(1)
     const toggleTheme = () => setTheme(theme * -1)
     return (
         <ThemeProvider theme={themes[theme]}>
             <React.Fragment>
                 <GlobalStyles />
-                <AnimatedIntro />
+                <App />
                 <ThemeToggler href="#" onClick={toggleTheme}>
                     {'Toggle Theme'}
                 </ThemeToggler>
@@ -28,4 +28,4 @@ const App = () => {
     )
 }
 
-ReactDOM.render(<App />, document.getElementById('root'))
+ReactDOM.render(<Shell />, document.getElementById('root'))
