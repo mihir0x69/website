@@ -7,6 +7,7 @@ import themes from './theme'
 import './styles.css'
 
 const ThemeToggler = styled.a`
+    color: pink;
     position: fixed;
     right: 10px;
     top: 10px;

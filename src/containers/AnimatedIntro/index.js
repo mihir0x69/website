@@ -43,7 +43,7 @@ const Glasses = styled.img.attrs({
 `
 
 const StartButton = styled(Link)`
-    color: white;
+    color: ${({ theme }) => theme.colors.foreground};
     text-decoration: none;
     animation: blink-animation 1s steps(5, start) infinite;
     -webkit-animation: blink-animation 1s steps(5, start) infinite;
