@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import ProgressiveImage from 'react-progressive-image'
 
 const Wrapper = styled.div`
     font-family: ${props => props.theme.fonts.retro};
@@ -58,18 +59,28 @@ const StartButton = styled.span`
     }
 `
 
-const AnimatedIntro = () => (
+const Content = ({ heroes }) => (
     <React.Fragment>
         <audio src={require('media/intro.mp3')} autoPlay />
         <Wrapper>
             <Images>
                 <Glasses src={require('media/thug.png')} />
-                <img src={require('media/contra.png')} style={{ width: 250 }} alt="Iddqd" />
+                <img src={heroes} style={{ width: 250 }} alt="Iddqd" />
             </Images>
             <br />
             <StartButton>{'PRESS START'}</StartButton>
         </Wrapper>
     </React.Fragment>
+)
+
+const AnimatedIntro = () => (
+    <ProgressiveImage src={require('media/contra.png')}>
+        {
+            (src, loading) => loading
+            ? null
+            : <Content heroes={src} />
+        }
+    </ProgressiveImage>
 )
 
 export default AnimatedIntro
