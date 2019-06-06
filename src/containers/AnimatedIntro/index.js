@@ -2,6 +2,10 @@ import React, { useEffect } from 'react'
 import styled from 'styled-components'
 import ProgressiveImage from 'react-progressive-image'
 import { Link } from 'react-router-dom'
+import Paths from 'constants/paths'
+
+const SPACEBAR = 32
+const ENTER = 13
 
 const Wrapper = styled.div`
     font-family: ${props => props.theme.fonts.retro};
@@ -27,7 +31,6 @@ const Glasses = styled.img.attrs({
     position: absolute;
     top: 48px;
     right: 68px;
-    -webkit-animation: thugmove 5s infinite; /* Safari 4.0 - 8.0 */
     animation: thugmove 4s;
 
     @-webkit-keyframes thugmove {
@@ -35,7 +38,6 @@ const Glasses = styled.img.attrs({
         to { top: 48px; }
     }
 
-    /* Standard syntax */
     @keyframes thugmove {
         from { top: -20px; }
         to { top: 48px; }
@@ -48,7 +50,6 @@ const StartButton = styled(Link)`
     animation: blink-animation 1s steps(5, start) infinite;
     -webkit-animation: blink-animation 1s steps(5, start) infinite;
     animation-delay: 3s;
-    -webkit-animation-delay: 3s;
 
     @keyframes blink-animation {
         to {
@@ -85,8 +86,8 @@ const AnimatedIntro = (props) => {
         }
     })
     const onPressStart = (e) => {
-        if (e.keyCode === 32 || e.keyCode === 13) {
-            props.history.push('/home')
+        if (e.keyCode === SPACEBAR || e.keyCode === ENTER) {
+            props.history.push(Paths.HOME)
         }
     }
     return (

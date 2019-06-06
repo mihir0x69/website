@@ -4,6 +4,7 @@ import styled, { ThemeProvider } from 'styled-components'
 import GlobalStyles from 'components/common/GlobalStyles'
 import App from './routes'
 import themes from './theme'
+import StorageManager from 'utils/StorageManager'
 import './styles.css'
 
 const ThemeToggler = styled.a`
@@ -14,8 +15,12 @@ const ThemeToggler = styled.a`
 `
 
 const Shell = () => {
-    const [theme, setTheme] = useState(1)
-    const toggleTheme = () => setTheme(theme * -1)
+    const [theme, setTheme] = useState(StorageManager.getTheme() || 1)
+    const toggleTheme = () => {
+        const newTheme = theme * -1
+        StorageManager.setTheme(newTheme)
+        setTheme(newTheme)
+    }
     return (
         <ThemeProvider theme={themes[theme]}>
             <React.Fragment>
