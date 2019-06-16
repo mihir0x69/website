@@ -1,15 +1,24 @@
 import React, { useState } from 'react'
 import styled, { ThemeProvider } from 'styled-components'
+import { withRouter } from 'react-router'
 import GlobalStyles from 'components/common/GlobalStyles'
 import StorageManager from 'utils/StorageManager'
 import themes from 'constants/themes'
+import paths from 'constants/paths'
 
 const NavigationBar = styled.div`
     font-family: monospace;
     color: ${props => props.theme.colors.pink};
     display: flex;
-    justify-content: space-between;
     padding: 10px;
+`
+
+const NavItem = styled.div`
+    flex: 1;
+    text-align: center;
+    & > span {
+        cursor: pointer;
+    }
 `
 
 const Layout = props => {
@@ -19,14 +28,24 @@ const Layout = props => {
         StorageManager.setTheme(newTheme)
         setTheme(newTheme)
     }
+    const themeLabel = theme > 0 ? 'Light' : 'Dark'
+    const navItems = [
+        { label: 'Intro', onClick: () => props.history.push(paths.ROOT) },
+        { label: 'Menu', onClick: () => props.history.push(paths.HOME) },
+        { label: themeLabel, onClick: toggleTheme }
+    ]
     return (
         <ThemeProvider theme={themes[theme]}>
             <React.Fragment>
                 <GlobalStyles />
                 <NavigationBar>
-                    <span onClick={toggleTheme}>{'[Toggle Theme]'}</span>
-                    <span onClick={toggleTheme}>{'[Show Menu]'}</span>
-                    <span onClick={toggleTheme}>{'[Mute Audio]'}</span>
+                    {navItems.map((x, i) => (
+                        <NavItem key={i}>
+                            <span onClick={x.onClick}>
+                                {`[${x.label}]`}
+                            </span>
+                        </NavItem>
+                    ))}
                 </NavigationBar>
                 {props.children}
             </React.Fragment>
@@ -34,4 +53,4 @@ const Layout = props => {
     )
 }
 
-export default Layout
+export default withRouter(Layout)
