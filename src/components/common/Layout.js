@@ -21,6 +21,11 @@ const NavItem = styled.div`
     }
 `
 
+const Container = styled.div`
+    max-width: 750px;
+    margin: 0 auto;
+`
+
 const Layout = props => {
     const [theme, setTheme] = useState(StorageManager.getTheme() || 1)
     const toggleTheme = () => {
@@ -28,7 +33,7 @@ const Layout = props => {
         StorageManager.setTheme(newTheme)
         setTheme(newTheme)
     }
-    const themeLabel = theme > 0 ? 'Light' : 'Dark'
+    const themeLabel = theme > 0 ? 'Lumos' : 'Nox'
     const navItems = [
         { label: 'Intro', onClick: () => props.history.push(paths.ROOT) },
         { label: 'Menu', onClick: () => props.history.push(paths.HOME) },
@@ -38,16 +43,18 @@ const Layout = props => {
         <ThemeProvider theme={themes[theme]}>
             <React.Fragment>
                 <GlobalStyles />
-                <NavigationBar>
-                    {navItems.map((x, i) => (
-                        <NavItem key={i}>
-                            <span onClick={x.onClick}>
-                                {`[${x.label}]`}
-                            </span>
-                        </NavItem>
-                    ))}
-                </NavigationBar>
-                {props.children}
+                <Container>
+                    <NavigationBar>
+                        {navItems.map((x, i) => (
+                            <NavItem key={i}>
+                                <span onClick={x.onClick}>
+                                    {`[${x.label}]`}
+                                </span>
+                            </NavItem>
+                        ))}
+                    </NavigationBar>
+                    {props.children}
+                </Container>
             </React.Fragment>
         </ThemeProvider>
     )

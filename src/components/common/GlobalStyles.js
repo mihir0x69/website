@@ -2,9 +2,9 @@ import { createGlobalStyle } from 'styled-components'
 
 const GlobalStyles = createGlobalStyle`
     @import url('https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap');
-    @import url('https://fonts.googleapis.com/css?family=Patua+One|Roboto:400,500,700&display=swap');
+    @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Mono:500|IBM+Plex+Sans:700|IBM+Plex+Serif:400,400i,700,700i&display=swap');
     html, body, div, span, applet, object, iframe,
-    blockquote, pre,
+    h1, h2, h3, h4, h5, h6, p, blockquote, pre,
     a, abbr, acronym, address, big, cite, code,
     del, dfn, em, img, ins, kbd, q, s, samp,
     small, strike, strong, sub, sup, tt, var,
@@ -64,6 +64,26 @@ const GlobalStyles = createGlobalStyle`
     a:hover,
     a:active {
         text-decoration: none;
+    }
+    p {
+        font-size: 17px;
+        line-height: 1.5;
+        margin: 7px 0 7px 0;
+    }
+    h1, h2, h3, h4, h5, h6 {
+        font-family: ${props => props.theme.fonts.heading}
+    }
+    h1 {
+        font-size: 2em;
+    }
+    h2 {
+        font-size: 1.5em;
+    }
+    h3 {
+        font-size: 1.17em;
+    }
+    h4 {
+        font-size: 1em;
     }
 `
 

@@ -15,8 +15,9 @@ const colors = {
 
 const fonts = {
     retro: "'Press Start 2P', cursive",
-    header: "'Patua One', cursive",
-    text: "'Roboto', sans-serif",
+    heading: "'IBM Plex Sans', sans-serif",
+    text: "'IBM Plex Serif', serif",
+    mono: "'IBM Plex Mono', monospace"
 }
 
 export const DARK = 1
