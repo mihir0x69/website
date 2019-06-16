@@ -37,7 +37,7 @@ const Layout = props => {
     const navItems = [
         { label: 'Intro', onClick: () => props.history.push(paths.ROOT) },
         { label: 'Menu', onClick: () => props.history.push(paths.HOME) },
-        { label: themeLabel, onClick: toggleTheme }
+        { label: themeLabel, onClick: toggleTheme },
     ]
     return (
         <ThemeProvider theme={themes[theme]}>

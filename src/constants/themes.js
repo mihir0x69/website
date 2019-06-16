@@ -17,7 +17,7 @@ const fonts = {
     retro: "'Press Start 2P', cursive",
     heading: "'IBM Plex Sans', sans-serif",
     text: "'IBM Plex Serif', serif",
-    mono: "'IBM Plex Mono', monospace"
+    mono: "'IBM Plex Mono', monospace",
 }
 
 export const DARK = 1
