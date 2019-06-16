@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import ProgressiveImage from 'react-progressive-image'
 import Paths from 'constants/paths'
 import { Wrapper, Images, Glasses, StartButton } from './fragments'
@@ -15,7 +16,9 @@ const Content = ({ heroes, onPressStart }) => (
                 <img src={heroes} style={{ width: 250 }} alt="Iddqd" />
             </Images>
             <br />
-            <StartButton to="/home">{'PRESS START'}</StartButton>
+            <Link to="/home">
+                <StartButton>{'PRESS START'}</StartButton>
+            </Link>
         </Wrapper>
     </React.Fragment>
 )

@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import { Link } from 'react-router-dom'
 
 export const Wrapper = styled.div`
     font-family: ${props => props.theme.fonts.retro};
@@ -49,9 +48,8 @@ export const Glasses = styled.img.attrs({
     }
 `
 
-export const StartButton = styled(Link)`
+export const StartButton = styled.span`
     color: ${({ theme }) => theme.colors.foreground};
-    text-decoration: none;
     animation: blink-animation 1s steps(5, start) infinite;
     -webkit-animation: blink-animation 1s steps(5, start) infinite;
     animation-delay: 3s;

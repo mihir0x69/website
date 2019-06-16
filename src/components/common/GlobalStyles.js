@@ -58,6 +58,13 @@ const GlobalStyles = createGlobalStyle`
     ::selection {
         background: ${({ theme }) => theme.colors.selection};
     }
+    a,
+    a:link,
+    a:visited,
+    a:hover,
+    a:active {
+        text-decoration: none;
+    }
 `
 
 export default GlobalStyles
