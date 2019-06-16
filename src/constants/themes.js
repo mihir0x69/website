@@ -10,13 +10,13 @@ const colors = {
     pink: '#ff79c6',
     purple: '#bd93f9',
     red: '#ff5555',
-    yellow: '#f1fa8c'
+    yellow: '#f1fa8c',
 }
 
 const fonts = {
     retro: "'Press Start 2P', cursive",
     header: "'Patua One', cursive",
-    text: "'Roboto', sans-serif"
+    text: "'Roboto', sans-serif",
 }
 
 export const DARK = 1
@@ -25,14 +25,14 @@ export const LIGHT = -1
 export default {
     [DARK]: {
         fonts,
-        colors
+        colors,
     },
     [LIGHT]: {
         fonts,
         colors: {
             ...colors,
             background: colors.Foreground,
-            foreground: colors.Background
-        }
-    }
+            foreground: colors.Background,
+        },
+    },
 }

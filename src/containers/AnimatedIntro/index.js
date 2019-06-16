@@ -25,7 +25,7 @@ const Images = styled.div`
 `
 
 const Glasses = styled.img.attrs({
-    alt: 'Glasses'
+    alt: 'Glasses',
 })`
     width: 60px;
     position: absolute;
@@ -34,14 +34,22 @@ const Glasses = styled.img.attrs({
     animation: thugmove 4s;
 
     @-webkit-keyframes thugmove {
-        from { top: -20px; }
-        to { top: 48px; }
+        from {
+            top: -20px;
+        }
+        to {
+            top: 48px;
+        }
     }
 
     @keyframes thugmove {
-        from { top: -20px; }
-        to { top: 48px; }
-    }    
+        from {
+            top: -20px;
+        }
+        to {
+            top: 48px;
+        }
+    }
 `
 
 const StartButton = styled(Link)`
@@ -77,7 +85,7 @@ const Content = ({ heroes, onPressStart }) => (
     </React.Fragment>
 )
 
-const AnimatedIntro = (props) => {
+const AnimatedIntro = props => {
     useEffect(() => {
         document.addEventListener('keyup', onPressStart)
 
@@ -85,17 +93,17 @@ const AnimatedIntro = (props) => {
             document.removeEventListener('keyup', onPressStart)
         }
     })
-    const onPressStart = (e) => {
+    const onPressStart = e => {
         if (e.keyCode === SPACEBAR || e.keyCode === ENTER) {
             props.history.push(Paths.HOME)
         }
     }
     return (
         <ProgressiveImage src={require('media/contra.png')}>
-            {
-                (src, loading) => loading
-                ? null
-                : <Content heroes={src} onPressStart={onPressStart} />
+            {(src, loading) =>
+                loading ? null : (
+                    <Content heroes={src} onPressStart={onPressStart} />
+                )
             }
         </ProgressiveImage>
     )

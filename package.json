@@ -15,7 +15,7 @@
     "start": "craco start",
     "build": "craco build",
     "test": "craco test",
-    "format": "prettier \"src/**/*.js\""
+    "format": "prettier --write \"src/**/*.js\""
   },
   "eslintConfig": {
     "extends": "react-app"

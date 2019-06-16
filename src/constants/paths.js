@@ -1,4 +1,4 @@
 export default {
     ROOT: '/',
-    HOME: '/home'
+    HOME: '/home',
 }

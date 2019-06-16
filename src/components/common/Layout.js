@@ -11,7 +11,7 @@ const ThemeToggler = styled.a`
     top: 10px;
 `
 
-const Layout = (props) => {
+const Layout = props => {
     const [theme, setTheme] = useState(StorageManager.getTheme() || 1)
     const toggleTheme = () => {
         const newTheme = theme * -1
