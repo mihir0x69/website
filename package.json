@@ -14,7 +14,8 @@
   "scripts": {
     "start": "craco start",
     "build": "craco build",
-    "test": "craco test"
+    "test": "craco test",
+    "format": "prettier \"src/**/*.js\""
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -34,6 +35,7 @@
   "homepage": ".",
   "devDependencies": {
     "@craco/craco": "5.2.1",
-    "babel-plugin-styled-components": "1.10.0"
+    "babel-plugin-styled-components": "1.10.0",
+    "prettier": "1.18.2"
   }
 }
