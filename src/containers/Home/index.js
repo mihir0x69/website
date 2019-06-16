@@ -1,8 +1,51 @@
-import React from 'react'
-import styled from 'styled-components'
+import React, { useState, useEffect } from 'react'
+import { Container, Menu, Item } from './fragments'
 
-const Home = () => {
-    return <h1>Home</h1>
+const SPACEBAR = 32
+const UP = 38
+const DOWN = 40
+
+const items = [
+    { label: 'Blog', link: '#' },
+    { label: 'Places', link: '#' },
+    { label: 'Whois', link: '#' },
+]
+
+const Home = props => {
+    const [activeItem, setActiveItem] = useState(0)
+    const handleKeyboardEvents = ({ keyCode }) => {
+        if (keyCode === SPACEBAR) {
+            props.history.push(items[activeItem].link)
+        }
+        let nextState = activeItem
+        if (keyCode === UP && nextState !== 0) {
+            nextState = nextState - 1
+        } else if (keyCode === DOWN && nextState !== items.length - 1) {
+            nextState = nextState + 1
+        }
+        setActiveItem(nextState)
+    }
+    useEffect(() => {
+        document.addEventListener('keyup', handleKeyboardEvents)
+        return () => {
+            document.removeEventListener('keyup', handleKeyboardEvents)
+        }
+    })
+    return (
+        <Container>
+            <Menu>
+                {items.map((x, idx) => (
+                    <Item
+                        key={idx}
+                        onClick={() => setActiveItem(idx)}
+                        active={idx === activeItem}
+                    >
+                        {x.label}
+                    </Item>
+                ))}
+            </Menu>
+        </Container>
+    )
 }
 
 export default Home
