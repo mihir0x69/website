@@ -4,13 +4,16 @@ import { Link } from 'react-router-dom'
 export const Wrapper = styled.div`
     font-family: ${props => props.theme.fonts.retro};
     color: ${props => props.theme.colors.foreground};
-    height: 100vh;
-    margin: 0;
-    padding: 0;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
 `
 
 export const Images = styled.div`

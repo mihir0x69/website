@@ -5,7 +5,12 @@ export const Container = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
 `
 
 export const Menu = styled.ul`
@@ -18,6 +23,7 @@ export const Item = styled.li`
     font-family: ${props => props.theme.fonts.retro};
     padding: 10px;
     position: relative;
+    cursor: pointer;
     ${props =>
         props.active &&
         `

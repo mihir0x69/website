@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import paths from 'constants/paths'
 import { Container, Menu, Item } from './fragments'
 
 const SPACEBAR = 32
@@ -6,7 +7,7 @@ const UP = 38
 const DOWN = 40
 
 const items = [
-    { label: 'Blog', link: '#' },
+    { label: 'Blog', link: paths.BLOG },
     { label: 'Places', link: '#' },
     { label: 'Whois', link: '#' },
 ]
@@ -34,15 +35,21 @@ const Home = props => {
     return (
         <Container>
             <Menu>
-                {items.map((x, idx) => (
-                    <Item
-                        key={idx}
-                        onClick={() => setActiveItem(idx)}
-                        active={idx === activeItem}
-                    >
-                        {x.label}
-                    </Item>
-                ))}
+                {items.map((x, idx) => {
+                    const clickHandler = () => {
+                        setActiveItem(idx)
+                        props.history.push(items[idx].link)
+                    }
+                    return (
+                        <Item
+                            key={idx}
+                            onClick={clickHandler}
+                            active={idx === activeItem}
+                        >
+                            {x.label}
+                        </Item>
+                    )
+                })}
             </Menu>
         </Container>
     )
