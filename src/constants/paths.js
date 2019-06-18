@@ -1,5 +1,6 @@
 export default {
     ROOT: '/',
     HOME: '/home',
-    BLOG: '/blog',
+    BLOGS: '/blogs',
+    BLOG: '/blog/:id'
 }
