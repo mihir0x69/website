@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import styled, { ThemeProvider } from 'styled-components'
 import { withRouter } from 'react-router'
 import GlobalStyles from 'components/common/GlobalStyles'
@@ -33,6 +33,11 @@ const Layout = props => {
         StorageManager.setTheme(newTheme)
         setTheme(newTheme)
     }
+
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [props.location])
+
     const themeLabel = theme > 0 ? 'Lumos' : 'Nox'
     const navItems = [
         { label: 'Intro', onClick: () => props.history.push(paths.ROOT) },
