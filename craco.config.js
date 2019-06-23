@@ -5,7 +5,7 @@ module.exports = {
         "plugins": [
             "babel-plugin-styled-components",
             ["babel-plugin-prismjs", {
-                "languages": ["javascript", "css", "markup"],
+                "languages": ["javascript", "jsx", "css", "markup"],
                 "plugins": ["line-numbers"],
                 "theme": "default",
                 "css": true
