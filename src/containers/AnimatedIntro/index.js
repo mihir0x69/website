@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import ProgressiveImage from 'react-progressive-image'
-import Paths from 'constants/paths'
+import paths from 'constants/paths'
 import { Wrapper, Images, Glasses, StartButton } from './fragments'
 
 const SPACEBAR = 32
@@ -16,7 +16,7 @@ const Content = ({ heroes, onPressStart }) => (
                 <img src={heroes} style={{ width: 250 }} alt="Iddqd" />
             </Images>
             <br />
-            <Link to="/home">
+            <Link to={paths.MENU}>
                 <StartButton>{'PRESS START'}</StartButton>
             </Link>
         </Wrapper>
@@ -33,7 +33,7 @@ const AnimatedIntro = props => {
     })
     const onPressStart = e => {
         if (e.keyCode === SPACEBAR || e.keyCode === ENTER) {
-            props.history.push(Paths.HOME)
+            props.history.push(paths.MENU)
         }
     }
     return (

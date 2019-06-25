@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import paths from 'constants/paths'
 import menuSoundFile from 'media/menu.wav'
-import { Container, Menu, Item } from './fragments'
+import { Container, ItemList, Item } from './fragments'
 
 const SPACEBAR = 32
 const UP = 38
@@ -13,7 +13,7 @@ const items = [
     { label: 'Whois', link: '#' },
 ]
 
-const Home = props => {
+const Menu = props => {
     const [sound] = useState(new Audio(menuSoundFile))
     const [activeItem, setActiveItem] = useState(0)
     const handleKeyboardEvents = ({ keyCode }) => {
@@ -42,9 +42,10 @@ const Home = props => {
     })
     return (
         <Container>
-            <Menu>
+            <ItemList>
                 {items.map((x, idx) => {
                     const clickHandler = () => {
+                        sound.play()
                         setActiveItem(idx)
                         props.history.push(items[idx].link)
                     }
@@ -58,9 +59,9 @@ const Home = props => {
                         </Item>
                     )
                 })}
-            </Menu>
+            </ItemList>
         </Container>
     )
 }
 
-export default Home
+export default Menu

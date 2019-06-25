@@ -41,7 +41,7 @@ const Layout = props => {
     const themeLabel = theme > 0 ? 'Lumos' : 'Nox'
     const navItems = [
         { label: 'Intro', onClick: () => props.history.push(paths.ROOT) },
-        { label: 'Menu', onClick: () => props.history.push(paths.HOME) },
+        { label: 'Menu', onClick: () => props.history.push(paths.MENU) },
         { label: themeLabel, onClick: toggleTheme },
     ]
     return (

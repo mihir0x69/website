@@ -13,7 +13,7 @@ export const Container = styled.div`
     left: 0;
 `
 
-export const Menu = styled.ul`
+export const ItemList = styled.ul`
     margin: 0;
     padding: 0;
     list-style-type: none;
