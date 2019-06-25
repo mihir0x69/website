@@ -16,7 +16,7 @@ const Content = ({ heroes, onPressStart }) => (
                 <img src={heroes} style={{ width: 250 }} alt="Iddqd" />
             </Images>
             <br />
-            <Link to={paths.MENU}>
+            <Link to={paths.MENU} style={{ textDecoration: 'none' }}>
                 <StartButton>{'PRESS START'}</StartButton>
             </Link>
         </Wrapper>

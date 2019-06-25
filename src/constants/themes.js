@@ -26,14 +26,16 @@ export const LIGHT = -1
 export default {
     [DARK]: {
         fonts,
-        colors,
+        colors: {
+            ...colors
+        },
     },
     [LIGHT]: {
         fonts,
         colors: {
             ...colors,
             background: colors.Foreground,
-            foreground: colors.Background,
+            foreground: colors.Background
         },
     },
 }

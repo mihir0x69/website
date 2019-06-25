@@ -5,6 +5,7 @@ import GlobalStyles from 'components/common/GlobalStyles'
 import StorageManager from 'utils/StorageManager'
 import themes from 'constants/themes'
 import paths from 'constants/paths'
+import lumosSoundFile from 'media/lumos_maxima.mp3'
 
 const NavigationBar = styled.div`
     font-family: monospace;
@@ -28,7 +29,9 @@ const Container = styled.div`
 
 const Layout = props => {
     const [theme, setTheme] = useState(StorageManager.getTheme() || 1)
+    const [lumos] = useState(new Audio(lumosSoundFile))
     const toggleTheme = () => {
+        lumos.play()
         const newTheme = theme * -1
         StorageManager.setTheme(newTheme)
         setTheme(newTheme)
@@ -48,6 +51,7 @@ const Layout = props => {
         <ThemeProvider theme={themes[theme]}>
             <React.Fragment>
                 <GlobalStyles />
+                <base target="_blank" />
                 <Container>
                     <NavigationBar>
                         {navItems.map((x, i) => (
