@@ -9,6 +9,10 @@ import remarkReactComponents from './remarkReactComponents'
 const Blog = (props) => {
     useEffect(Prism.highlightAll, [props.markdown])
 
+    if (!props.markdown) {
+        return null
+    }
+
     return (
         <React.Fragment>
             {
