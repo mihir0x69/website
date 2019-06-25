@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
 const Container = styled.div`
     margin: 0 auto;
@@ -19,13 +20,20 @@ const Hr = styled.hr`
     background-color: gray;
 `
 
+const BlogTitle = styled(Link)`
+    color: ${({ theme }) => theme.colors.foreground} !important;
+    text-decoration: none !important;
+`
+
 const Blog = () => {
     return (
         <Container>
             <Title>The Millennial Programmer️️️</Title>
             <p>⚡ Personal blog by me. I discuss tech, politics and life.</p>
             <Hr />
-            <h1>FSharp: Learning to use FAKE and Paket</h1>
+            <BlogTitle to="blog/sample2">
+                <h1>FSharp: Learning to use FAKE and Paket</h1>
+            </BlogTitle>
             <p>March 25, 2019 • ☕️ 4 min read</p>
             <p>
                 Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -40,7 +48,9 @@ const Blog = () => {
                 Lorem Ipsum.
             </p>
             <Hr />
-            <h1>Porting enterprise React app to create-react-app</h1>
+            <BlogTitle to="blog/sample2">
+                <h1>Porting enterprise React app to create-react-app</h1>
+            </BlogTitle>
             <p>March 25, 2019 • ☕️ 4 min read</p>
             <p>
                 Lorem Ipsum is simply dummy text of the printing and typesetting

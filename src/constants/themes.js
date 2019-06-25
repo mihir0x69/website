@@ -34,8 +34,8 @@ export default {
         fonts,
         colors: {
             ...colors,
-            background: colors.Foreground,
-            foreground: colors.Background
+            background: colors.foreground,
+            foreground: colors.background
         },
     },
 }
