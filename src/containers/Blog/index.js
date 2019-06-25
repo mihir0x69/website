@@ -9,13 +9,13 @@ async function getContents(id) {
     return content.default
 }
 
-const Blog = (props) => {
+const Blog = props => {
     const [markdown, setMarkdown] = useState(0)
     const [error, setError] = useState(false)
     useEffect(() => {
         getContents(props.match.params.id)
-        .then(setMarkdown)
-        .catch(setError)
+            .then(setMarkdown)
+            .catch(setError)
     }, [props.match.params.id])
 
     if (error) {

@@ -2,5 +2,5 @@ export default {
     ROOT: '/',
     MENU: '/menu',
     BLOGS: '/blogs',
-    BLOG: '/blog/:id'
+    BLOG: '/blog/:id',
 }

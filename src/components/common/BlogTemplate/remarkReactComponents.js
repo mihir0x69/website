@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import includes from 'lodash/includes'
 
-const Image = (props) => {
+const Image = props => {
     const isExternalImage = includes(props.src, 'http')
     return (
         <img
@@ -15,12 +15,12 @@ const Image = (props) => {
 
 Image.propTypes = {
     src: PropTypes.string.isRequired,
-    alt: PropTypes.string
+    alt: PropTypes.string,
 }
 
-const Pre = (props) => <pre className="line-numbers">{props.children}</pre>
+const Pre = props => <pre className="line-numbers">{props.children}</pre>
 
 export default {
     img: Image,
-    pre: Pre
+    pre: Pre,
 }

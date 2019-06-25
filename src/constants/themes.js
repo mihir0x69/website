@@ -27,7 +27,7 @@ export default {
     [DARK]: {
         fonts,
         colors: {
-            ...colors
+            ...colors,
         },
     },
     [LIGHT]: {
@@ -35,7 +35,7 @@ export default {
         colors: {
             ...colors,
             background: colors.foreground,
-            foreground: colors.background
+            foreground: colors.background,
         },
     },
 }

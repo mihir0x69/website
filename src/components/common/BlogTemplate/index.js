@@ -6,7 +6,7 @@ import parse from 'remark-parse'
 import remark2react from 'remark-react'
 import remarkReactComponents from './remarkReactComponents'
 
-const Blog = (props) => {
+const Blog = props => {
     useEffect(Prism.highlightAll, [props.markdown])
 
     if (!props.markdown) {
@@ -17,19 +17,19 @@ const Blog = (props) => {
         <React.Fragment>
             {
                 unified()
-                .use(parse)
-                .use(remark2react, {
+                    .use(parse)
+                    .use(remark2react, {
                         sanitize: false,
-                        remarkReactComponents
+                        remarkReactComponents,
                     })
-                .processSync(props.markdown).contents
+                    .processSync(props.markdown).contents
             }
         </React.Fragment>
     )
 }
 
 Blog.propTypes = {
-    markdown: PropTypes.string.isRequired
+    markdown: PropTypes.string.isRequired,
 }
 
 export default Blog
