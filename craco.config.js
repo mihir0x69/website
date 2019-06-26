@@ -1,27 +1,29 @@
 const _ = require('lodash')
 
 module.exports = {
-    babel: {
-        "plugins": [
-            "babel-plugin-styled-components",
-            ["babel-plugin-prismjs", {
-                "languages": ["javascript", "jsx", "css", "markup"],
-                "plugins": ["line-numbers"],
-                "theme": "default",
-                "css": true
-            }]
-        ]
-    },
     webpack: {
         configure: (config) => {
             config.resolve.modules.push('src')
+
             const rules = _.find(config.module.rules, x => x.oneOf)
             const fileLoaderRuleIndex = _.findIndex(
-                rules, x => _.includes(x.loader, 'file-loader'))
+                rules.oneOf, x => _.includes(x.loader, 'file-loader'))
             rules.oneOf.splice(fileLoaderRuleIndex, 0, {
                 test: /\.md$/,
                 loader: 'raw-loader'
             })
+
+            const appCodeBabelLoader = _.find(
+                rules.oneOf, x => _.includes(x.loader, 'babel-loader'))
+            appCodeBabelLoader.options.plugins.unshift(
+                'babel-plugin-styled-components',
+                ["babel-plugin-prismjs", {
+                    "languages": ["javascript", "jsx", "css", "markup"],
+                    "plugins": ["line-numbers"],
+                    "theme": "default",
+                    "css": true
+                }]
+            )
             return config
         }
     }
