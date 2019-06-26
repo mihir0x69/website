@@ -38,7 +38,7 @@
       "last 1 safari version"
     ]
   },
-  "homepage": ".",
+  "homepage": "https://mihirk.netlify.com/",
   "devDependencies": {
     "@craco/craco": "5.2.1",
     "babel-plugin-prismjs": "1.0.2",
