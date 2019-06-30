@@ -5,7 +5,8 @@ import kebabCase from 'lodash/kebabCase'
 import Timestamp from 'components/common/Timestamp'
 
 const context = require.context('../Blogs/', true, /metadata.json$/)
-const blogs = context.keys().map(context)
+const blogs = context.keys().map(context).sort(
+    (a, b) => new Date(a.timestamp) > new Date(b.timestamp) ? 1 : -1)
 
 const Container = styled.div`
     margin: 0 auto;
