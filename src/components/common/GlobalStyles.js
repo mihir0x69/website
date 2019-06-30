@@ -29,6 +29,7 @@ const GlobalStyles = createGlobalStyle`
         margin: 20px 0;
     }
     h1, h2, h3, h4, h5, h6 {
+        color: ${props => props.theme.colors.heading};
         font-family: ${props => props.theme.fonts.heading}
     }
     h1 {

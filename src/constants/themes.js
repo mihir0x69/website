@@ -2,7 +2,8 @@ const colors = {
     background: '#282a36',
     currentLine: '#44475a',
     selection: '#44475a',
-    foreground: '#f8f8f2',
+    foreground: '#d9d9d9',
+    heading: '#ffffff',
     comment: '#6272a4',
     cyan: '#8be9fd',
     green: '#50fa7b',
@@ -34,8 +35,9 @@ export default {
         fonts,
         colors: {
             ...colors,
-            background: colors.foreground,
-            foreground: colors.background,
+            background: '#f8f8f2',
+            foreground: '#282a36',
+            heading: '#282a36',
         },
     },
 }
