@@ -2,19 +2,23 @@ import React, { useState, useEffect } from 'react'
 import { Redirect } from 'react-router-dom'
 import BlogTemplate from 'components/common/BlogTemplate'
 import paths from 'constants/paths'
-// import md from './sample2.md'
 
-async function getContents(id) {
-    const content = await import(`./${id}.md`)
-    return content.default
+const getContents = async id => {
+    const { default: metadata} = await import(`./${id}/metadata.json`)
+    const { default: content } = await import(`./${id}/index.md`)
+
+    return {
+        metadata,
+        content
+    }
 }
 
 const Blog = props => {
-    const [markdown, setMarkdown] = useState(0)
+    const [data, setData] = useState(null)
     const [error, setError] = useState(false)
     useEffect(() => {
         getContents(props.match.params.id)
-            .then(setMarkdown)
+            .then(setData)
             .catch(setError)
     }, [props.match.params.id])
 
@@ -22,7 +26,11 @@ const Blog = props => {
         return <Redirect to={paths.BLOGS} />
     }
 
-    return <BlogTemplate markdown={markdown} />
+    if (!data) {
+        return 'Loading...'
+    }
+
+    return <BlogTemplate {...data} />
 }
 
 export default Blog

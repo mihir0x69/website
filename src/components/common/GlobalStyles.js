@@ -24,9 +24,9 @@ const GlobalStyles = createGlobalStyle`
         text-decoration: underline;
     }
     p {
-        font-size: 17px;
+        font-size: 20px;
         line-height: 1.5;
-        margin: 7px 0 7px 0;
+        margin: 20px 0;
     }
     h1, h2, h3, h4, h5, h6 {
         font-family: ${props => props.theme.fonts.heading}
