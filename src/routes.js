@@ -4,7 +4,7 @@ import AnimatedIntro from 'containers/AnimatedIntro'
 import Menu from 'containers/Menu'
 import Paths from 'constants/paths'
 import BlogList from 'containers/BlogList'
-import Blog from 'containers/Blog'
+import Blog from 'containers/Blogs'
 import Layout from 'components/common/Layout'
 
 const Routes = () => {
