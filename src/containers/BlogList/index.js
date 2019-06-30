@@ -1,6 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
+import kebabCase from 'lodash/kebabCase'
+
+const context = require.context('../Blog/', true, /metadata.json$/)
+const blogs = context.keys().map(context)
 
 const Container = styled.div`
     margin: 0 auto;
@@ -31,40 +35,18 @@ const Blog = () => {
             <Title>The Millennial Programmer️️️</Title>
             <p>⚡ Personal blog by me. I discuss tech, politics and life.</p>
             <Hr />
-            <BlogTitle to="blog/sample2">
-                <h1>FSharp: Learning to use FAKE and Paket</h1>
-            </BlogTitle>
-            <p>March 25, 2019 • ☕️ 4 min read</p>
-            <p>
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s, when an unknown printer took a galley
-                of type and scrambled it to make a type specimen book. It has
-                survived not only five centuries, but also the leap into
-                electronic typesetting, remaining essentially unchanged. It was
-                popularised in the 1960s with the release of Letraset sheets
-                containing Lorem Ipsum passages, and more recently with desktop
-                publishing software like Aldus PageMaker including versions of
-                Lorem Ipsum.
-            </p>
-            <Hr />
-            <BlogTitle to="blog/sample2">
-                <h1>Porting enterprise React app to create-react-app</h1>
-            </BlogTitle>
-            <p>March 25, 2019 • ☕️ 4 min read</p>
-            <p>
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s, when an unknown printer took a galley
-                of type and scrambled it to make a type specimen book. It has
-                survived not only five centuries, but also the leap into
-                electronic typesetting, remaining essentially unchanged. It was
-                popularised in the 1960s with the release of Letraset sheets
-                containing Lorem Ipsum passages, and more recently with desktop
-                publishing software like Aldus PageMaker including versions of
-                Lorem Ipsum.
-            </p>
-            <Hr />
+            {
+                blogs.map(({ title, teaser, timestamp }, idx) => (
+                    <React.Fragment key={idx}>
+                        <BlogTitle to={`blog/${kebabCase(title)}`}>
+                            <h1>{title}</h1>
+                        </BlogTitle>
+                        <p></p>
+                        <p>{teaser}</p>
+                        <Hr />
+                    </React.Fragment>
+                ))
+            }
         </Container>
     )
 }
