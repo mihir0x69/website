@@ -34,23 +34,23 @@ const Blog = () => {
     return (
         <Container>
             <Title>{'The Millennial Programmer️️️'}</Title>
-            <p>{'⚡ Personal blog by me. I discuss tech, politics and life.'}</p>
+            <p>
+                {'⚡ Personal blog by me. I discuss tech, politics and life.'}
+            </p>
             <Hr />
-            {
-                blogs.map(({ title, teaser, timestamp, readingStats }, idx) => (
-                    <React.Fragment key={idx}>
-                        <BlogTitle to={`blog/${kebabCase(title)}`}>
-                            <h1>{title}</h1>
-                        </BlogTitle>
-                        <Timestamp
-                            timestamp={timestamp}
-                            readingStats={readingStats}
-                        />
-                        <p>{teaser}</p>
-                        <Hr />
-                    </React.Fragment>
-                ))
-            }
+            {blogs.map(({ title, teaser, timestamp, readingStats }, idx) => (
+                <React.Fragment key={idx}>
+                    <BlogTitle to={`blog/${kebabCase(title)}`}>
+                        <h1>{title}</h1>
+                    </BlogTitle>
+                    <Timestamp
+                        timestamp={timestamp}
+                        readingStats={readingStats}
+                    />
+                    <p>{teaser}</p>
+                    <Hr />
+                </React.Fragment>
+            ))}
         </Container>
     )
 }

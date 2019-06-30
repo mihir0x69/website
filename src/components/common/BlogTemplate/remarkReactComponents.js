@@ -7,7 +7,9 @@ const Image = props => {
     const isExternalImage = includes(props.src, 'http')
     const isYoutubeLink = includes(props.src, 'youtube.com')
     if (isYoutubeLink) {
-        const { query: { v: videoId } } = qs.parseUrl(props.src)
+        const {
+            query: { v: videoId },
+        } = qs.parseUrl(props.src)
         return (
             <iframe
                 title="Youtube Video"

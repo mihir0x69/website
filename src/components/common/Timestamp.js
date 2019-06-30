@@ -14,7 +14,9 @@ const Timestamp = ({ readingStats, timestamp }) => {
         rtIndicator = range(readingStats.minutes).map(() => CRAPPER)
     }
     return (
-        <p>{formatDate(timestamp)} • {rtIndicator} {readingStats.text}</p>
+        <p>
+            {formatDate(timestamp)} • {rtIndicator} {readingStats.text}
+        </p>
     )
 }
 

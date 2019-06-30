@@ -32,7 +32,9 @@ const Blog = ({ metadata, content }) => {
                     })
                     .processSync(content).contents
             }
-            <p><Link to={paths.BLOGS}>{'← Back to other blogs'}</Link></p>
+            <p>
+                <Link to={paths.BLOGS}>{'← Back to other blogs'}</Link>
+            </p>
         </div>
     )
 }

@@ -4,12 +4,12 @@ import BlogTemplate from 'components/common/BlogTemplate'
 import paths from 'constants/paths'
 
 const getContents = async id => {
-    const { default: metadata} = await import(`./${id}/metadata.json`)
+    const { default: metadata } = await import(`./${id}/metadata.json`)
     const { default: content } = await import(`./${id}/index.md`)
 
     return {
         metadata,
-        content
+        content,
     }
 }
 
