@@ -26,5 +26,12 @@ module.exports = {
             )
             return config
         }
+    },
+    eslint: {
+        configure: {
+            rules: {
+                "jsx-a11y/accessible-emoji": "off"
+            }
+        }
     }
 }
