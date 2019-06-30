@@ -5,6 +5,7 @@ import Menu from 'containers/Menu'
 import Paths from 'constants/paths'
 import BlogList from 'containers/BlogList'
 import Blog from 'containers/Blogs'
+import Places from 'containers/Places'
 import Layout from 'components/common/Layout'
 
 const Routes = () => {
@@ -15,6 +16,7 @@ const Routes = () => {
                 <Route path={Paths.MENU} component={Menu} />
                 <Route path={Paths.BLOGS} component={BlogList} />
                 <Route path={Paths.BLOG} component={Blog} />
+                <Route path={Paths.PLACES} component={Places} />
             </Layout>
         </Router>
     )

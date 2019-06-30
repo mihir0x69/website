@@ -9,7 +9,7 @@ const DOWN = 40
 
 const items = [
     { label: 'Blog', link: paths.BLOGS },
-    { label: 'Places', link: '#' },
+    { label: 'Places', link: paths.PLACES },
     { label: 'Whois', link: '#' },
 ]
 
