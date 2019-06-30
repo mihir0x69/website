@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import kebabCase from 'lodash/kebabCase'
 import Timestamp from 'components/common/Timestamp'
 
-const context = require.context('../Blog/', true, /metadata.json$/)
+const context = require.context('../Blogs/', true, /metadata.json$/)
 const blogs = context.keys().map(context)
 
 const Container = styled.div`
@@ -37,12 +37,15 @@ const Blog = () => {
             <p>{'⚡ Personal blog by me. I discuss tech, politics and life.'}</p>
             <Hr />
             {
-                blogs.map(({ title, teaser, timestamp }, idx) => (
+                blogs.map(({ title, teaser, timestamp, readingStats }, idx) => (
                     <React.Fragment key={idx}>
                         <BlogTitle to={`blog/${kebabCase(title)}`}>
                             <h1>{title}</h1>
                         </BlogTitle>
-                        <Timestamp timestamp={timestamp} content={teaser} />
+                        <Timestamp
+                            timestamp={timestamp}
+                            readingStats={readingStats}
+                        />
                         <p>{teaser}</p>
                         <Hr />
                     </React.Fragment>

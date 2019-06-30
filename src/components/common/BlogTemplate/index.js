@@ -17,7 +17,10 @@ const Blog = ({ metadata, content }) => {
     return (
         <div style={{ marginBottom: 50 }}>
             <h1>{metadata.title}</h1>
-            <Timestamp timestamp={metadata.timestamp} content={content} />
+            <Timestamp
+                timestamp={metadata.timestamp}
+                readingStats={metadata.readingStats}
+            />
             {
                 unified()
                     .use(parse)
