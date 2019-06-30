@@ -8,6 +8,7 @@ const BASE_PATH = './src/containers/Blogs'
 const ENCODING = 'UTF-8'
 
 const info = chalk.blue
+const error = chalk.red
 
 const files = fs.readdirSync(BASE_PATH)
 files.forEach(fileName => {
@@ -18,13 +19,24 @@ files.forEach(fileName => {
         const children = fs.readdirSync(dirPath)
         const markdownFileName = find(children, c => c.includes('.md'))
 
+        console.log(info(`Found ${markdownFileName}`))
+        const markdownFilePath = path.join(dirPath, markdownFileName)
+        if (!fs.existsSync(markdownFilePath)) {
+            console.log(error.inverse('ERROR'))
+            console.log(error('Markdown file not found'))
+            process.exit(1)
+        }
+        const contents = fs.readFileSync(markdownFilePath, ENCODING)
+
         console.log(info(`Reading metadata`))
         const metadataFilePath = path.join(dirPath, 'metadata.json')
+        if (!fs.existsSync(metadataFilePath)) {
+            console.log(error.inverse('ERROR'))
+            console.log(error('Metadata file not found'))
+            process.exit(1)
+        }
         const metadata = fs.readFileSync(metadataFilePath, ENCODING)
         const obj = JSON.parse(metadata)
-
-        console.log(info(`Found ${markdownFileName}`))
-        const contents = fs.readFileSync(path.join(dirPath, markdownFileName), ENCODING)
 
         console.log(info(`Calculating reading stats`))
         const readingStats = readingTime(contents)
