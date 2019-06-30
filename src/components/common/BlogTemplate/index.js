@@ -1,10 +1,12 @@
 import React, { useEffect } from 'react'
 import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom'
 import Prism from 'prismjs'
 import unified from 'unified'
 import parse from 'remark-parse'
 import remark2react from 'remark-react'
 import Timestamp from 'components/common/Timestamp'
+import paths from 'constants/paths'
 import remarkReactComponents from './remarkReactComponents'
 
 const Blog = ({ metadata, content }) => {
@@ -30,6 +32,7 @@ const Blog = ({ metadata, content }) => {
                     })
                     .processSync(content).contents
             }
+            <p><Link to={paths.BLOGS}>{'← Back to other blogs'}</Link></p>
         </div>
     )
 }
