@@ -28,7 +28,7 @@ Let’s come back to the topic. If you are an undergrad student and you want to 
 
 7. Connect to the programming community through StackExchange websites, Twitter and most importantly, Github. Dig into Open Source projects on Github. Start contributing to a project. Start from small contributions such as correcting wrong documentation, grammar, examples etc. Then start refactoring the original code and open a PR. What’s a PR? For that, first you need to Learn git and Github.
 
-8. Is it too much to do already? Don’t lose hope. Don’t be in a haste of becoming a great programmer. It takes years and years of beating on your craft to be great at anything. Did you know that Ut. Zakir Hussain used to play Tabla for 23 hours a day? It’s called Riyaz (practice). It’s the key to everything :) Enjoy the journey. Be eternally curious like a child.
+8. Is it too much to do already? Don’t lose hope. Don’t be in a haste of becoming a great programmer. It takes years and years of beating on your craft to be great at anything. Did you know that [Ut. Zakir Hussain](https://www.youtube.com/watch?v=KbbSEmk5Dqo) used to play Tabla for 23 hours a day? It’s called Riyaz (practice). It’s the key to everything :) Enjoy the journey. Be eternally curious like a child.
 
     ![mind-of-a-child](https://cdn-images-1.medium.com/max/1200/1*JxGTJrwTTQlt9k3H-0bZOQ.gif)
 
