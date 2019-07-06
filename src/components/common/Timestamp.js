@@ -15,7 +15,9 @@ const Timestamp = ({ readingStats, timestamp }) => {
     }
     return (
         <p>
-            <b>{formatDate(timestamp)} • {rtIndicator} {readingStats.text}</b>
+            <b>
+                {formatDate(timestamp)} • {rtIndicator} {readingStats.text}
+            </b>
         </p>
     )
 }

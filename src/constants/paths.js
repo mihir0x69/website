@@ -3,5 +3,5 @@ export default {
     MENU: '/menu',
     BLOGS: '/blogs/:tag?',
     BLOG: '/blog/:id',
-    PLACES: '/places'
+    PLACES: '/places',
 }

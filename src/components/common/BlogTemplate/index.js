@@ -19,19 +19,14 @@ const Blog = ({ metadata, content }) => {
     const tags = metadata.tags && (
         <p>
             {'Tags: '}
-            {metadata.tags.map(
-                (tag, idx) => (
-                    <span>
-                        <Link
-                            key={idx}
-                            to={`/blogs/${kebabCase(tag)}`}
-                        >
-                            {tag}
-                        </Link>
-                        {idx + 1 !== metadata.tags.length && ' • '}
-                    </span>
-                )
-            )}
+            {metadata.tags.map((tag, idx) => (
+                <span>
+                    <Link key={idx} to={`/blogs/${kebabCase(tag)}`}>
+                        {tag}
+                    </Link>
+                    {idx + 1 !== metadata.tags.length && ' • '}
+                </span>
+            ))}
         </p>
     )
 

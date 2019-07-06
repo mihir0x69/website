@@ -27,9 +27,9 @@ const Loading = styled.div`
     align-items: center;
 `
 
-const LanceWalking = styled.img.attrs({ 
+const LanceWalking = styled.img.attrs({
     src: loaderImage,
-    alt: 'Loading'
+    alt: 'Loading',
 })`
     margin: 0 20px;
 `
@@ -50,7 +50,7 @@ const Blog = props => {
     if (!data) {
         return (
             <Loading>
-                <LanceWalking/>
+                <LanceWalking />
                 {'Loading...'}
             </Loading>
         )

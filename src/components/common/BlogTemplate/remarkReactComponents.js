@@ -52,5 +52,5 @@ const Code = styled.code`
 export default {
     img: Image,
     pre: Pre,
-    code: Code
+    code: Code,
 }
