@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import styled from 'styled-components'
 import includes from 'lodash/includes'
 import qs from 'query-string'
 
@@ -39,7 +40,17 @@ Image.propTypes = {
 
 const Pre = props => <pre className="line-numbers">{props.children}</pre>
 
+const Code = styled.code`
+    font-size: 15px;
+    background-color: ${props => props.theme.colors.foreground};
+    margin: 0 3px;
+    padding: 1px 7px;
+    color: ${props => props.theme.colors.background};
+    border-radius: 2px;
+`
+
 export default {
     img: Image,
     pre: Pre,
+    code: Code
 }

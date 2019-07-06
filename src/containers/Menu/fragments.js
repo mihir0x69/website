@@ -20,6 +20,7 @@ export const ItemList = styled.ul`
 `
 
 export const Item = styled.li`
+    font-size: 14px;
     font-family: ${props => props.theme.fonts.retro};
     padding: 10px;
     position: relative;
