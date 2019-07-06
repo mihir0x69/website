@@ -1,8 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
+import TweetEmbed from 'react-tweet-embed'
 import includes from 'lodash/includes'
 import qs from 'query-string'
+import split from 'lodash/split'
+import last from 'lodash/last'
 
 const Image = props => {
     const isExternalImage = includes(props.src, 'http')
@@ -49,8 +52,28 @@ const Code = styled.code`
     border-radius: 2px;
 `
 
+const CustomLink = props => {
+    const isTwitterLink = includes(props.href, 'https://twitter.com')
+    if (isTwitterLink) {
+        const tweetId = last(split(props.href, '/status/'))
+        return (
+            <TweetEmbed id={tweetId} options={{ align: 'center' }} />
+        )
+    }
+    return (
+        <a
+            href={props.href}
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            {props.children}
+        </a>
+    )
+}
+
 export default {
     img: Image,
     pre: Pre,
     code: Code,
+    a: CustomLink
 }

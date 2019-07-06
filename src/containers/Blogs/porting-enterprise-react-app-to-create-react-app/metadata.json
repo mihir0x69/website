@@ -3,9 +3,15 @@
     "teaser": "So I’ve been writing React apps for a year now. I’ve had the honor of being one of the maintainers of react-boilerplate. If you’re a React developer, you know how it is- You get the mock-ups, you get the API endpoints and then you write the components. Easy-peasy. But over the period of time it becomes mundane. I never had a chance to work at the architectural level of live applications.",
     "timestamp": "08-07-2017",
     "readingStats": {
-        "text": "2 min read",
-        "minutes": 1.64,
-        "time": 98399.99999999999,
-        "words": 328
-    }
+        "text": "5 min read",
+        "minutes": 4.42,
+        "time": 265200,
+        "words": 884
+    },
+    "tags": [
+        "Javascript",
+        "CreateReactApp",
+        "React",
+        "ReactJs"
+    ]
 }
