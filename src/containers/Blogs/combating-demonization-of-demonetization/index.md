@@ -23,9 +23,9 @@ For those of you who have this genuine query, you can find a video down below, a
 ## Was government unprepared?
 I don’t think so. This is not a small step. Government think-tank must have anticipated the chaos, strain on banks, post offices and most importantly on ordinary citizens. Yes, many things could have been improved. Some say government should have pumped in adequate currency in the economy before acting on something like this. But do you really think that the government has not chalked out a solid plan? Should-have, could-have, would-have will not help. We’re in this, now. We must help the government.
 
-Some people suddenly started crying for their maids, watchmen and local bhaji wallah down the road. I urge you to guide these poor people to open bank accounts and teach them how to do transactions. You can open their accounts under Jan Dhan Yojana. Stop criticizing the government.
+Some people suddenly started crying for their maids, watchmen and local bhaji wallah down the road. I urge you to guide these poor people to open bank accounts and teach them how to do transactions. You can open their accounts under [Jan Dhan Yojana](http://www.pmjdy.gov.in/). Stop criticizing the government.
 
-*_There’s only one aspect that I’m worried about- Hospitals. It’s very sensitive and subjective. Hospitals should be given complete exemption. Patients must not suffer because some government has decided to curb corruption. Watching next of kin run helplessly is painful. Mr. Modi should give this top priority._*
+**_There’s only one aspect that I’m worried about- Hospitals. It’s very sensitive and subjective. Hospitals should be given complete exemption. Patients must not suffer because some government has decided to curb corruption. Watching next of kin run helplessly is painful. Mr. Modi should give this top priority._**
 
 Everything will come back to normal, eventually. It has to! Have patience.
 
