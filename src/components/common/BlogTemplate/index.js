@@ -7,6 +7,7 @@ import unified from 'unified'
 import parse from 'remark-parse'
 import remark2react from 'remark-react'
 import Timestamp from 'components/common/Timestamp'
+import paths from 'constants/paths'
 import remarkReactComponents from './remarkReactComponents'
 
 const Blog = ({ metadata, content }) => {
@@ -21,7 +22,7 @@ const Blog = ({ metadata, content }) => {
             {'Tags: '}
             {metadata.tags.map((tag, idx) => (
                 <span>
-                    <Link key={idx} to={`/blogs/${kebabCase(tag)}`}>
+                    <Link key={idx} to={`${paths.BLOGS}/${kebabCase(tag)}`}>
                         {tag}
                     </Link>
                     {idx + 1 !== metadata.tags.length && ' • '}
@@ -48,7 +49,7 @@ const Blog = ({ metadata, content }) => {
             }
             {tags}
             <p>
-                <Link to="/blogs">{'← Back to other blogs'}</Link>
+                <Link to={paths.BLOGS}>{'← Back to other blogs'}</Link>
             </p>
         </div>
     )

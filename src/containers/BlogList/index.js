@@ -5,6 +5,7 @@ import find from 'lodash/find'
 import startCase from 'lodash/startCase'
 import kebabCase from 'lodash/kebabCase'
 import Timestamp from 'components/common/Timestamp'
+import paths from 'constants/paths'
 
 const context = require.context('../Blogs/', true, /metadata.json$/)
 const allBlogs = context
@@ -61,7 +62,7 @@ const Blog = props => {
             {visibleBlogs.length === 0 && (
                 <p>
                     {'No blogs found. '}
-                    <Link to="/blogs">{'See all blogs.'}</Link>
+                    <Link to={paths.BLOGS}>{'See all blogs.'}</Link>
                 </p>
             )}
             {visibleBlogs.map(

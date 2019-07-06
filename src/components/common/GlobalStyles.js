@@ -47,6 +47,10 @@ const GlobalStyles = createGlobalStyle`
     h4 {
         font-size: 1em;
     }
+    blockquote {
+        border-left: 3px solid ${props => props.theme.colors.foreground};
+        padding-left: 15px;
+    }
 `
 
 export default GlobalStyles
