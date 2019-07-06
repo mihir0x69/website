@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components'
+import { DARK } from 'constants/themes'
 
 const GlobalStyles = createGlobalStyle`
     @import url('https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap');
@@ -50,6 +51,9 @@ const GlobalStyles = createGlobalStyle`
     blockquote {
         border-left: 3px solid ${props => props.theme.colors.foreground};
         padding-left: 15px;
+    }
+    b, strong {
+        color: ${props => props.theme.identify() === DARK ? 'white' : 'black'};
     }
 `
 

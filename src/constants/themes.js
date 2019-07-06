@@ -26,12 +26,14 @@ export const LIGHT = -1
 
 export default {
     [DARK]: {
+        identify: () => DARK,
         fonts,
         colors: {
             ...colors,
         },
     },
     [LIGHT]: {
+        identify: () => LIGHT,
         fonts,
         colors: {
             ...colors,

@@ -11,7 +11,11 @@ const context = require.context('../Blogs/', true, /metadata.json$/)
 const allBlogs = context
     .keys()
     .map(context)
-    .sort((a, b) => (new Date(a.timestamp) > new Date(b.timestamp) ? 1 : -1))
+    .sort((a, b) => {
+        const aa = a.timestamp.split('-').reverse().join()
+        const bb = b.timestamp.split('-').reverse().join()
+        return aa < bb ? 1 : (aa > bb ? -1 : 0)
+    })
 
 const Container = styled.div`
     margin: 0 auto;
