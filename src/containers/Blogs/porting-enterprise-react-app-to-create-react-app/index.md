@@ -12,6 +12,6 @@ The reason for choosing CRA over any other boilerplate is that CRA is truly unop
 4. Replacing all instances of require.ensureto new es6 import()syntax.
 5. Some find/replace problems like dropping React.PropTypesin favor of new prop-typespackage.
 6. Removing all relative imports like
-7. import * as actions from '../../../actions/MyActions' with module-like imports 
-8. import * as actions from 'actions/MyActions'
+7. `import * as actions from '../../../actions/MyActions'` with module-like imports 
+8. `import * as actions from 'actions/MyActions'`
 9. And finally write a new build process on our build server since CRA recommends using Yarn.
