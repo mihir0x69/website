@@ -1,0 +1,18 @@
+{
+    "title": "FSharp: Learning to use FAKE and Paket",
+    "teaser": "Background: A year ago I discovered F# to be the next big thing in .Net world (apart from .Net core). F# is a functional-first language with OO capabilities. I quickly fell in love with it. I come from Javascript background and I had lost my touch with the back-end. Learning F# proved to be an excellent opportunity for me to hone my back-end skills and get acquainted with .Net way of doing things.",
+    "timestamp": "02-07-2018",
+    "readingStats": {
+        "text": "5 min read",
+        "minutes": 4.42,
+        "time": 265200,
+        "words": 884
+    },
+    "tags": [
+        "FSharp",
+        "Functional Programming",
+        "Dotnet",
+        "Microsoft",
+        "Dotnet Core"
+    ]
+}
