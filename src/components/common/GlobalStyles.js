@@ -28,6 +28,9 @@ const GlobalStyles = createGlobalStyle`
         line-height: 1.5;
         margin: 20px 0;
     }
+    li, ol {
+        font-size: 20px;
+    }
     h1, h2, h3, h4, h5, h6 {
         color: ${props => props.theme.colors.heading};
         font-family: ${props => props.theme.fonts.heading}
