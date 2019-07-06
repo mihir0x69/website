@@ -56,16 +56,10 @@ const CustomLink = props => {
     const isTwitterLink = includes(props.href, 'https://twitter.com')
     if (isTwitterLink) {
         const tweetId = last(split(props.href, '/status/'))
-        return (
-            <TweetEmbed id={tweetId} options={{ align: 'center' }} />
-        )
+        return <TweetEmbed id={tweetId} options={{ align: 'center' }} />
     }
     return (
-        <a
-            href={props.href}
-            target="_blank"
-            rel="noopener noreferrer"
-        >
+        <a href={props.href} target="_blank" rel="noopener noreferrer">
             {props.children}
         </a>
     )
@@ -75,5 +69,5 @@ export default {
     img: Image,
     pre: Pre,
     code: Code,
-    a: CustomLink
+    a: CustomLink,
 }

@@ -53,7 +53,8 @@ const GlobalStyles = createGlobalStyle`
         padding-left: 15px;
     }
     b, strong {
-        color: ${props => props.theme.identify() === DARK ? 'white' : 'black'};
+        color: ${props =>
+            props.theme.identify() === DARK ? 'white' : 'black'};
     }
 `
 
