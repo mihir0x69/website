@@ -6,6 +6,7 @@ import paths from 'constants/paths'
 import BlogList from 'containers/BlogList'
 import Blog from 'containers/Blogs'
 import Places from 'containers/Places'
+import Whoami from 'containers/Whoami'
 import Layout from 'components/common/Layout'
 
 const Routes = () => {
@@ -17,6 +18,7 @@ const Routes = () => {
                 <Route path={paths.BLOGS_PATH} component={BlogList} />
                 <Route path={paths.BLOG} component={Blog} />
                 <Route path={paths.PLACES} component={Places} />
+                <Route path={paths.WHOAMI} component={Whoami} />
             </Layout>
         </Router>
     )

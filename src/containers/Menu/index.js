@@ -10,7 +10,7 @@ const DOWN = 40
 const items = [
     { label: 'Blog', link: paths.BLOGS },
     { label: 'Places', link: paths.PLACES },
-    { label: 'Whois', link: '#' },
+    { label: 'Whoami', link: paths.WHOAMI },
 ]
 
 const Menu = props => {
