@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
+import kebabCase from 'lodash/kebabCase'
 import Prism from 'prismjs'
 import unified from 'unified'
 import parse from 'remark-parse'
 import remark2react from 'remark-react'
 import Timestamp from 'components/common/Timestamp'
-import paths from 'constants/paths'
 import remarkReactComponents from './remarkReactComponents'
 
 const Blog = ({ metadata, content }) => {
@@ -15,6 +15,25 @@ const Blog = ({ metadata, content }) => {
     if (!content || !metadata) {
         return null
     }
+
+    const tags = metadata.tags && (
+        <p>
+            {'Tags: '}
+            {metadata.tags.map(
+                (tag, idx) => (
+                    <span>
+                        <Link
+                            key={idx}
+                            to={`/blogs/${kebabCase(tag)}`}
+                        >
+                            {tag}
+                        </Link>
+                        {idx + 1 !== metadata.tags.length && ' • '}
+                    </span>
+                )
+            )}
+        </p>
+    )
 
     return (
         <div style={{ marginBottom: 50 }}>
@@ -32,8 +51,9 @@ const Blog = ({ metadata, content }) => {
                     })
                     .processSync(content).contents
             }
+            {tags}
             <p>
-                <Link to={paths.BLOGS}>{'← Back to other blogs'}</Link>
+                <Link to="/blogs">{'← Back to other blogs'}</Link>
             </p>
         </div>
     )

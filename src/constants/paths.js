@@ -1,7 +1,7 @@
 export default {
     ROOT: '/',
     MENU: '/menu',
-    BLOGS: '/blogs',
+    BLOGS: '/blogs/:tag?',
     BLOG: '/blog/:id',
     PLACES: '/places'
 }
