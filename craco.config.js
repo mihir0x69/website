@@ -18,7 +18,7 @@ module.exports = {
             appCodeBabelLoader.options.plugins.unshift(
                 'babel-plugin-styled-components',
                 ["babel-plugin-prismjs", {
-                    "languages": ["javascript", "jsx", "css", "markup"],
+                    "languages": ["javascript", "jsx", "css", "markup", "fsharp", "csharp"],
                     "plugins": ["line-numbers"],
                     "theme": "default",
                     "css": true

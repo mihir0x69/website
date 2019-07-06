@@ -72,7 +72,7 @@ Once you have that in place, you will be able to use FAKE and as a bonus —�
 
 First task that I would like to have in my build script is to clean the `bin` and `obj` folders from all cs/fs project folders.
 
-```fs
+```fsharp
 let appDirectory = Path.Combine("src", "PaketDemo")
 
 let directoriesToClean () =
@@ -89,7 +89,7 @@ Your project directory structure may differ from mine. But in this particular ex
 
 Cool! So now we have a clean solution. Lets try to restore the packages before we actually build the project.
 
-```fs
+```fsharp
 Target.create "Restore" (fun _ ->
     Shell.Exec (Path.Combine(".paket", "paket.exe"), "restore", "") |> ignore
 )
@@ -97,7 +97,7 @@ Target.create "Restore" (fun _ ->
 
 This part of the script simply calls `paket.exe` and passes `restore` as a command. You can easily guess what this will do. Once we have all the packages restored, we can just go build the project. And for that, all you have to do is this —
 
-```fs
+```fsharp
 Target.create "Build" (fun _ -> 
     Trace.log "--- Building the app ---"
     DotNet.build id (Path.Combine("src", "PaketDemo"))
@@ -106,7 +106,7 @@ Target.create "Build" (fun _ ->
 
 We’re using `FAKE.DotNet` module to build the project. The argument we need to provide is the path to the startup project. Now that we have all the `Targets` defined, let’s define the dependency between them.
 
-```fs
+```fsharp
 open Fake.Core.TargetOperators
 
 "Clean" ==> "Restore" ==> "Build"
