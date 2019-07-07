@@ -25,7 +25,7 @@ const Routes = () => {
         <Router>
             <Layout>
                 <Switch>
-                    {routes.map(props => <Route {...props} />)}
+                    {routes.map((props, idx) => <Route key={idx} {...props} />)}
                 </Switch>
             </Layout>
         </Router>

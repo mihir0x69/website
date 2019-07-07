@@ -10,6 +10,7 @@ const Title = styled.h2`
 
 const SocialLink = styled.a.attrs({ taregt: '_blank' })`
     margin: 0 5px;
+    display: inline-block;
 `
 
 const socialLinks = [
@@ -71,7 +72,8 @@ const Whoami = () => {
                 <p>{"सो ऽहम् - The light which is thy fairest form, I see it. I am what He is."}</p>
                 <p>
                     {socialLinks.map(
-                        ({ label, link }) => <SocialLink href={link}>{label}</SocialLink>
+                        ({ label, link }, idx) =>
+                            <SocialLink key={idx} href={link}>{label}</SocialLink>
                     )}
                 </p>
             </div>
