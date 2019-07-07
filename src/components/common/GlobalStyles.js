@@ -49,6 +49,7 @@ const GlobalStyles = createGlobalStyle`
         font-size: 1em;
     }
     blockquote {
+        margin: 15px;
         font-size: 20px;
         border-left: 3px solid ${props => props.theme.colors.foreground};
         padding-left: 15px;
