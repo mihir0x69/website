@@ -48,7 +48,7 @@ const Whoami = () => {
                     <a href="https://en.wikipedia.org/wiki/Advaita_Vedanta" target="_blank">{'Advait Vedanta'}</a>
                     {` and `}
                     <a href="https://en.wikipedia.org/wiki/Rakhi_Sawant" target="_blank">{'Rakhi Sawant'}</a>
-                    {` in the same conversation and still not be overwhelmed. I think I have 
+                    {` in the same breath and still not be overwhelmed. I think I have 
                     figured out my life - Just working out a few kinks. Hit me up on `}
                     <a href="https://twitter.com/KarandikarMihir" target="_blank">{'Twitter'}</a>
                     {' if you want to talk.'}
