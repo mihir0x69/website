@@ -8,15 +8,28 @@ const Title = styled.h2`
     text-align: center;
 `
 
+const SocialLink = styled.a.attrs({ taregt: '_blank' })`
+    margin: 0 5px;
+`
+
+const socialLinks = [
+    { label: 'Github', link: 'https://github.com/KarandikarMihir' },
+    { label: 'StackOverflow', link: 'https://stackoverflow.com/users/5241520/mihir' },
+    { label: 'Twitter', link: 'https://twitter.com/KarandikarMihir' },
+    { label: 'LinkedIn', link: 'https://in.linkedin.com/in/karandikarmihir' },
+    { label: 'Email', link: 'mailto:karandikar.mihir@outlook.com' }
+]
+
 const Whoami = () => {
     return (
         <>
             <div style={{ textAlign: 'center' }}>
                 <Title>{'whoami'}</Title>
+                <p>{'कोऽहं?'}</p>
                 <p><i>{"*Interstellar Main Theme plays in the background*"}</i></p>
                 <img src={hero} alt="hero" style={{ width: '100%' }} />
                 <p>
-                    {`My name is Mihir. I'm a software developer from Pune, India. I write Javascript,
+                    {`Mihir. I'm a software developer from Pune, India. I write Javascript,
                     C# and F#. I enjoy working on Microsoft Azure. Working on cool stuff at my day job.
                     I love building things from scratch. I enjoy watching small things come together
                     and form a huge system. I loathe unnecessary abstraction and overengineering. I strive
@@ -49,12 +62,18 @@ const Whoami = () => {
                     <blockquote key={idx}>
                         {q.text}
                         <br />
-                        {`- ${q.author}`}
+                        <b>{`- ${q.author}`}</b>
                     </blockquote>
                 ))
             }
             <div style={{ textAlign: 'center' }}>
-                <p><b>{`God damn it guys!! I'm trying really hard to be nice to people.`}</b></p>
+                <p><b>{`Damn it guys!! I'm trying!!`}</b></p>
+                <p>{'सोहम'}</p>
+                <p>
+                    {socialLinks.map(
+                        ({ label, link }) => <SocialLink href={link}>{label}</SocialLink>
+                    )}
+                </p>
             </div>
         </>
     )

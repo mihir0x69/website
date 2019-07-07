@@ -1,6 +1,6 @@
 const quotes = [
     { 
-        text: 'I can crack dirtiest of jokes with you and I feel very comfortable talking to you. You are just like me 😎. Stop spending so much of your time on your phone.',
+        text: 'I can crack dirtiest of jokes with you and I feel very comfortable talking to you. You are just like me 😎. Stop spending so much time on your phone!',
         author: 'Aditya'
     },
     {
