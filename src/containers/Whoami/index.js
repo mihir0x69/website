@@ -25,8 +25,8 @@ const Whoami = () => {
         <>
             <div style={{ textAlign: 'center' }}>
                 <Title>{'whoami'}</Title>
-                <p>{'कोऽहं?'}</p>
-                <p><i>{"*Interstellar Main Theme plays in the background*"}</i></p>
+                <p>{'को ऽहं?'}</p>
+                <p><i>{"*Interstellar Organ Theme plays in the background*"}</i></p>
                 <img src={hero} alt="hero" style={{ width: '100%' }} />
                 <p>
                     {`Mihir. I'm a software developer from Pune, India. I write Javascript,
@@ -44,12 +44,12 @@ const Whoami = () => {
                 </p>
                 <p>
                     {`I like to imagine myself as an intriguing human being. I can talk about `}
-                    <a href="https://en.wikipedia.org/wiki/Advaita_Vedanta">{'Advait Vedanta'}</a>
+                    <a href="https://en.wikipedia.org/wiki/Advaita_Vedanta" target="_blank">{'Advait Vedanta'}</a>
                     {` and `}
-                    <a href="https://en.wikipedia.org/wiki/Rakhi_Sawant">{'Rakhi Sawant'}</a>
+                    <a href="https://en.wikipedia.org/wiki/Rakhi_Sawant" target="_blank">{'Rakhi Sawant'}</a>
                     {` in the same conversation and still not be overwhelmed. I think I have 
                     figured out my life - Just working out a few kinks. Hit me up on `}
-                    <a href="https://twitter.com/KarandikarMihir">{'Twitter'}</a>
+                    <a href="https://twitter.com/KarandikarMihir" target="_blank">{'Twitter'}</a>
                     {' if you want to talk.'}
                 </p>
                 <p>
@@ -68,7 +68,7 @@ const Whoami = () => {
             }
             <div style={{ textAlign: 'center' }}>
                 <p><b>{`Damn it guys!! I'm trying!!`}</b></p>
-                <p>{'सोहम'}</p>
+                <p>{"सो ऽहम् - The light which is thy fairest form, I see it. I am what He is."}</p>
                 <p>
                     {socialLinks.map(
                         ({ label, link }) => <SocialLink href={link}>{label}</SocialLink>
