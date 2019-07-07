@@ -12,14 +12,12 @@ const Container = styled.div`
 `
 
 const Title = styled.p`
-    font-family: ${props => props.theme.fonts.retro}
+    font-family: ${props => props.theme.fonts.retro};
 `
 
 const NotFound = () => (
     <Container>
-        <Title>
-            {'404 Not Found'}
-        </Title>
+        <Title>{'404 Not Found'}</Title>
         <img src={lanceLyingDown} alt="Not found" />
     </Container>
 )

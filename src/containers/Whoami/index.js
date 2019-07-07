@@ -15,10 +15,13 @@ const SocialLink = styled.a.attrs({ taregt: '_blank' })`
 
 const socialLinks = [
     { label: 'Github', link: 'https://github.com/KarandikarMihir' },
-    { label: 'StackOverflow', link: 'https://stackoverflow.com/users/5241520/mihir' },
+    {
+        label: 'StackOverflow',
+        link: 'https://stackoverflow.com/users/5241520/mihir',
+    },
     { label: 'Twitter', link: 'https://twitter.com/KarandikarMihir' },
     { label: 'LinkedIn', link: 'https://in.linkedin.com/in/karandikarmihir' },
-    { label: 'Email', link: 'mailto:karandikar.mihir@outlook.com' }
+    { label: 'Email', link: 'mailto:karandikar.mihir@outlook.com' },
 ]
 
 const Whoami = () => {
@@ -27,7 +30,11 @@ const Whoami = () => {
             <div style={{ textAlign: 'center' }}>
                 <Title>{'whoami'}</Title>
                 <p>{'को ऽहं?'}</p>
-                <p><i>{"*Interstellar Organ Theme plays in the background*"}</i></p>
+                <p>
+                    <i>
+                        {'*Interstellar Organ Theme plays in the background*'}
+                    </i>
+                </p>
                 <img src={hero} alt="hero" style={{ width: '100%' }} />
                 <p>
                     {`Mihir. I'm a software developer from Pune, India. I write Javascript,
@@ -45,12 +52,27 @@ const Whoami = () => {
                 </p>
                 <p>
                     {`I like to imagine myself as an intriguing human being. I can talk about `}
-                    <a href="https://en.wikipedia.org/wiki/Advaita_Vedanta" target="_blank">{'Advait Vedanta'}</a>
+                    <a
+                        href="https://en.wikipedia.org/wiki/Advaita_Vedanta"
+                        target="_blank"
+                    >
+                        {'Advait Vedanta'}
+                    </a>
                     {` and `}
-                    <a href="https://en.wikipedia.org/wiki/Rakhi_Sawant" target="_blank">{'Rakhi Sawant'}</a>
+                    <a
+                        href="https://en.wikipedia.org/wiki/Rakhi_Sawant"
+                        target="_blank"
+                    >
+                        {'Rakhi Sawant'}
+                    </a>
                     {` in the same breath and still not be overwhelmed. I think I have 
                     figured out my life - Just working out a few kinks. Hit me up on `}
-                    <a href="https://twitter.com/KarandikarMihir" target="_blank">{'Twitter'}</a>
+                    <a
+                        href="https://twitter.com/KarandikarMihir"
+                        target="_blank"
+                    >
+                        {'Twitter'}
+                    </a>
                     {' if you want to talk.'}
                 </p>
                 <p>
@@ -58,23 +80,28 @@ const Whoami = () => {
                     with them for a little longer in this realm. Let's have them say something about me -`}
                 </p>
             </div>
-            {
-                quotes.map((q, idx) => (
-                    <blockquote key={idx}>
-                        {q.text}
-                        <br />
-                        <b>{`- ${q.author}`}</b>
-                    </blockquote>
-                ))
-            }
+            {quotes.map((q, idx) => (
+                <blockquote key={idx}>
+                    {q.text}
+                    <br />
+                    <b>{`- ${q.author}`}</b>
+                </blockquote>
+            ))}
             <div style={{ textAlign: 'center' }}>
-                <p><b>{`Damn it guys!! I'm trying!!`}</b></p>
-                <p>{"सो ऽहम् - The light which is thy fairest form, I see it. I am what He is."}</p>
                 <p>
-                    {socialLinks.map(
-                        ({ label, link }, idx) =>
-                            <SocialLink key={idx} href={link}>{label}</SocialLink>
-                    )}
+                    <b>{`Damn it guys!! I'm trying!!`}</b>
+                </p>
+                <p>
+                    {
+                        'सो ऽहम् - The light which is thy fairest form, I see it. I am what He is.'
+                    }
+                </p>
+                <p>
+                    {socialLinks.map(({ label, link }, idx) => (
+                        <SocialLink key={idx} href={link}>
+                            {label}
+                        </SocialLink>
+                    ))}
                 </p>
             </div>
         </>

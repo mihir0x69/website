@@ -17,7 +17,7 @@ const routes = [
     { path: paths.BLOG, component: Blog },
     { path: paths.PLACES, component: Places },
     { path: paths.WHOAMI, component: Whoami },
-    { component: NotFound }
+    { component: NotFound },
 ]
 
 const Routes = () => {
@@ -25,7 +25,9 @@ const Routes = () => {
         <Router>
             <Layout>
                 <Switch>
-                    {routes.map((props, idx) => <Route key={idx} {...props} />)}
+                    {routes.map((props, idx) => (
+                        <Route key={idx} {...props} />
+                    ))}
                 </Switch>
             </Layout>
         </Router>
