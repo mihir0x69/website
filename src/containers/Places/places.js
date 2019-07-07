@@ -2,6 +2,11 @@ import React from 'react'
 import styled from 'styled-components'
 import places from './list'
 
+const Container = styled.div`
+    margin-bottom: 50px;
+    padding: 0 10px;
+`
+
 const Title = styled.h2`
     font-family: ${props => props.theme.fonts.retro};
 `
@@ -15,7 +20,7 @@ const ImageSet = styled.div`
 `
 
 const Places = () => (
-    <>
+    <Container>
         <Title>{'Places'}</Title>
         <p>
             {"I can't list down all of them, so I'll just start from May 2019."}
@@ -27,7 +32,7 @@ const Places = () => (
                 </p>
                 <ImageSet key={idx}>
                     {place.images.map((photo, i) => (
-                        <div style={{ flex: 1, padding: 5 }}>
+                        <div key={i} style={{ flex: 1, padding: 5 }}>
                             <img
                                 key={i}
                                 src={photo}
@@ -40,7 +45,7 @@ const Places = () => (
                 <hr />
             </React.Fragment>
         ))}
-    </>
+    </Container>
 )
 
 export default Places

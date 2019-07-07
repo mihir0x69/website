@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import PropTypes from 'prop-types'
+import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import kebabCase from 'lodash/kebabCase'
 import Prism from 'prismjs'
@@ -9,6 +10,11 @@ import remark2react from 'remark-react'
 import Timestamp from 'components/common/Timestamp'
 import paths from 'constants/paths'
 import remarkReactComponents from './remarkReactComponents'
+
+const Container = styled.div`
+    margin-bottom: 50px;
+    padding: 0 10px;
+`
 
 const Blog = ({ metadata, content }) => {
     useEffect(Prism.highlightAll, [content])
@@ -32,7 +38,7 @@ const Blog = ({ metadata, content }) => {
     )
 
     return (
-        <div style={{ marginBottom: 50 }}>
+        <Container>
             <h1>{metadata.title}</h1>
             <Timestamp
                 timestamp={metadata.timestamp}
@@ -51,7 +57,7 @@ const Blog = ({ metadata, content }) => {
             <p>
                 <Link to={paths.BLOGS}>{'← Back to other blogs'}</Link>
             </p>
-        </div>
+        </Container>
     )
 }
 

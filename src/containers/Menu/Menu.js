@@ -44,15 +44,18 @@ const Menu = props => {
         <Container>
             <ItemList>
                 {items.map((x, idx) => {
-                    const clickHandler = () => {
+                    const eventHandler = (e) => {
                         sound.play()
                         setActiveItem(idx)
-                        props.history.push(items[idx].link)
+                        if (e.type === 'click') {
+                            props.history.push(items[idx].link)
+                        }
                     }
                     return (
                         <Item
                             key={idx}
-                            onClick={clickHandler}
+                            onClick={eventHandler}
+                            onMouseOver={eventHandler}
                             active={idx === activeItem}
                         >
                             {x.label}

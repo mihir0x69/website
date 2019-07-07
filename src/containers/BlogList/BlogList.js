@@ -25,7 +25,7 @@ const allBlogs = context
 
 const Container = styled.div`
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 10px;
 `
 
 const Title = styled.h2`

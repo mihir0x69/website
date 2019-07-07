@@ -3,6 +3,11 @@ import styled from 'styled-components'
 import hero from 'media/mihir.jpg'
 import quotes from './quotes'
 
+const Container = styled.div`
+    margin-bottom: 50px;
+    padding: 0 10px;
+`
+
 const Title = styled.h2`
     font-family: ${props => props.theme.fonts.retro};
     text-align: center;
@@ -26,7 +31,7 @@ const socialLinks = [
 
 const Whoami = () => {
     return (
-        <>
+        <Container>
             <div style={{ textAlign: 'center' }}>
                 <Title>{'whoami'}</Title>
                 <p>{'को ऽहं?'}</p>
@@ -104,7 +109,7 @@ const Whoami = () => {
                     ))}
                 </p>
             </div>
-        </>
+        </Container>
     )
 }
 

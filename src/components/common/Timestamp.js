@@ -16,7 +16,10 @@ const Timestamp = ({ readingStats, timestamp }) => {
     return (
         <p>
             <b>
-                {formatDate(timestamp)} • {rtIndicator} {readingStats.text}
+                {formatDate(timestamp)}{' • '}
+                <span style={{ display: 'inline-block' }}>
+                    {rtIndicator} {readingStats.text}
+                </span>
             </b>
         </p>
     )
