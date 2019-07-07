@@ -21,7 +21,7 @@ const Blog = ({ metadata, content }) => {
         <p>
             {'Tags: '}
             {metadata.tags.map((tag, idx) => (
-                <span>
+                <span key={idx}>
                     <Link key={idx} to={`${paths.BLOGS}/${kebabCase(tag)}`}>
                         {tag}
                     </Link>
