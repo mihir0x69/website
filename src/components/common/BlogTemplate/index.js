@@ -43,7 +43,7 @@ const Blog = ({ metadata, content }) => {
     const disqusConfig = {
         url: `${SITE_URL}/blog/${blogId}`,
         identifier: blogId,
-        title: metadata.title
+        title: metadata.title,
     }
 
     return (

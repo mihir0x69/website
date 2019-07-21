@@ -44,7 +44,7 @@ const Menu = props => {
         <Container>
             <ItemList>
                 {items.map((x, idx) => {
-                    const eventHandler = (e) => {
+                    const eventHandler = e => {
                         sound.play()
                         setActiveItem(idx)
                         if (e.type === 'click') {
