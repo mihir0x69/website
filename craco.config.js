@@ -1,9 +1,11 @@
 const _ = require('lodash')
+const path = require('path')
 
 module.exports = {
     webpack: {
-        configure: (config) => {
+        configure: (config, { env }) => {
             config.resolve.modules.push('src')
+            config.resolve.alias.config = path.resolve('src', 'config', `${env}.js`)
 
             const rules = _.find(config.module.rules, x => x.oneOf)
             const fileLoaderRuleIndex = _.findIndex(
