@@ -23,7 +23,7 @@ const Places = () => (
     <Container>
         <Title>{'Places'}</Title>
         <p>
-            {"I can't list down all of them, so I'll just start from May 2019."}
+            {"It'd be a long list if I include all my trips from the past, so I'll just start from May 2019."}
         </p>
         {places.map((place, idx) => (
             <React.Fragment key={idx}>
