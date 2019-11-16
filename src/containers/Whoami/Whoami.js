@@ -60,6 +60,7 @@ const Whoami = () => {
                     <a
                         href="https://en.wikipedia.org/wiki/Advaita_Vedanta"
                         target="_blank"
+                        rel="noopener noreferrer"
                     >
                         {'Advait Vedanta'}
                     </a>
@@ -67,6 +68,7 @@ const Whoami = () => {
                     <a
                         href="https://en.wikipedia.org/wiki/Rakhi_Sawant"
                         target="_blank"
+                        rel="noopener noreferrer"
                     >
                         {'Rakhi Sawant'}
                     </a>
@@ -75,6 +77,7 @@ const Whoami = () => {
                     <a
                         href="https://twitter.com/KarandikarMihir"
                         target="_blank"
+                        rel="noopener noreferrer"
                     >
                         {'Twitter'}
                     </a>
