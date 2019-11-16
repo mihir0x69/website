@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
 import styled, { ThemeProvider } from 'styled-components'
-import GlobalStyles from 'components/common/GlobalStyles'
+import GlobalStyles from 'components/GlobalStyles'
 import * as StorageManager from 'utils/StorageManager'
 import themes from 'constants/themes'
 import paths from 'constants/paths'

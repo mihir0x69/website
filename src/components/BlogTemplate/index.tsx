@@ -7,7 +7,7 @@ import Prism from 'prismjs'
 import unified from 'unified'
 import parse from 'remark-parse'
 import remark2react from 'remark-react'
-import Timestamp from 'components/common/Timestamp'
+import Timestamp from 'components/Timestamp'
 import paths from 'constants/paths'
 import remarkReactComponents from './remarkReactComponents'
 const { SITE_URL, DISQUS_SHORT_NAME } = require('config')

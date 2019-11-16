@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Redirect } from 'react-router-dom'
-import BlogTemplate from 'components/common/BlogTemplate'
-import Loader from 'components/common/Loader'
+import BlogTemplate from 'components/BlogTemplate'
+import Loader from 'components/Loader'
 import paths from 'constants/paths'
 
 const getContents = async id => {

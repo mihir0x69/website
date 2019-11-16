@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import find from 'lodash/find'
 import startCase from 'lodash/startCase'
 import kebabCase from 'lodash/kebabCase'
-import Timestamp from 'components/common/Timestamp'
+import Timestamp from 'components/Timestamp'
 import paths from 'constants/paths'
 
 const context = require.context('../Blogs/', true, /metadata.json$/)

@@ -8,7 +8,7 @@ import Blog from 'containers/Blogs'
 import Places from 'containers/Places'
 import Whoami from 'containers/Whoami'
 import NotFound from 'containers/NotFound'
-import Layout from 'components/common/Layout'
+import Layout from 'components/Layout'
 
 type RouteConfig = {
     path?: string

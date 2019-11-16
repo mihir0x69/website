@@ -1,3 +1,3 @@
-import lodable from 'components/common/Loadable'
+import lodable from 'components/Loadable'
 
 export default lodable(() => import('./Menu'))
