@@ -5,7 +5,7 @@ module.exports = {
     webpack: {
         configure: (config, { env }) => {
             config.resolve.modules.push('src')
-            config.resolve.alias.config = path.resolve('src', 'config', `${env}.js`)
+            config.resolve.alias.config = path.resolve('src', 'config', `${env}.ts`)
 
             const rules = _.find(config.module.rules, x => x.oneOf)
             const fileLoaderRuleIndex = _.findIndex(
