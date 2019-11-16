@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react'
-import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import { DiscussionEmbed } from 'disqus-react'
 import { Link } from 'react-router-dom'
@@ -10,15 +9,32 @@ import parse from 'remark-parse'
 import remark2react from 'remark-react'
 import Timestamp from 'components/common/Timestamp'
 import paths from 'constants/paths'
-import { SITE_URL, DISQUS_SHORT_NAME } from 'config'
 import remarkReactComponents from './remarkReactComponents'
+const { SITE_URL, DISQUS_SHORT_NAME } = require('config')
 
 const Container = styled.div`
     margin-bottom: 50px;
     padding: 0 10px;
 `
 
-const Blog = ({ metadata, content }) => {
+export type ReadingStats = {
+    minutes: number
+    text: string
+}
+
+type Metadata = {
+    tags: Array<string>
+    title: string
+    timestamp: Date
+    readingStats: ReadingStats
+}
+
+type Props = {
+    metadata: Metadata
+    content: string
+}
+
+const Blog: React.FC<Props> = ({ metadata, content }: Props) => {
     useEffect(Prism.highlightAll, [content])
 
     if (!content || !metadata) {
@@ -72,11 +88,6 @@ const Blog = ({ metadata, content }) => {
             />
         </Container>
     )
-}
-
-Blog.propTypes = {
-    metadata: PropTypes.object.isRequired,
-    content: PropTypes.string.isRequired,
 }
 
 export default Blog

@@ -2,17 +2,13 @@ import React from 'react'
 import range from 'lodash/range'
 import dayjs from 'dayjs'
 import customParseFormat from 'dayjs/plugin/customParseFormat'
+import { ReadingStats } from './BlogTemplate'
 
 dayjs.extend(customParseFormat)
 const formatDate = (date: Date) =>
     dayjs(date, 'DD-MM-YYYY').format('MMMM D, YYYY')
 const SLEEPY = '😴'
 const CRAPPER = '🚽'
-
-type ReadingStats = {
-    minutes: number
-    text: string
-}
 
 interface ComponentProps {
     readingStats: ReadingStats
@@ -24,7 +20,7 @@ const Timestamp: React.FC<ComponentProps> = ({
     timestamp,
 }: ComponentProps) => {
     let rtIndicator: string =
-        readingStats.minutes > 7
+        readingStats.minutes < 7
             ? range(readingStats.minutes)
                   .map(() => CRAPPER)
                   .join('')

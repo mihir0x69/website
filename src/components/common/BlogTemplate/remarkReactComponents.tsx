@@ -1,19 +1,24 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import TweetEmbed from 'react-tweet-embed'
 import includes from 'lodash/includes'
 import qs from 'query-string'
 import split from 'lodash/split'
 import last from 'lodash/last'
+import { ChildrenType } from 'types'
 
-const Image = props => {
-    const isExternalImage = includes(props.src, 'http')
-    const isYoutubeLink = includes(props.src, 'youtube.com')
+type ImageProps = {
+    src: string
+    alt?: string
+}
+
+const Image = ({ src, alt, ...props }: ImageProps) => {
+    const isExternalImage = includes(src, 'http')
+    const isYoutubeLink = includes(src, 'youtube.com')
     if (isYoutubeLink) {
         const {
             query: { v: videoId },
-        } = qs.parseUrl(props.src)
+        } = qs.parseUrl(src)
         return (
             <iframe
                 title="Youtube Video"
@@ -29,19 +34,20 @@ const Image = props => {
             <img
                 {...props}
                 style={{ maxWidth: '100%' }}
-                src={isExternalImage ? props.src : require(`./${props.src}`)}
-                alt={props.alt}
+                src={isExternalImage ? src : require(`./${src}`)}
+                alt={alt}
             />
         </div>
     )
 }
 
-Image.propTypes = {
-    src: PropTypes.string.isRequired,
-    alt: PropTypes.string,
+type PreProps = {
+    children: ChildrenType
 }
 
-const Pre = props => <pre className="line-numbers">{props.children}</pre>
+const Pre = ({ children }: PreProps) => (
+    <pre className="line-numbers">{children}</pre>
+)
 
 const Code = styled.code`
     font-size: 15px;
@@ -52,10 +58,15 @@ const Code = styled.code`
     border-radius: 2px;
 `
 
-const CustomLink = props => {
+type CustomLinkProps = {
+    href: string
+    children: ChildrenType
+}
+
+const CustomLink = (props: CustomLinkProps) => {
     const isTwitterLink = includes(props.href, 'https://twitter.com')
     if (isTwitterLink) {
-        const tweetId = last(split(props.href, '/status/'))
+        const tweetId = last(split(props.href, '/status/')) || ''
         return <TweetEmbed id={tweetId} options={{ align: 'center' }} />
     }
     return (

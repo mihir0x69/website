@@ -1,5 +1,9 @@
 {
   "compilerOptions": {
+    "types": [
+      "node",
+      "@paperist/types-remark"
+    ],
     "target": "es5",
     "lib": [
       "dom",

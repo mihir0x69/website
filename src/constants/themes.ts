@@ -1,4 +1,4 @@
-import Dictionary from 'types/Dictionary'
+import { Dictionary } from 'types'
 
 const colors: Dictionary<string> = {
     background: '#282a36',
