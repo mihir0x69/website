@@ -1,4 +1,6 @@
-const colors = {
+import Dictionary from 'types/Dictionary'
+
+const colors: Dictionary<string> = {
     background: '#282a36',
     currentLine: '#44475a',
     selection: '#44475a',
@@ -14,7 +16,7 @@ const colors = {
     yellow: '#f1fa8c',
 }
 
-const fonts = {
+const fonts: Dictionary<string> = {
     retro: "'Press Start 2P', cursive",
     heading: "'IBM Plex Sans', sans-serif",
     text: "'IBM Plex Serif', serif",
@@ -24,7 +26,13 @@ const fonts = {
 export const DARK = 1
 export const LIGHT = -1
 
-export default {
+type Theme = {
+    identify: () => number,
+    fonts: Dictionary<string>,
+    colors: Dictionary<string>
+}
+
+const themes: Dictionary<Theme> = {
     [DARK]: {
         identify: () => DARK,
         fonts,
@@ -43,3 +51,5 @@ export default {
         },
     },
 }
+
+export default themes

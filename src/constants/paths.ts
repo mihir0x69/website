@@ -1,4 +1,6 @@
-export default {
+import Dictionary from 'types/Dictionary'
+
+const paths: Dictionary<string> = {
     ROOT: '/',
     MENU: '/menu',
     BLOGS: '/blogs',
@@ -7,3 +9,5 @@ export default {
     PLACES: '/places',
     WHOAMI: '/whoami',
 }
+
+export default paths
