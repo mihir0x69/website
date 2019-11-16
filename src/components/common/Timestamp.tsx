@@ -1,10 +1,11 @@
-import React from 'react';
-import range from 'lodash/range';
-import dayjs from 'dayjs';
-import customParseFormat from 'dayjs/plugin/customParseFormat';
+import React from 'react'
+import range from 'lodash/range'
+import dayjs from 'dayjs'
+import customParseFormat from 'dayjs/plugin/customParseFormat'
 
 dayjs.extend(customParseFormat)
-const formatDate = (date: Date) => dayjs(date, 'DD-MM-YYYY').format('MMMM D, YYYY')
+const formatDate = (date: Date) =>
+    dayjs(date, 'DD-MM-YYYY').format('MMMM D, YYYY')
 const SLEEPY = '😴'
 const CRAPPER = '🚽'
 
@@ -18,10 +19,16 @@ interface ComponentProps {
     timestamp: Date
 }
 
-const Timestamp: React.FC<ComponentProps> = ({ readingStats, timestamp }: ComponentProps) => {
-    let rtIndicator: string = readingStats.minutes > 7 
-    ? range(readingStats.minutes).map(() => CRAPPER).join('')
-    : SLEEPY
+const Timestamp: React.FC<ComponentProps> = ({
+    readingStats,
+    timestamp,
+}: ComponentProps) => {
+    let rtIndicator: string =
+        readingStats.minutes > 7
+            ? range(readingStats.minutes)
+                  .map(() => CRAPPER)
+                  .join('')
+            : SLEEPY
 
     return (
         <p>

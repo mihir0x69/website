@@ -26,9 +26,9 @@ const fonts: Dictionary<string> = {
 export const DARK = 1
 export const LIGHT = -1
 
-type Theme = {
-    identify: () => number,
-    fonts: Dictionary<string>,
+export type Theme = {
+    identify: () => number
+    fonts: Dictionary<string>
     colors: Dictionary<string>
 }
 

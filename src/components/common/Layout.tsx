@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react'
+import { useHistory } from 'react-router-dom'
 import styled, { ThemeProvider } from 'styled-components'
-import { withRouter } from 'react-router'
 import GlobalStyles from 'components/common/GlobalStyles'
 import * as StorageManager from 'utils/StorageManager'
 import themes from 'constants/themes'
 import paths from 'constants/paths'
-import lumosSoundFile from 'media/lumos_maxima.mp3'
+const lumosSoundFile = require('media/lumos_maxima.mp3').default
 
 const NavigationBar = styled.div`
     font-family: monospace;
@@ -27,7 +27,12 @@ const Container = styled.div`
     margin: 0 auto;
 `
 
-const Layout = props => {
+type Props = {
+    children: React.ReactNode | Array<React.ReactNode>
+}
+
+const Layout: React.FC<Props> = (props: Props) => {
+    const history = useHistory()
     const [theme, setTheme] = useState(StorageManager.getTheme() || 1)
     const [lumos] = useState(new Audio(lumosSoundFile))
     const toggleTheme = () => {
@@ -39,7 +44,7 @@ const Layout = props => {
 
     useEffect(() => {
         window.scrollTo(0, 0)
-    }, [props.location])
+    }, [history.location])
 
     const themeLabel = theme > 0 ? 'Lumos' : 'Nox'
     const navItems = [
@@ -47,12 +52,13 @@ const Layout = props => {
             label: 'Intro',
             onClick: () => {
                 StorageManager.enableIntro()
-                props.history.push(paths.ROOT)
+                history.push(paths.ROOT)
             },
         },
-        { label: 'Menu', onClick: () => props.history.push(paths.MENU) },
+        { label: 'Menu', onClick: () => history.push(paths.MENU) },
         { label: themeLabel, onClick: toggleTheme },
     ]
+
     return (
         <ThemeProvider theme={themes[theme]}>
             <React.Fragment>
@@ -75,4 +81,4 @@ const Layout = props => {
     )
 }
 
-export default withRouter(Layout)
+export default Layout

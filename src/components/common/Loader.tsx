@@ -21,7 +21,7 @@ const LanceWalking = styled.img.attrs({
     margin: 0 20px;
 `
 
-const Loader = () => (
+const Loader: React.FC = () => (
     <Loading>
         <LanceWalking />
         {'Loading...'}
