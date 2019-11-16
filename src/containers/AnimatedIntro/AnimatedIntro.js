@@ -1,13 +1,13 @@
 import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import ProgressiveImage from 'react-progressive-image'
-import paths from 'constants/paths'
-import { Wrapper, Images, Glasses, StartButton } from './fragments'
+import paths, { LAST_VISITED_KEY } from 'constants/paths'
+import { Wrapper, Images, Glasses, StartButton, Skip } from './fragments'
 
 const SPACEBAR = 32
 const ENTER = 13
 
-const Content = ({ heroes, onPressStart }) => (
+const Content = ({ heroes, onPressStart, alwaysSkip }) => (
     <React.Fragment>
         <audio src={require('media/intro.mp3')} autoPlay />
         <Wrapper>
@@ -19,28 +19,43 @@ const Content = ({ heroes, onPressStart }) => (
             <Link to={paths.MENU} style={{ textDecoration: 'none' }}>
                 <StartButton>{'PRESS START'}</StartButton>
             </Link>
+            <Skip onClick={alwaysSkip}>{'Always skip ?'}</Skip>
         </Wrapper>
     </React.Fragment>
 )
 
 const AnimatedIntro = props => {
     useEffect(() => {
+        if (localStorage.getItem(LAST_VISITED_KEY)) {
+            props.history.push(paths.MENU)
+        }
         document.addEventListener('keyup', onPressStart)
 
         return () => {
             document.removeEventListener('keyup', onPressStart)
         }
     })
+
     const onPressStart = e => {
         if (e.keyCode === SPACEBAR || e.keyCode === ENTER) {
             props.history.push(paths.MENU)
         }
     }
+
+    const alwaysSkip = () => {
+        localStorage.setItem(LAST_VISITED_KEY, new Date())
+        props.history.push(paths.MENU)
+    }
+
     return (
         <ProgressiveImage src={require('media/contra.png')}>
             {(src, loading) =>
                 loading ? null : (
-                    <Content heroes={src} onPressStart={onPressStart} />
+                    <Content
+                        heroes={src}
+                        onPressStart={onPressStart}
+                        alwaysSkip={alwaysSkip}
+                    />
                 )
             }
         </ProgressiveImage>

@@ -65,3 +65,13 @@ export const StartButton = styled.span`
         }
     }
 `
+
+export const Skip = styled.span(
+    props => `
+    font-size: 7px;
+    color: ${props.theme.colors.foreground};
+    opacity: 0.4;
+    margin: 20px;
+    cursor: pointer;
+`
+)

@@ -4,7 +4,7 @@ import { withRouter } from 'react-router'
 import GlobalStyles from 'components/common/GlobalStyles'
 import StorageManager from 'utils/StorageManager'
 import themes from 'constants/themes'
-import paths from 'constants/paths'
+import paths, { LAST_VISITED_KEY } from 'constants/paths'
 import lumosSoundFile from 'media/lumos_maxima.mp3'
 
 const NavigationBar = styled.div`
@@ -43,7 +43,13 @@ const Layout = props => {
 
     const themeLabel = theme > 0 ? 'Lumos' : 'Nox'
     const navItems = [
-        { label: 'Intro', onClick: () => props.history.push(paths.ROOT) },
+        {
+            label: 'Intro',
+            onClick: () => {
+                localStorage.removeItem(LAST_VISITED_KEY)
+                props.history.push(paths.ROOT)
+            },
+        },
         { label: 'Menu', onClick: () => props.history.push(paths.MENU) },
         { label: themeLabel, onClick: toggleTheme },
     ]

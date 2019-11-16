@@ -3,15 +3,15 @@ const places = [
         label: 'Nimdari, Pune - November 2019',
         images: [
             require('./photos/nimdari2019/1.jpg'),
-            require('./photos/nimdari2019/2.jpg')
-        ]
+            require('./photos/nimdari2019/2.jpg'),
+        ],
     },
     {
         label: 'Delhi - August 2019',
         images: [
             require('./photos/delhi2019/1.jpg'),
             require('./photos/delhi2019/2.jpg'),
-        ]
+        ],
     },
     {
         label: 'Customer Visit - May 2019',

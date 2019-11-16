@@ -34,15 +34,15 @@ const Spinner = styled.div`
 
     @keyframes loader {
         from {
-            transform:rotate(0)
+            transform: rotate(0);
         }
         to {
-            transform:rotate(360deg)
+            transform: rotate(360deg);
         }
     }
 
     :before {
-        border-color: rgba(255,255,255,.15);
+        border-color: rgba(255, 255, 255, 0.15);
         width: 32px;
         height: 32px;
         position: absolute;
@@ -52,7 +52,7 @@ const Spinner = styled.div`
         width: 100%;
         height: 100%;
         border-radius: 500rem;
-        border: .2em solid rgba(0,0,0,.1);
+        border: 0.2em solid rgba(0, 0, 0, 0.1);
     }
 
     :after {
@@ -63,14 +63,14 @@ const Spinner = styled.div`
         left: 50%;
         width: 100%;
         height: 100%;
-        -webkit-animation: loader .6s linear;
-        animation: loader .6s linear;
+        -webkit-animation: loader 0.6s linear;
+        animation: loader 0.6s linear;
         -webkit-animation-iteration-count: infinite;
         animation-iteration-count: infinite;
         border-radius: 500rem;
         border-color: #767676 transparent transparent;
         border-style: solid;
-        border-width: .2em;
+        border-width: 0.2em;
         -webkit-box-shadow: 0 0 0 1px transparent;
         box-shadow: 0 0 0 1px transparent;
     }
@@ -80,7 +80,9 @@ const Places = () => (
     <Container>
         <Title>{'Places'}</Title>
         <p>
-            {"It'd be a long list if I include all my trips from the past, so I'll just start from May 2019."}
+            {
+                "It'd be a long list if I include all my trips from the past, so I'll just start from May 2019."
+            }
         </p>
         {places.map((place, idx) => (
             <React.Fragment key={idx}>
@@ -91,18 +93,25 @@ const Places = () => (
                     {place.images.map((photo, i) => (
                         <div key={i} style={{ flex: 1, padding: 5 }}>
                             <ProgressiveImage src={photo}>
-                                {(src, loading) => loading ? (
-                                    <div style={{ position: 'relative', height: 100 }}>
-                                        <Spinner />
-                                    </div>
-                                ) : (
-                                    <img
-                                        key={i}
-                                        src={src}
-                                        style={{ width: '100%' }}
-                                        alt={place.text}
-                                    />
-                                )}
+                                {(src, loading) =>
+                                    loading ? (
+                                        <div
+                                            style={{
+                                                position: 'relative',
+                                                height: 100,
+                                            }}
+                                        >
+                                            <Spinner />
+                                        </div>
+                                    ) : (
+                                        <img
+                                            key={i}
+                                            src={src}
+                                            style={{ width: '100%' }}
+                                            alt={place.text}
+                                        />
+                                    )
+                                }
                             </ProgressiveImage>
                         </div>
                     ))}
