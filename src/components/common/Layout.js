@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react'
 import styled, { ThemeProvider } from 'styled-components'
 import { withRouter } from 'react-router'
 import GlobalStyles from 'components/common/GlobalStyles'
-import StorageManager from 'utils/StorageManager'
+import * as StorageManager from 'utils/StorageManager'
 import themes from 'constants/themes'
-import paths, { LAST_VISITED_KEY } from 'constants/paths'
+import paths from 'constants/paths'
 import lumosSoundFile from 'media/lumos_maxima.mp3'
 
 const NavigationBar = styled.div`
@@ -46,7 +46,7 @@ const Layout = props => {
         {
             label: 'Intro',
             onClick: () => {
-                localStorage.removeItem(LAST_VISITED_KEY)
+                StorageManager.enableIntro()
                 props.history.push(paths.ROOT)
             },
         },

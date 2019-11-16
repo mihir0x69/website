@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import ProgressiveImage from 'react-progressive-image'
-import paths, { LAST_VISITED_KEY } from 'constants/paths'
+import paths from 'constants/paths'
+import * as StorageManager from 'utils/StorageManager'
 import { Wrapper, Images, Glasses, StartButton, Skip } from './fragments'
 
 const SPACEBAR = 32
@@ -26,9 +27,10 @@ const Content = ({ heroes, onPressStart, alwaysSkip }) => (
 
 const AnimatedIntro = props => {
     useEffect(() => {
-        if (localStorage.getItem(LAST_VISITED_KEY)) {
+        if (StorageManager.hasDisabledIntro()) {
             props.history.push(paths.MENU)
         }
+
         document.addEventListener('keyup', onPressStart)
 
         return () => {
@@ -43,7 +45,7 @@ const AnimatedIntro = props => {
     }
 
     const alwaysSkip = () => {
-        localStorage.setItem(LAST_VISITED_KEY, new Date())
+        StorageManager.disableIntro()
         props.history.push(paths.MENU)
     }
 

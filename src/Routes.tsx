@@ -10,7 +10,13 @@ import Whoami from 'containers/Whoami'
 import NotFound from 'containers/NotFound'
 import Layout from 'components/common/Layout'
 
-const routes = [
+type RouteConfig = {
+    path?: string
+    exact?: boolean
+    component: any
+}
+
+const routes: RouteConfig[] = [
     { path: paths.ROOT, exact: true, component: AnimatedIntro },
     { path: paths.MENU, component: Menu },
     { path: paths.BLOGS_PATH, component: BlogList },
@@ -20,18 +26,16 @@ const routes = [
     { component: NotFound },
 ]
 
-const Routes = () => {
-    return (
-        <Router>
-            <Layout>
-                <Switch>
-                    {routes.map((props, idx) => (
-                        <Route key={idx} {...props} />
-                    ))}
-                </Switch>
-            </Layout>
-        </Router>
-    )
-}
+const Routes: React.FC = () => (
+    <Router>
+        <Layout>
+            <Switch>
+                {routes.map((props, idx) => (
+                    <Route key={idx} {...props} />
+                ))}
+            </Switch>
+        </Layout>
+    </Router>
+)
 
 export default Routes

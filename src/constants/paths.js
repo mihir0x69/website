@@ -1,5 +1,3 @@
-export const LAST_VISITED_KEY = 'lastVisited'
-
 export default {
     ROOT: '/',
     MENU: '/menu',
