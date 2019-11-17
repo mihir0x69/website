@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import ProgressiveImage from 'react-progressive-image'
 import paths from 'constants/paths'
 import * as StorageManager from 'utils/StorageManager'
@@ -8,7 +8,15 @@ import { Wrapper, Images, Glasses, StartButton, Skip } from './fragments'
 const SPACEBAR = 32
 const ENTER = 13
 
-const Content = ({ heroes, onPressStart, alwaysSkip }) => (
+type ContentProps = {
+    heroes: string
+    alwaysSkip: () => void
+}
+
+const Content: React.FC<ContentProps> = ({
+    heroes,
+    alwaysSkip,
+}: ContentProps) => (
     <React.Fragment>
         <audio src={require('media/intro.mp3')} autoPlay />
         <Wrapper>
@@ -25,10 +33,11 @@ const Content = ({ heroes, onPressStart, alwaysSkip }) => (
     </React.Fragment>
 )
 
-const AnimatedIntro = props => {
+const AnimatedIntro: React.FC = () => {
+    const history = useHistory()
     useEffect(() => {
         if (StorageManager.hasDisabledIntro()) {
-            props.history.push(paths.MENU)
+            history.push(paths.MENU)
         }
 
         document.addEventListener('keyup', onPressStart)
@@ -38,26 +47,22 @@ const AnimatedIntro = props => {
         }
     })
 
-    const onPressStart = e => {
+    const onPressStart = (e: KeyboardEvent): any => {
         if (e.keyCode === SPACEBAR || e.keyCode === ENTER) {
-            props.history.push(paths.MENU)
+            history.push(paths.MENU)
         }
     }
 
-    const alwaysSkip = () => {
+    const alwaysSkip = (): void => {
         StorageManager.disableIntro()
-        props.history.push(paths.MENU)
+        history.push(paths.MENU)
     }
 
     return (
-        <ProgressiveImage src={require('media/contra.png')}>
-            {(src, loading) =>
+        <ProgressiveImage src={require('media/contra.png')} placeholder="">
+            {(src: string, loading: boolean) =>
                 loading ? null : (
-                    <Content
-                        heroes={src}
-                        onPressStart={onPressStart}
-                        alwaysSkip={alwaysSkip}
-                    />
+                    <Content heroes={src} alwaysSkip={alwaysSkip} />
                 )
             }
         </ProgressiveImage>

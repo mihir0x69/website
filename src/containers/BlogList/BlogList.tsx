@@ -1,27 +1,14 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Link } from 'react-router-dom'
+import { Link, RouteComponentProps } from 'react-router-dom'
 import find from 'lodash/find'
+import get from 'lodash/get'
 import startCase from 'lodash/startCase'
 import kebabCase from 'lodash/kebabCase'
 import Timestamp from 'components/Timestamp'
 import paths from 'constants/paths'
-
-const context = require.context('../Blogs/', true, /metadata.json$/)
-const allBlogs = context
-    .keys()
-    .map(context)
-    .sort((a, b) => {
-        const aa = a.timestamp
-            .split('-')
-            .reverse()
-            .join()
-        const bb = b.timestamp
-            .split('-')
-            .reverse()
-            .join()
-        return aa < bb ? 1 : aa > bb ? -1 : 0
-    })
+import { Metadata } from 'types'
+import allBlogs from './allBlogs'
 
 const Container = styled.div`
     margin: 0 auto;
@@ -46,13 +33,9 @@ const BlogTitle = styled(Link)`
     text-decoration: none !important;
 `
 
-const Blog = props => {
-    const {
-        match: {
-            params: { tag },
-        },
-    } = props
-    const visibleBlogs = tag
+const Blog: React.FC<RouteComponentProps> = props => {
+    const tag = get(props.match, 'params.tag', '')
+    const visibleBlogs: Metadata[] = tag
         ? allBlogs.filter(b => find(b.tags, t => kebabCase(t) === tag))
         : allBlogs
     return (

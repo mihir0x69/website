@@ -2,17 +2,17 @@ import React from 'react'
 import range from 'lodash/range'
 import dayjs from 'dayjs'
 import customParseFormat from 'dayjs/plugin/customParseFormat'
-import { ReadingStats } from './BlogTemplate'
+import { ReadingStats } from 'types'
 
 dayjs.extend(customParseFormat)
-const formatDate = (date: Date) =>
+const formatDate = (date: string) =>
     dayjs(date, 'DD-MM-YYYY').format('MMMM D, YYYY')
 const SLEEPY = '😴'
 const CRAPPER = '🚽'
 
 interface ComponentProps {
     readingStats: ReadingStats
-    timestamp: Date
+    timestamp: string
 }
 
 const Timestamp: React.FC<ComponentProps> = ({

@@ -9,6 +9,7 @@ import parse from 'remark-parse'
 import remark2react from 'remark-react'
 import Timestamp from 'components/Timestamp'
 import paths from 'constants/paths'
+import { Metadata } from 'types'
 import remarkReactComponents from './remarkReactComponents'
 const { SITE_URL, DISQUS_SHORT_NAME } = require('config')
 
@@ -16,18 +17,6 @@ const Container = styled.div`
     margin-bottom: 50px;
     padding: 0 10px;
 `
-
-export type ReadingStats = {
-    minutes: number
-    text: string
-}
-
-type Metadata = {
-    tags: Array<string>
-    title: string
-    timestamp: Date
-    readingStats: ReadingStats
-}
 
 type Props = {
     metadata: Metadata
