@@ -25,8 +25,7 @@ const socialLinks = [
         link: 'https://stackoverflow.com/users/5241520/mihir',
     },
     { label: 'Twitter', link: 'https://twitter.com/KarandikarMihir' },
-    { label: 'LinkedIn', link: 'https://in.linkedin.com/in/karandikarmihir' },
-    { label: 'Email', link: 'mailto:karandikar.mihir@outlook.com' },
+    { label: 'LinkedIn', link: 'https://in.linkedin.com/in/karandikarmihir' }
 ]
 
 const Whoami = () => {
