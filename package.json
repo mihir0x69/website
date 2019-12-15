@@ -27,7 +27,8 @@
     "build": "craco build",
     "test": "craco test",
     "format": "prettier --write \"src/**/*.{js,ts,tsx}\"",
-    "updateMetadata": "node ./scripts/updateMetadata.js"
+    "updateMetadata": "node ./scripts/updateMetadata.js",
+    "create": "node ./scripts/createNewBlog.js"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -60,6 +61,9 @@
     "babel-plugin-prismjs": "1.0.2",
     "babel-plugin-styled-components": "1.10.0",
     "chalk": "2.4.2",
+    "fs": "0.0.1-security",
+    "minimist": "1.2.0",
+    "path": "0.12.7",
     "prettier": "1.18.2",
     "raw-loader": "3.0.0",
     "react-scripts": "3.2.0",
