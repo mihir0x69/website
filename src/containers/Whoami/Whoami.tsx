@@ -30,7 +30,7 @@ const socialLinks: Array<SocialLink> = [
         link: 'https://stackoverflow.com/users/5241520/mihir',
     },
     { label: 'Twitter', link: 'https://twitter.com/KarandikarMihir' },
-    { label: 'LinkedIn', link: 'https://in.linkedin.com/in/karandikarmihir' }
+    { label: 'LinkedIn', link: 'https://in.linkedin.com/in/karandikarmihir' },
 ]
 
 const Whoami: React.FC = () => {
