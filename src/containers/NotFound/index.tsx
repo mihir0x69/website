@@ -15,7 +15,7 @@ const Title = styled.p`
     font-family: ${props => props.theme.fonts.retro};
 `
 
-const NotFound = () => (
+const NotFound: React.FC = () => (
     <Container>
         <Title>{'404 Not Found'}</Title>
         <img src={lanceLyingDown} alt="Not found" />

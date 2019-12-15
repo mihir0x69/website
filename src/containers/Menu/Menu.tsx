@@ -1,27 +1,38 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, MouseEvent } from 'react'
+import { useHistory } from 'react-router-dom'
 import paths from 'constants/paths'
-import menuSoundFile from 'media/menu.wav'
 import { Container, ItemList, Item } from './fragments'
 
 const SPACEBAR = 32
 const UP = 38
 const DOWN = 40
 
-const items = [
+type Page = {
+    label: string
+    link: string
+}
+
+const items: Array<Page> = [
     { label: 'Blog', link: paths.BLOGS },
     { label: 'Places', link: paths.PLACES },
     { label: 'Whoami', link: paths.WHOAMI },
 ]
 
-const Menu = props => {
-    const [sound] = useState(new Audio(menuSoundFile))
+type HandlerParams = {
+    keyCode: number
+}
+
+const Menu: React.FC = () => {
+    const history = useHistory()
+    const [sound] = useState(new Audio(require('media/menu.wav')))
     const [activeItem, setActiveItem] = useState(0)
-    const handleKeyboardEvents = ({ keyCode }) => {
+    const handleKeyboardEvents = (e: HandlerParams) => {
+        const { keyCode } = e
         if (!sound.paused) {
             return
         }
         if (keyCode === SPACEBAR) {
-            props.history.push(items[activeItem].link)
+            history.push(items[activeItem].link)
             return
         }
         let nextState = activeItem
@@ -44,11 +55,11 @@ const Menu = props => {
         <Container>
             <ItemList>
                 {items.map((x, idx) => {
-                    const eventHandler = e => {
+                    const eventHandler = (e: MouseEvent) => {
                         sound.play()
                         setActiveItem(idx)
                         if (e.type === 'click') {
-                            props.history.push(items[idx].link)
+                            history.push(items[idx].link)
                         }
                     }
                     return (

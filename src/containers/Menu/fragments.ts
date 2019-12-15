@@ -19,13 +19,17 @@ export const ItemList = styled.ul`
     list-style-type: none;
 `
 
+type ItemProps = {
+    active: boolean
+}
+
 export const Item = styled.li`
     font-size: 14px;
     font-family: ${props => props.theme.fonts.retro};
     padding: 10px;
     position: relative;
     cursor: pointer;
-    ${props =>
+    ${(props: ItemProps) =>
         props.active &&
         `
         &:before {
