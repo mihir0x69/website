@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react'
-import { Redirect } from 'react-router-dom'
+import get from 'lodash/get'
+import { Redirect, RouteComponentProps } from 'react-router-dom'
+import { Metadata } from 'types'
 import BlogTemplate from 'components/BlogTemplate'
 import Loader from 'components/Loader'
 import paths from 'constants/paths'
 
-const getContents = async id => {
+const getContents = async (id: number) => {
     const { default: metadata } = await import(`./${id}/metadata.json`)
     const { default: content } = await import(`./${id}/index.md`)
 
@@ -14,14 +16,20 @@ const getContents = async id => {
     }
 }
 
-const Blog = props => {
-    const [data, setData] = useState(null)
+type Contents = {
+    metadata: Metadata
+    content: string
+}
+
+const Blog: React.FC<RouteComponentProps> = ({ match }) => {
+    const [data, setData] = useState<Contents | null>(null)
     const [error, setError] = useState(false)
+    const id = get(match, 'params.id')
     useEffect(() => {
-        getContents(props.match.params.id)
+        getContents(id)
             .then(setData)
             .catch(setError)
-    }, [props.match.params.id])
+    }, [id])
 
     if (error) {
         return <Redirect to={paths.BLOGS} />
