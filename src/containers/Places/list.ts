@@ -1,4 +1,9 @@
-const places = [
+type Place = {
+    label: string
+    images: Array<string>
+}
+
+const places: Array<Place> = [
     {
         label: 'Nimdari, Pune - November 2019',
         images: [

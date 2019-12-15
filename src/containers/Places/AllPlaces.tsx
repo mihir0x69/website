@@ -76,7 +76,7 @@ const Spinner = styled.div`
     }
 `
 
-const Places = () => (
+const Places: React.FC = () => (
     <Container>
         <Title>{'Places'}</Title>
         <p>
@@ -92,8 +92,8 @@ const Places = () => (
                 <ImageSet key={idx}>
                     {place.images.map((photo, i) => (
                         <div key={i} style={{ flex: 1, padding: 5 }}>
-                            <ProgressiveImage src={photo}>
-                                {(src, loading) =>
+                            <ProgressiveImage src={photo} placeholder="">
+                                {(src: string, loading: boolean) =>
                                     loading ? (
                                         <div
                                             style={{
@@ -108,7 +108,7 @@ const Places = () => (
                                             key={i}
                                             src={src}
                                             style={{ width: '100%' }}
-                                            alt={place.text}
+                                            alt={place.label}
                                         />
                                     )
                                 }
