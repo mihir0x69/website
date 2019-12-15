@@ -1,4 +1,9 @@
-const quotes = [
+type Quote = {
+    text: string
+    author: string
+}
+
+const quotes: Array<Quote> = [
     {
         text:
             'I can crack dirtiest of jokes with you and I feel very comfortable talking to you. You are just like me 😎. Stop spending so much time on your phone!',

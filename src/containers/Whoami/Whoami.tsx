@@ -18,7 +18,12 @@ const SocialLink = styled.a.attrs({ taregt: '_blank' })`
     display: inline-block;
 `
 
-const socialLinks = [
+type SocialLink = {
+    label: string
+    link: string
+}
+
+const socialLinks: Array<SocialLink> = [
     { label: 'Github', link: 'https://github.com/KarandikarMihir' },
     {
         label: 'StackOverflow',
@@ -28,7 +33,7 @@ const socialLinks = [
     { label: 'LinkedIn', link: 'https://in.linkedin.com/in/karandikarmihir' }
 ]
 
-const Whoami = () => {
+const Whoami: React.FC = () => {
     return (
         <Container>
             <div style={{ textAlign: 'center' }}>
