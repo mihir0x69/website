@@ -5,7 +5,7 @@ import GlobalStyles from 'components/GlobalStyles'
 import * as StorageManager from 'utils/StorageManager'
 import themes from 'constants/themes'
 import paths from 'constants/paths'
-const lumosSoundFile = require('media/lumos_maxima.mp3').default
+const lumosSoundFile = require('media/lumos_maxima.mp3')
 
 const NavigationBar = styled.div`
     font-family: monospace;
