@@ -93,7 +93,7 @@ const Whoami: React.FC = () => {
                 </p>
             </div>
             {quotes.map((q, idx) => (
-                <blockquote key={idx}>
+                <blockquote key={idx} style={{ marginBottom: 30 }}>
                     {q.text}
                     <br />
                     <b>{`- ${q.author}`}</b>

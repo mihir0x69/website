@@ -11,15 +11,21 @@ import NotFound from 'containers/NotFound'
 import Layout from 'components/Layout'
 
 type RouteConfig = {
-    path?: string
+    path?: string | Array<string>
     exact?: boolean
     component: any
 }
 
+const blogPaths = [
+    paths.BLOGS,
+    paths.BLOGS_FILTERED_BY_TAG,
+    paths.BLOGS_FILTERED_BY_TIMESTAMP,
+]
+
 const routes: RouteConfig[] = [
     { path: paths.ROOT, exact: true, component: AnimatedIntro },
     { path: paths.MENU, component: Menu },
-    { path: paths.BLOGS_PATH, component: BlogList },
+    { path: blogPaths, exact: true, component: BlogList },
     { path: paths.BLOG, component: Blog },
     { path: paths.PLACES, component: Places },
     { path: paths.WHOAMI, component: Whoami },

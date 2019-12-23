@@ -35,7 +35,7 @@ const Blog: React.FC<Props> = ({ metadata, content }: Props) => {
             {'Tags: '}
             {metadata.tags.map((tag, idx) => (
                 <span key={idx}>
-                    <Link key={idx} to={`${paths.BLOGS}/${kebabCase(tag)}`}>
+                    <Link key={idx} to={`${paths.BLOGS}/tag/${kebabCase(tag)}`}>
                         {tag}
                     </Link>
                     {idx + 1 !== metadata.tags.length && ' • '}

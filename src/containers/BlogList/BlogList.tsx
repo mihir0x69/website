@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { Link, RouteComponentProps } from 'react-router-dom'
 import find from 'lodash/find'
 import get from 'lodash/get'
+import includes from 'lodash/includes'
 import startCase from 'lodash/startCase'
 import kebabCase from 'lodash/kebabCase'
 import Timestamp from 'components/Timestamp'
@@ -36,7 +37,7 @@ const BlogTitle = styled(Link)`
 const Blog: React.FC<RouteComponentProps> = props => {
     const tag = get(props.match, 'params.tag', '')
     const visibleBlogs: Metadata[] = tag
-        ? allBlogs.filter(b => find(b.tags, t => kebabCase(t) === tag))
+        ? allBlogs.filter(b => find(b.tags, t => includes(kebabCase(t), tag)))
         : allBlogs
     return (
         <Container>
