@@ -18,7 +18,6 @@ const Content: React.FC<ContentProps> = ({
     alwaysSkip,
 }: ContentProps) => (
     <React.Fragment>
-        <audio src={require('media/intro.mp3')} autoPlay />
         <Wrapper>
             <Images>
                 <Glasses src={require('media/thug.png')} />

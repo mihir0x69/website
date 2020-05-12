@@ -25,7 +25,7 @@ if (!argv.name) {
     exit('Required argument: --name')
 }
 
-const fullPath = BASE_PATH +  kebabCase(argv.name)
+const fullPath = BASE_PATH + kebabCase(argv.name)
 
 if (fs.existsSync(fullPath)) {
     console.log(error.inverse('ERROR'))
