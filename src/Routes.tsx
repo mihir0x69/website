@@ -5,7 +5,6 @@ import {
     Switch,
     RouteProps,
 } from 'react-router-dom'
-import AnimatedIntro from 'containers/AnimatedIntro'
 import Menu from 'containers/Menu'
 import paths from 'constants/paths'
 import BlogList from 'containers/BlogList'
@@ -31,7 +30,7 @@ const blogPaths = [
 ]
 
 const routes: RouteConfig[] = [
-    { path: paths.ROOT, exact: true, component: AnimatedIntro },
+    { path: paths.ROOT, exact: true, component: () => null },
     { path: paths.MENU, component: Menu, title: 'Menu' },
     { path: blogPaths, exact: true, component: BlogList, title: 'Blogs' },
     { path: paths.BLOG, component: Blog },
