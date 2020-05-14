@@ -7,8 +7,8 @@ type Props = {
 
 const GlobalStyles = createGlobalStyle(
     ({ theme }: Props) => css`
-        @import url('https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap');
-        @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Mono:500|IBM+Plex+Sans:700|IBM+Plex+Serif:400,400i,700,700i&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Mono:500|IBM+Plex+Serif:400,400i,700,700i&display=swap');
         body {
             background-color: ${theme.colors.background};
             color: ${theme.colors.foreground};
@@ -17,9 +17,11 @@ const GlobalStyles = createGlobalStyle(
         }
         ::-moz-selection {
             background: ${theme.colors.selection};
+            color: #edf2f7;
         }
         ::selection {
             background: ${theme.colors.selection};
+            color: #edf2f7;
         }
         a,
         a:link,
@@ -48,16 +50,20 @@ const GlobalStyles = createGlobalStyle(
             font-family: ${theme.fonts.heading};
         }
         h1 {
-            font-size: 2em;
+            font-size: 2.5em;
+            font-weight: 700;
         }
         h2 {
             font-size: 1.5em;
+            font-weight: 500;
         }
         h3 {
             font-size: 1.17em;
+            font-weight: 400;
         }
         h4 {
             font-size: 1em;
+            font-weight: 400;
         }
         blockquote {
             margin: 15px;

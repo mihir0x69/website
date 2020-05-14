@@ -9,7 +9,7 @@ const Container = styled.div`
 `
 
 const Title = styled.h2`
-    font-family: ${props => props.theme.fonts.retro};
+    font-family: ${props => props.theme.fonts.heading};
 `
 
 const ImageSet = styled.div`

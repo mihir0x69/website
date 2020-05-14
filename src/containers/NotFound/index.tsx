@@ -12,7 +12,7 @@ const Container = styled.div`
 `
 
 const Title = styled.p`
-    font-family: ${props => props.theme.fonts.retro};
+    font-family: ${props => props.theme.fonts.heading};
 `
 
 const NotFound: React.FC = () => (

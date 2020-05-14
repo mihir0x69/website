@@ -25,7 +25,7 @@ type ItemProps = {
 
 export const Item = styled.li`
     font-size: 14px;
-    font-family: ${props => props.theme.fonts.retro};
+    font-family: ${props => props.theme.fonts.heading};
     padding: 10px;
     position: relative;
     cursor: pointer;

@@ -17,8 +17,7 @@ const colors: Dictionary<string> = {
 }
 
 const fonts: Dictionary<string> = {
-    retro: "'Press Start 2P', cursive",
-    heading: "'IBM Plex Sans', sans-serif",
+    heading: "'Inter', sans-serif",
     text: "'IBM Plex Serif', serif",
     mono: "'IBM Plex Mono', monospace",
 }
@@ -45,7 +44,7 @@ const themes: Dictionary<Theme> = {
         fonts,
         colors: {
             ...colors,
-            background: '#f8f8f2',
+            background: '#edf2f7',
             foreground: '#282a36',
             heading: '#282a36',
         },

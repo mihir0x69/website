@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import loaderImage from 'media/LanceWalkingR.gif'
 
 const Loading = styled.div`
-    font-family: ${props => props.theme.fonts.retro};
+    font-family: ${props => props.theme.fonts.heading};
     position: fixed;
     top: 100px;
     right: 0;

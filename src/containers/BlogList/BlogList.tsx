@@ -16,12 +16,6 @@ const Container = styled.div`
     padding: 0 10px;
 `
 
-const Title = styled.h2`
-    font-family: ${props => props.theme.fonts.retro};
-    margin: 15px 0 5px 0;
-    line-height: 1.5;
-`
-
 const Hr = styled.hr`
     border: none;
     margin: 15px 0 50px 0;
@@ -41,7 +35,7 @@ const Blog: React.FC<RouteComponentProps> = props => {
         : allBlogs
     return (
         <Container>
-            <Title>{'The Millennial Programmer️️️'}</Title>
+            <h1>{'The Millennial Programmer️️️'}</h1>
             <p>
                 {'⚡ Personal blog by me. I discuss tech, politics and life.'}
             </p>
