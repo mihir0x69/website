@@ -97,7 +97,7 @@ const Places: React.FC = () => {
 
     return (
         <Container>
-            <h1>{'Wanderlust Section'}</h1>
+            <h1>{'The Wanderlust Section'}</h1>
             <p>
                 {
                     "I'm a huge sucker for new places. But I don't get as much time."

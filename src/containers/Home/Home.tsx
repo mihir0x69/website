@@ -8,14 +8,14 @@ const Intro = styled.div`
     align-items: center;
     justify-content: center;
     padding: 10px;
-    height: 70vh;
+    min-height: 70vh;
     flex-direction: row;
     margin: 30px 0;
     align-items: center;
 
     @media (max-width: 991px) {
         flex-direction: column;
-        height: 100vh;
+        min-height: 100vh;
     }
 `
 
@@ -49,8 +49,9 @@ const Content = styled.div`
 
 const Latest = styled.div`
     display: flex;
+    margin-bottom: 100px;
     & > div {
-        padding: 20px;
+        padding: 0 20px;
     }
 
     @media (max-width: 991px) {
@@ -71,7 +72,7 @@ const Home: React.FC = () => {
                         {'Associate Tech Lead at Harbinger Group.'}
                         <br />
                         {
-                            "I love building systems. I've created this little place to geek out with my fellow programmers :)"
+                            "I love building systems. I've built this little place from scratch to geek out with my fellow programmers :)"
                         }
                     </p>
                     <p>
@@ -87,9 +88,9 @@ const Home: React.FC = () => {
                     </p>
                 </Content>
             </Intro>
-            {/* TODO: Make this data dynamic */}
+            {/* TODO: Make this dynamic */}
             <Latest>
-                <div>
+                <div style={{ flex: 1 }}>
                     <h2>{'Latest Blog Post'}</h2>
                     <p>
                         {'FSharp: Learning to use FAKE and Paket'}
@@ -101,7 +102,7 @@ const Home: React.FC = () => {
                         </Link>
                     </p>
                 </div>
-                <div>
+                <div style={{ flex: 1 }}>
                     <h2>{'Last Visited Place'}</h2>
                     <p>
                         {'Nimdari, Pune - November 2019'}

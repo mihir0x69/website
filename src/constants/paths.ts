@@ -11,7 +11,7 @@ const paths: Dictionary<string> = {
     BLOG: '/blog/:id',
     PLACES: '/places',
     WHOAMI: '/whoami',
-    WORK: '/work'
+    WORK: '/work',
 }
 
 export default paths

@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import loaderImage from 'media/LanceWalkingR.gif'
 
 const Loading = styled.div`
-    font-family: ${props => props.theme.fonts.heading};
+    font-family: ${props => props.theme.fonts.mono};
     position: fixed;
     top: 100px;
     right: 0;
@@ -24,7 +24,7 @@ const LanceWalking = styled.img.attrs({
 const Loader: React.FC = () => (
     <Loading>
         <LanceWalking />
-        {'Loading...'}
+        {'LOADING...'}
     </Loading>
 )
 
