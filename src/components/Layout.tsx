@@ -10,6 +10,10 @@ const lumosSoundFile = require('media/lumos_maxima.mp3')
 const NavigationBar = styled.div`
     display: flex;
     text-align: center;
+
+    @media (max-width: 991px) {
+        display: none;
+    }
 `
 
 const NavItem = styled.div`
@@ -29,15 +33,21 @@ const NavItem = styled.div`
 
 const HomeNavItem = styled(NavItem)`
     text-align: left;
+    @media (max-width: 991px) {
+        padding: 5px;
+    }
 `
 
 const NavWrapper = styled.div`
     display: flex;
     margin: 30px 50px;
+    @media (max-width: 991px) {
+        margin: 10px;
+    }    
 `
 
 const Container = styled.div`
-    max-width: 800px;
+    max-width: 980px;
     margin: 0 auto;
 `
 
@@ -64,7 +74,7 @@ const Layout: React.FC<Props> = (props: Props) => {
     const navItems = [
         { label: 'Blog', onClick: () => history.push(paths.BLOGS) },
         { label: 'Places', onClick: () => history.push(paths.PLACES) },
-        { label: 'Work', onClick: () => history.push(paths.WHOAMI) },
+        { label: 'Work', onClick: () => history.push(paths.WORK) },
         { label: themeLabel, onClick: toggleTheme },
     ]
 

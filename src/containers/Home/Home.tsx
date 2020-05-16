@@ -15,6 +15,7 @@ const Intro = styled.div`
 
     @media (max-width: 991px) {
         flex-direction: column;
+        height: 100vh;
     }
 `
 

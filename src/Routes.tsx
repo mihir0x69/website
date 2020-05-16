@@ -11,6 +11,7 @@ import BlogList from 'containers/BlogList'
 import Blog from 'containers/Blogs'
 import Places from 'containers/Places'
 import Whoami from 'containers/Whoami'
+import Work from 'containers/Work'
 import NotFound from 'containers/NotFound'
 import Layout from 'components/Layout'
 
@@ -35,6 +36,7 @@ const routes: RouteConfig[] = [
     { path: paths.BLOG, component: Blog },
     { path: paths.PLACES, component: Places, title: 'Places' },
     { path: paths.WHOAMI, component: Whoami, title: 'Who Am I' },
+    { path: paths.WORK, component: Work, title: 'Work' },
     { component: NotFound },
 ]
 
