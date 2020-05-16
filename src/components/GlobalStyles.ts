@@ -66,9 +66,9 @@ const GlobalStyles = createGlobalStyle(
             font-weight: 400;
         }
         blockquote {
-            margin: 15px;
+            margin: 30px;
             font-size: 20px;
-            border-left: 3px solid ${theme.colors.foreground};
+            border-left: 4px solid ${theme.colors.foreground};
             padding-left: 15px;
         }
         b,

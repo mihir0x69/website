@@ -1,5 +1,4 @@
 import React from 'react'
-import styled from 'styled-components'
 import range from 'lodash/range'
 import dayjs from 'dayjs'
 import customParseFormat from 'dayjs/plugin/customParseFormat'

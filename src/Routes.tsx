@@ -5,8 +5,8 @@ import {
     Switch,
     RouteProps,
 } from 'react-router-dom'
-import Menu from 'containers/Menu'
 import paths from 'constants/paths'
+import Home from 'containers/Home'
 import BlogList from 'containers/BlogList'
 import Blog from 'containers/Blogs'
 import Places from 'containers/Places'
@@ -30,8 +30,7 @@ const blogPaths = [
 ]
 
 const routes: RouteConfig[] = [
-    { path: paths.ROOT, exact: true, component: () => null },
-    { path: paths.MENU, component: Menu, title: 'Menu' },
+    { path: paths.ROOT, exact: true, component: Home, title: 'Home' },
     { path: blogPaths, exact: true, component: BlogList, title: 'Blogs' },
     { path: paths.BLOG, component: Blog },
     { path: paths.PLACES, component: Places, title: 'Places' },

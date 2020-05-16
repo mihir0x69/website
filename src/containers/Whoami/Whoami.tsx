@@ -8,11 +8,6 @@ const Container = styled.div`
     padding: 0 10px;
 `
 
-const Title = styled.h2`
-    font-family: ${props => props.theme.fonts.heading};
-    text-align: center;
-`
-
 const SocialLink = styled.a.attrs({ taregt: '_blank' })`
     margin: 0 5px;
     display: inline-block;
@@ -37,8 +32,7 @@ const Whoami: React.FC = () => {
     return (
         <Container>
             <div style={{ textAlign: 'center' }}>
-                <Title>{'whoami'}</Title>
-                <p>{'को ऽहं?'}</p>
+                <h1>{'कोऽहं?'}</h1>
                 <p>
                     <i>
                         {'*Interstellar Organ Theme plays in the background*'}
@@ -101,7 +95,7 @@ const Whoami: React.FC = () => {
             ))}
             <div style={{ textAlign: 'center' }}>
                 <p>
-                    <b>{`Damn it guys!! I'm trying!!`}</b>
+                    <b>{`So there you go!`}</b>
                 </p>
                 <p>
                     {

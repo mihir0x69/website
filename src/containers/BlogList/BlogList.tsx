@@ -7,6 +7,7 @@ import includes from 'lodash/includes'
 import startCase from 'lodash/startCase'
 import kebabCase from 'lodash/kebabCase'
 import Timestamp from 'components/Timestamp'
+import Hr from 'components/Hr'
 import paths from 'constants/paths'
 import { Metadata } from 'types'
 import allBlogs from './allBlogs'
@@ -14,13 +15,6 @@ import allBlogs from './allBlogs'
 const Container = styled.div`
     margin: 0 auto;
     padding: 0 10px;
-`
-
-const Hr = styled.hr`
-    border: none;
-    margin: 15px 0 50px 0;
-    height: 1px;
-    background-color: gray;
 `
 
 const BlogTitle = styled(Link)`

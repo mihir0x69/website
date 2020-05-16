@@ -8,22 +8,36 @@ import paths from 'constants/paths'
 const lumosSoundFile = require('media/lumos_maxima.mp3')
 
 const NavigationBar = styled.div`
-    font-family: monospace;
-    color: ${props => props.theme.colors.pink};
     display: flex;
-    padding: 10px;
+    text-align: center;
 `
 
 const NavItem = styled.div`
+    padding: 20px 0;
+    font-family: ${props => props.theme.fonts.heading};
+    color: ${props => props.theme.colors.pink};
+    font-weight: bold;
     flex: 1;
-    text-align: center;
+    text-align: right;
+    font-size: 20px;
+    text-transform: uppercase;
+
     & > span {
         cursor: pointer;
     }
 `
 
+const HomeNavItem = styled(NavItem)`
+    text-align: left;
+`
+
+const NavWrapper = styled.div`
+    display: flex;
+    margin: 30px 50px;
+`
+
 const Container = styled.div`
-    max-width: 750px;
+    max-width: 800px;
     margin: 0 auto;
 `
 
@@ -48,14 +62,9 @@ const Layout: React.FC<Props> = (props: Props) => {
 
     const themeLabel = theme > 0 ? 'Lumos' : 'Nox'
     const navItems = [
-        {
-            label: 'Intro',
-            onClick: () => {
-                StorageManager.enableIntro()
-                history.push(paths.ROOT)
-            },
-        },
-        { label: 'Menu', onClick: () => history.push(paths.MENU) },
+        { label: 'Blog', onClick: () => history.push(paths.BLOGS) },
+        { label: 'Places', onClick: () => history.push(paths.PLACES) },
+        { label: 'Work', onClick: () => history.push(paths.WHOAMI) },
         { label: themeLabel, onClick: toggleTheme },
     ]
 
@@ -64,18 +73,25 @@ const Layout: React.FC<Props> = (props: Props) => {
             <React.Fragment>
                 <GlobalStyles />
                 <base target="_blank" />
-                <Container>
-                    <NavigationBar>
-                        {navItems.map((x, i) => (
-                            <NavItem key={i}>
-                                <span onClick={x.onClick}>
-                                    {`[${x.label}]`}
-                                </span>
-                            </NavItem>
-                        ))}
-                    </NavigationBar>
-                    {props.children}
-                </Container>
+                <NavWrapper>
+                    <div style={{ flex: 1 }}>
+                        <HomeNavItem>
+                            <span onClick={() => history.push(paths.ROOT)}>
+                                <b>{'Mihir Karandikar'}</b>
+                            </span>
+                        </HomeNavItem>
+                    </div>
+                    <div style={{ flex: 1 }}>
+                        <NavigationBar>
+                            {navItems.map((x, i) => (
+                                <NavItem key={i}>
+                                    <span onClick={x.onClick}>{x.label}</span>
+                                </NavItem>
+                            ))}
+                        </NavigationBar>
+                    </div>
+                </NavWrapper>
+                <Container>{props.children}</Container>
             </React.Fragment>
         </ThemeProvider>
     )

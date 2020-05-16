@@ -1,15 +1,15 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styled from 'styled-components'
+import camelCase from 'lodash/camelCase'
 import ProgressiveImage from 'react-progressive-image'
+import { useHistory, useLocation } from 'react-router-dom'
+import paths from 'constants/paths'
+import Hr from 'components/Hr'
 import places from './list'
 
 const Container = styled.div`
     margin-bottom: 50px;
     padding: 0 10px;
-`
-
-const Title = styled.h2`
-    font-family: ${props => props.theme.fonts.heading};
 `
 
 const ImageSet = styled.div`
@@ -76,50 +76,85 @@ const Spinner = styled.div`
     }
 `
 
-const Places: React.FC = () => (
-    <Container>
-        <Title>{'Places'}</Title>
-        <p>
-            {
-                "It'd be a long list if I include all my trips from the past, so I'll just start from May 2019."
+const Places: React.FC = () => {
+    const { hash } = useLocation()
+    const history = useHistory()
+    useEffect(() => {
+        setTimeout(() => {
+            if (hash) {
+                const id = hash.replace('#', '')
+                const element = document.getElementById(id)
+                console.log(id, element)
+                if (element) {
+                    window.scrollTo({
+                        behavior: 'smooth',
+                        top: element.offsetTop,
+                    })
+                }
             }
-        </p>
-        {places.map((place, idx) => (
-            <React.Fragment key={idx}>
-                <p>
-                    <b>{place.label}</b>
-                </p>
-                <ImageSet key={idx}>
-                    {place.images.map((photo, i) => (
-                        <div key={i} style={{ flex: 1, padding: 5 }}>
-                            <ProgressiveImage src={photo} placeholder="">
-                                {(src: string, loading: boolean) =>
-                                    loading ? (
-                                        <div
-                                            style={{
-                                                position: 'relative',
-                                                height: 100,
-                                            }}
-                                        >
-                                            <Spinner />
-                                        </div>
-                                    ) : (
-                                        <img
-                                            key={i}
-                                            src={src}
-                                            style={{ width: '100%' }}
-                                            alt={place.label}
-                                        />
-                                    )
+        }, 1000)
+    }, [hash])
+
+    return (
+        <Container>
+            <h1>{'Wanderlust Section'}</h1>
+            <p>
+                {
+                    "I'm a huge sucker for new places. But I don't get as much time."
+                }
+            </p>
+            <Hr />
+            {places.map((place, idx) => {
+                const id = `${camelCase(place.label)}`
+                return (
+                    <React.Fragment key={idx}>
+                        <p id={id}>
+                            <b>{place.label}</b>
+                            <span
+                                style={{ marginLeft: 10, cursor: 'pointer' }}
+                                onClick={() =>
+                                    history.push(`${paths.PLACES}#${id}`)
                                 }
-                            </ProgressiveImage>
-                        </div>
-                    ))}
-                </ImageSet>
-                <hr />
-            </React.Fragment>
-        ))}
-    </Container>
-)
+                            >
+                                {'🔗'}
+                            </span>
+                        </p>
+                        <ImageSet key={idx}>
+                            {place.images.map((photo, i) => (
+                                <div key={i} style={{ flex: 1, padding: 5 }}>
+                                    <ProgressiveImage
+                                        src={photo}
+                                        placeholder=""
+                                    >
+                                        {(src: string, loading: boolean) =>
+                                            loading ? (
+                                                <div
+                                                    style={{
+                                                        position: 'relative',
+                                                        height: 100,
+                                                    }}
+                                                >
+                                                    <Spinner />
+                                                </div>
+                                            ) : (
+                                                <img
+                                                    key={i}
+                                                    src={src}
+                                                    style={{ width: '100%' }}
+                                                    alt={place.label}
+                                                />
+                                            )
+                                        }
+                                    </ProgressiveImage>
+                                </div>
+                            ))}
+                        </ImageSet>
+                        <Hr />
+                    </React.Fragment>
+                )
+            })}
+        </Container>
+    )
+}
 
 export default Places
