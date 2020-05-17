@@ -65,7 +65,7 @@ const LatestSection = styled.div`
     transition: all 200ms ease-in-out;
 
     :hover {
-        background-color: rgba(0,0,0,0.2);
+        background-color: rgba(0, 0, 0, 0.2);
     }
 `
 
