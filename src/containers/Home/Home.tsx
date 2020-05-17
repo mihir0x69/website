@@ -59,6 +59,16 @@ const Latest = styled.div`
     }
 `
 
+const LatestSection = styled.div`
+    flex: 1;
+    border-radius: 5px;
+    transition: all 200ms ease-in-out;
+
+    :hover {
+        background-color: rgba(0,0,0,0.2);
+    }
+`
+
 const Home: React.FC = () => {
     return (
         <>
@@ -90,7 +100,7 @@ const Home: React.FC = () => {
             </Intro>
             {/* TODO: Make this dynamic */}
             <Latest>
-                <div style={{ flex: 1 }}>
+                <LatestSection>
                     <h2>{'Latest Blog Post'}</h2>
                     <p>
                         {'FSharp: Learning to use FAKE and Paket'}
@@ -101,8 +111,8 @@ const Home: React.FC = () => {
                             {'Read →'}
                         </Link>
                     </p>
-                </div>
-                <div style={{ flex: 1 }}>
+                </LatestSection>
+                <LatestSection>
                     <h2>{'Last Visited Place'}</h2>
                     <p>
                         {'Nimdari, Pune - November 2019'}
@@ -111,7 +121,7 @@ const Home: React.FC = () => {
                             {'Check out →'}
                         </Link>
                     </p>
-                </div>
+                </LatestSection>
             </Latest>
         </>
     )

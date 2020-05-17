@@ -7,6 +7,7 @@ import Navigation from './Navigation'
 
 const Container = styled.div`
     max-width: 980px;
+    padding: 20px;
     margin: 0 auto;
 `
 

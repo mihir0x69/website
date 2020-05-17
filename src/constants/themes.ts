@@ -10,7 +10,7 @@ const colors: Dictionary<string> = {
     cyan: '#8be9fd',
     green: '#50fa7b',
     orange: '#ffb86c',
-    pink: '#ff79c6',
+    pink: '#e56cb2',
     purple: '#bd93f9',
     red: '#ff5555',
     yellow: '#f1fa8c',
