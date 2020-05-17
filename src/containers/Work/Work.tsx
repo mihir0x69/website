@@ -1,70 +1,106 @@
 import React from 'react'
 import styled from 'styled-components'
-
-const Container = styled.div`
-    padding: 20px;
-    height: 70vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: row;
-
-    @media (max-width: 991px) {
-        flex-direction: column;
-        justify-content: flex-start;
-    }
-`
-
-const Section = styled.div`
-    padding: 20px;
-`
+import Hr from 'components/Hr'
+import random from 'lodash/random'
+import words from './words'
 
 const P = styled.p`
     font-family: ${props => props.theme.fonts.heading};
 `
 
+const Container = styled.div`
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 100px;
+
+    @media (max-width: 991px) {
+        flex-direction: column;
+    }
+`
+
+const Section = styled.div`
+    flex: 1;
+    padding: 0 10px 0 10px;
+`
+
+type WordProps = {
+    opacity: number
+}
+
+const Word = styled.span<WordProps>`
+    color: ${props => props.theme.colors.pink};
+    opacity: ${props => props.opacity};
+    padding: 3px 5px;
+    margin: 3px;
+    background-color: rgba(189, 147, 249, 0.2);
+    display: inline-block;
+    border-radius: 5px;
+    cursor: default;
+`
+
 const Work: React.FC = () => {
     return (
-        <Container>
-            <Section>
-                <P>{'Currently employed at'}</P>
-                <a href="https://harbingergroup.com/lifeatharbinger/">
-                    <img
-                        style={{ width: '100%' }}
-                        src={require('media/harbinger.png')}
-                        alt="Harbinger Group"
-                    />
-                </a>
-            </Section>
-            <Section>
-                <h2>
-                    <b>{'Past Experience'}</b>
-                </h2>
-                <ul>
-                    <li>
-                        <P>
-                            {
-                                'Senior Software Engineer at HCL Technologies (2017)'
-                            }
-                        </P>
-                    </li>
-                    <li>
-                        <P>
-                            {
-                                'Software Engineer at Harbinger Systems (2016-2017)'
-                            }
-                        </P>
-                    </li>
-                    <li>
-                        <P>
-                            {
-                                'Trainee Software Engineer at Harbinger Systems (2016)'
-                            }
-                        </P>
-                    </li>
-                </ul>
-            </Section>
-        </Container>
+        <div>
+            <h1>{'Work Experience'}</h1>
+            <p>
+                {
+                    "I have 4½ years of professional experience in this industry. But my programming journey starts way back in my Dad's office with Visual Basic 98 👨‍💻"
+                }
+            </p>
+            <Hr />
+            <Container>
+                <Section>
+                    <h2>
+                        <b>{'Current Employment'}</b>
+                    </h2>
+                    <ul>
+                        <li>
+                            <P>
+                                {'Associate Tech Lead at '}
+                                <a href="https://harbingergroup.com/lifeatharbinger/">
+                                    {'Harbinger Systems'}
+                                </a>
+                            </P>
+                        </li>
+                    </ul>
+                    <h2>
+                        <b>{'Past Experience'}</b>
+                    </h2>
+                    <ul>
+                        <li>
+                            <P>
+                                {
+                                    'Senior Software Engineer at HCL Technologies (2017)'
+                                }
+                            </P>
+                        </li>
+                        <li>
+                            <P>
+                                {
+                                    'Software Engineer at Harbinger Systems (2016-2017)'
+                                }
+                            </P>
+                        </li>
+                        <li>
+                            <P>
+                                {
+                                    'Trainee Software Engineer at Harbinger Systems (2016)'
+                                }
+                            </P>
+                        </li>
+                    </ul>
+                </Section>
+                <Section>
+                    <h1 style={{ margin: 0 }}>
+                        {words.map((w, i) => (
+                            <Word key={i} opacity={random(0.5, 1.0)}>
+                                {w}{' '}
+                            </Word>
+                        ))}
+                    </h1>
+                </Section>
+            </Container>
+        </div>
     )
 }
 
