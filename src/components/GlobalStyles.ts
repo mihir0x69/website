@@ -16,6 +16,7 @@ const GlobalStyles = createGlobalStyle(
             transition: all 300ms ease-in-out;
             margin: 0;
             padding: 0;
+            height: 100%;
         }
         ::-moz-selection {
             background: ${theme.colors.selection};

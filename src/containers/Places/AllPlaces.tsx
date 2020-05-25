@@ -92,7 +92,7 @@ const Places: React.FC = () => {
                     })
                 }
             }
-        }, 1000)
+        }, 100)
     }, [hash])
 
     return (

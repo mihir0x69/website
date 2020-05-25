@@ -7,7 +7,6 @@ const Intro = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 10px;
     min-height: 70vh;
     flex-direction: row;
     margin: 30px 0;
@@ -42,6 +41,7 @@ const Content = styled.div`
     flex: 2;
 
     @media (max-width: 991px) {
+        padding: 0;
         text-align: center;
         margin-top: 50px;
     }
@@ -61,11 +61,13 @@ const Latest = styled.div`
 
 const LatestSection = styled.div`
     flex: 1;
+    cursor: pointer;
     border-radius: 5px;
     transition: all 200ms ease-in-out;
 
     :hover {
         background-color: rgba(0, 0, 0, 0.2);
+        color: white;
     }
 `
 
@@ -79,7 +81,7 @@ const Home: React.FC = () => {
                 <Content>
                     <h1 style={{ margin: 0 }}>{"Hey, I'm Mihir!"}</h1>
                     <p>
-                        {'Associate Tech Lead at Harbinger Group.'}
+                        {'Associate Technical Lead at Harbinger Group.'}
                         <br />
                         {
                             "I love building systems. I've built this little place from scratch to geek out with my fellow programmers :)"
@@ -108,7 +110,7 @@ const Home: React.FC = () => {
                         <Link
                             to={'/blog/f-sharp-learning-to-use-fake-and-paket'}
                         >
-                            {'Read →'}
+                            {'Read now →'}
                         </Link>
                     </p>
                 </LatestSection>

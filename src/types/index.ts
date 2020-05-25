@@ -19,6 +19,7 @@ export type ReadingStats = {
 export type Metadata = {
     title: string
     teaser: string
+    cover?: string
     timestamp: string
     readingStats: ReadingStats
     tags: string[]

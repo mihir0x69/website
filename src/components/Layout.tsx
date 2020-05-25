@@ -7,8 +7,20 @@ import Navigation from './Navigation'
 
 const Container = styled.div`
     max-width: 980px;
+    min-height: calc(100vh - 50px);
     padding: 20px;
     margin: 0 auto;
+`
+
+const Footnote = styled.div`
+    width: 100%;
+    height: 50px;
+
+    > p {
+        text-align: center;
+        font-family: ${props => props.theme.fonts.heading};
+        font-size: 12px;
+    }
 `
 
 type Props = {
@@ -24,6 +36,15 @@ const Layout: React.FC<Props> = (props: Props) => {
                 <base target="_blank" />
                 <Navigation theme={theme} setTheme={setTheme} />
                 <Container>{props.children}</Container>
+                <Footnote>
+                    <p>
+                        {'Edit this on '}
+                        <a href="https://github.com/KarandikarMihir/website">
+                            {'Github'}
+                        </a>
+                        {' 💙'}
+                    </p>
+                </Footnote>
             </React.Fragment>
         </ThemeProvider>
     )
