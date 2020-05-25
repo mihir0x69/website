@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import Hr from 'components/Hr'
-import random from 'lodash/random'
 import words from './words'
 
 const P = styled.p`
@@ -14,28 +13,48 @@ const Container = styled.div`
     margin-bottom: 100px;
 
     @media (max-width: 991px) {
-        flex-direction: column;
+        flex-direction: column-reverse;
     }
 `
 
 const Section = styled.div`
     flex: 1;
-    padding: 0 10px 0 10px;
+    padding: 0 10px;
+
+    @media (max-width: 991px) {
+        padding: 0;
+    }
 `
 
-type WordProps = {
-    opacity: number
-}
+const Words = styled.h2`
+    margin: 0;
+    font-weight: bold;
 
-const Word = styled.span<WordProps>`
+    @media (max-width: 991px) {
+        text-align: center;
+    }
+`
+
+const Word = styled.span`
     color: ${props => props.theme.colors.pink};
-    opacity: ${props => props.opacity};
     padding: 3px 5px;
     margin: 3px;
     background-color: rgba(189, 147, 249, 0.2);
     display: inline-block;
     border-radius: 5px;
     cursor: default;
+
+    @media (max-width: 991px) {
+        font-size: 20px;
+    }
+`
+
+const MobileHr = styled(Hr)`
+    display: none;
+
+    @media (max-width: 991px) {
+        display: block;
+    }
 `
 
 const Work: React.FC = () => {
@@ -47,7 +66,7 @@ const Work: React.FC = () => {
                     "I have 4½ years of professional experience in this industry. But my programming journey starts way back in my Dad's office with Visual Basic 98 👨‍💻"
                 }
             </p>
-            <Hr />
+            <Hr margin="20px 0" />
             <Container>
                 <Section>
                     <h2>
@@ -91,13 +110,12 @@ const Work: React.FC = () => {
                     </ul>
                 </Section>
                 <Section>
-                    <h1 style={{ margin: 0 }}>
+                    <Words>
                         {words.map((w, i) => (
-                            <Word key={i} opacity={random(0.5, 1.0)}>
-                                {w}{' '}
-                            </Word>
+                            <Word key={i}>{w} </Word>
                         ))}
-                    </h1>
+                    </Words>
+                    <MobileHr margin="30px 0 20px 0" />
                 </Section>
             </Container>
         </div>

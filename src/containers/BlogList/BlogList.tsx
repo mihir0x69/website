@@ -30,9 +30,7 @@ const Blog: React.FC<RouteComponentProps> = props => {
     return (
         <Container>
             <h1>{'The Millennial Programmer️️️'}</h1>
-            <p>
-                {'⚡ Personal blog by me. I discuss tech, politics and life.'}
-            </p>
+            <p>{'I discuss tech, politics and life.'}</p>
             <Hr />
             {tag && (
                 <p>
