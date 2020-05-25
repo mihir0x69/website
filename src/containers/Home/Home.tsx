@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import paths from 'constants/paths'
 
 const Intro = styled.div`
@@ -71,7 +71,11 @@ const LatestSection = styled.div`
     }
 `
 
+const BLOG_LINK = '/blog/f-sharp-learning-to-use-fake-and-paket'
+const PLACE_LINK = `${paths.PLACES}#nimdariPuneNovember2019`
+
 const Home: React.FC = () => {
+    const history = useHistory()
     return (
         <>
             <Intro>
@@ -102,26 +106,20 @@ const Home: React.FC = () => {
             </Intro>
             {/* TODO: Make this dynamic */}
             <Latest>
-                <LatestSection>
+                <LatestSection onClick={() => history.push(BLOG_LINK)}>
                     <h2>{'Latest Blog Post'}</h2>
                     <p>
                         {'FSharp: Learning to use FAKE and Paket'}
                         <br />
-                        <Link
-                            to={'/blog/f-sharp-learning-to-use-fake-and-paket'}
-                        >
-                            {'Read now →'}
-                        </Link>
+                        <Link to={BLOG_LINK}>{'Read now →'}</Link>
                     </p>
                 </LatestSection>
-                <LatestSection>
+                <LatestSection onClick={() => history.push(PLACE_LINK)}>
                     <h2>{'Last Visited Place'}</h2>
                     <p>
                         {'Nimdari, Pune - November 2019'}
                         <br />
-                        <Link to={`${paths.PLACES}#nimdariPuneNovember2019`}>
-                            {'Check out →'}
-                        </Link>
+                        <Link to={PLACE_LINK}>{'Check out →'}</Link>
                     </p>
                 </LatestSection>
             </Latest>

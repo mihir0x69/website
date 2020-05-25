@@ -47,6 +47,37 @@ const OverlayMenuItems = styled.div`
     justify-content: center;
 `
 
+const CrossMark = styled.div`
+    position: fixed;
+    right: 25px;
+    top: 25px;
+    width: 25px;
+    height: 25px;
+    z-index: 99999;
+
+    :hover {
+        opacity: 1;
+    }
+
+    :before,
+    :after {
+        position: absolute;
+        left: 15px;
+        content: ' ';
+        height: 25px;
+        width: 3px;
+        background-color: ${props => props.theme.colors.foreground};
+    }
+
+    :before {
+        transform: rotate(45deg);
+    }
+
+    :after {
+        transform: rotate(-45deg);
+    }
+`
+
 type OverLayMenuProps = {
     closeMenu: any
     navItems: Array<any>
@@ -63,6 +94,7 @@ export const OverlayMenu: React.FC<OverLayMenuProps> = ({
 
     return (
         <OverlayMenuWrapper>
+            <CrossMark onClick={closeMenu} />
             <OverlayMenuItems>
                 {navItems.map((x, i) => (
                     <p>
