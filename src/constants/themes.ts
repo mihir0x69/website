@@ -1,7 +1,7 @@
 import { Dictionary } from 'types'
 
 const colors: Dictionary<string> = {
-    background: '#282a36',
+    background: '#1b262c',
     currentLine: '#44475a',
     selection: '#44475a',
     foreground: '#d9d9d9',
@@ -10,7 +10,7 @@ const colors: Dictionary<string> = {
     cyan: '#8be9fd',
     green: '#50fa7b',
     orange: '#ffb86c',
-    pink: '#e56cb2',
+    pink: '#ed6663',
     purple: '#bd93f9',
     red: '#ff5555',
     yellow: '#f1fa8c',

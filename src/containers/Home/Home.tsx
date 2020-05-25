@@ -64,10 +64,10 @@ const LatestSection = styled.div`
     cursor: pointer;
     border-radius: 5px;
     transition: all 200ms ease-in-out;
+    text-align: center;
 
     :hover {
         background-color: rgba(0, 0, 0, 0.2);
-        color: white;
     }
 `
 
