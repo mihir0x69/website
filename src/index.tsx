@@ -1,13 +1,5 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import Routes from './Routes'
-import DefaultMetaTags from 'components/DefaultMetaTags'
+import App from './Routes'
 
-const app = (
-    <>
-        <DefaultMetaTags />
-        <Routes />
-    </>
-)
-
-ReactDOM.render(app, document.getElementById('root'))
+ReactDOM.render(<App />, document.getElementById('root'))
