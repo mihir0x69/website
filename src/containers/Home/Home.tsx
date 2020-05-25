@@ -15,6 +15,7 @@ const Intro = styled.div`
     @media (max-width: 991px) {
         flex-direction: column;
         min-height: 100vh;
+        margin: 0;
     }
 `
 
@@ -43,7 +44,7 @@ const Content = styled.div`
     @media (max-width: 991px) {
         padding: 0;
         text-align: center;
-        margin-top: 50px;
+        margin-top: 30px;
     }
 `
 
