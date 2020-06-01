@@ -72,7 +72,7 @@ const LatestSection = styled.div`
     }
 `
 
-const BLOG_LINK = '/blog/f-sharp-learning-to-use-fake-and-paket'
+const BLOG_LINK = '/blog/simple-mechanism-to-find-dirty-form-fields'
 const PLACE_LINK = `${paths.PLACES}#nimdariPuneNovember2019`
 
 const Home: React.FC = () => {
@@ -110,7 +110,7 @@ const Home: React.FC = () => {
                 <LatestSection onClick={() => history.push(BLOG_LINK)}>
                     <h2>{'Latest Blog Post'}</h2>
                     <p>
-                        {'FSharp: Learning to use FAKE and Paket'}
+                        {'Simple mechanism to find dirty form fields'}
                         <br />
                         <Link to={BLOG_LINK}>{'Read now →'}</Link>
                     </p>
