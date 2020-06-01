@@ -25,6 +25,7 @@ const AdblockNotice = styled.div`
     border-radius: 5px;
     font-family: ${props => props.theme.fonts.heading};
     margin: 50px 0;
+    font-weight: bold;
 `
 
 type Props = {
