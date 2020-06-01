@@ -14,11 +14,17 @@ import { Metadata } from 'types'
 import remarkReactComponents from './remarkReactComponents'
 const { SITE_URL, DISQUS_SHORT_NAME } = require('config').default
 
-const ENABLE_DISQUS = true
-
 const Container = styled.div`
     margin-bottom: 50px;
     padding: 0 10px;
+`
+
+const AdblockNotice = styled.div`
+    padding: 20px;
+    border: 2px solid ${props => props.theme.colors.foreground};
+    border-radius: 5px;
+    font-family: ${props => props.theme.fonts.heading};
+    margin: 50px 0;
 `
 
 type Props = {
@@ -32,11 +38,16 @@ type DisqusConfig = {
     title: string
 }
 
-const renderDisqus = (config: DisqusConfig) => {
+const DisqusThread: React.FC<DisqusConfig> = config => {
     return (
-        ENABLE_DISQUS && (
+        <>
+            <AdblockNotice>
+                {
+                    'Please disable AdBlock and other extensions to read this discussion thread :)'
+                }
+            </AdblockNotice>
             <DiscussionEmbed shortname={DISQUS_SHORT_NAME} config={config} />
-        )
+        </>
     )
 }
 
@@ -104,7 +115,7 @@ const Blog: React.FC<Props> = ({ metadata, content }: Props) => {
                 <p>
                     <Link to={paths.BLOGS}>{'← Back to other blogs'}</Link>
                 </p>
-                {renderDisqus(disqusConfig)}
+                <DisqusThread {...disqusConfig} />
             </Container>
         </>
     )

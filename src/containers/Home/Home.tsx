@@ -88,12 +88,16 @@ const Home: React.FC = () => {
                     <p>
                         {'Associate Technical Lead at Harbinger Group.'}
                         <br />
-                        {"I love building systems. I've built this little place from scratch to "}
+                        {
+                            "I love building systems. I've built this little place from scratch to "
+                        }
                         <Link to={paths.BLOGS}>{'geek out'}</Link>
                         {' with my fellow programmers :)'}
                     </p>
                     <p>
-                        {"I write JavaScript and C# for a living. But I've had "}
+                        {
+                            "I write JavaScript and C# for a living. But I've had "
+                        }
                         <Link to={paths.WORK}>{'plenty of opportunities'}</Link>
                         {' to touch many other technologies.'}
                     </p>
