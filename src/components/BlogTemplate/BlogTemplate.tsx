@@ -12,9 +12,9 @@ import Timestamp from 'components/Timestamp'
 import paths from 'constants/paths'
 import { Metadata } from 'types'
 import remarkReactComponents from './remarkReactComponents'
-const { SITE_URL, DISQUS_SHORT_NAME } = require('config')
+const { SITE_URL, DISQUS_SHORT_NAME } = require('config').default
 
-const ENABLE_DISQUS = false
+const ENABLE_DISQUS = true
 
 const Container = styled.div`
     margin-bottom: 50px;
