@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { Link, useHistory } from 'react-router-dom'
 import paths from 'constants/paths'
+import { SocialMediaDesktop, SocialMediaMobile } from './SocialMedia'
 
 const Intro = styled.div`
     display: flex;
@@ -80,6 +81,7 @@ const Home: React.FC = () => {
     return (
         <>
             <Intro>
+                <SocialMediaDesktop />
                 <AvatarWrapper>
                     <Avatar />
                 </AvatarWrapper>
@@ -109,6 +111,7 @@ const Home: React.FC = () => {
                     </p>
                 </Content>
             </Intro>
+            <SocialMediaMobile />
             {/* TODO: Make this dynamic */}
             <Latest>
                 <LatestSection onClick={() => history.push(BLOG_LINK)}>
