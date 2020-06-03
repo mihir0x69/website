@@ -5,8 +5,13 @@
 
 ---
 
-### Create a new blog
+## Create a new blog
 `yarn run create`
 
-### Update metadata
+## Update metadata
 `yarn run updateMetadata`
+
+---
+
+## Latest Lighthouse Report (June 3, 2020)
+![Lighthouse Report](./github/Lighthouse.png)
