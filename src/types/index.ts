@@ -24,3 +24,8 @@ export type Metadata = {
     readingStats: ReadingStats
     tags: string[]
 }
+
+export type NavItemType = {
+    label: string
+    onClick: () => void
+}

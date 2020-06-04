@@ -1,6 +1,6 @@
 import { Dictionary } from 'types'
 
-const colors: Dictionary<string> = {
+export const colors: Dictionary<string> = {
     background: '#181818',
     currentLine: '#44475a',
     selection: '#44475a',
@@ -14,7 +14,7 @@ const colors: Dictionary<string> = {
     purple: '#bd93f9',
     red: '#ff5555',
     yellow: '#f1fa8c',
-    white: '#ffffff'
+    white: '#ffffff',
 }
 
 const fonts: Dictionary<string> = {
@@ -46,7 +46,7 @@ const themes: Dictionary<Theme> = {
         colors: {
             ...colors,
             background: '#edf2f7',
-            foreground: '#282a36',
+            foreground: '#181818',
             heading: '#282a36',
         },
     },

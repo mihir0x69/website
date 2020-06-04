@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
 import * as StorageManager from 'utils/StorageManager'
 import paths from 'constants/paths'
+import { NavItemType } from 'types'
 import {
     NavigationBar,
     NavItem,
@@ -9,13 +10,9 @@ import {
     NavWrapper,
     RightNavWrapper,
 } from './fragments'
-import { MenuIcon, OverlayMenu } from './MobileNavigation'
+import { Navigation as MobileNavigation } from './MobileNavigation'
 
 const lumosSoundFile = require('media/lumos_maxima.mp3')
-
-const enableBodyScrolling = (enableScroll: boolean) => {
-    document.body.style.overflow = enableScroll ? 'auto' : 'hidden'
-}
 
 type NavigationBarProps = {
     theme: any
@@ -25,21 +22,10 @@ type NavigationBarProps = {
 const Navigation: React.FC<NavigationBarProps> = ({ theme, setTheme }) => {
     const history = useHistory()
     const [lumos] = useState(new Audio(lumosSoundFile))
-    const [isMenuVisible, setIsMenuVisible] = useState(false)
 
     useEffect(() => {
         window.scrollTo(0, 0)
     }, [history.location])
-
-    const openMenu = () => {
-        setIsMenuVisible(true)
-        enableBodyScrolling(false)
-    }
-
-    const closeMenu = () => {
-        setIsMenuVisible(false)
-        enableBodyScrolling(true)
-    }
 
     const toggleTheme = () => {
         lumos.play()
@@ -50,7 +36,7 @@ const Navigation: React.FC<NavigationBarProps> = ({ theme, setTheme }) => {
 
     const themeLabel = theme > 0 ? 'Lumos' : 'Nox'
 
-    const navItems = [
+    const navItems: Array<NavItemType> = [
         { label: 'Blog', onClick: () => history.push(paths.BLOGS) },
         { label: 'Places', onClick: () => history.push(paths.PLACES) },
         { label: 'Work', onClick: () => history.push(paths.WORK) },
@@ -59,9 +45,7 @@ const Navigation: React.FC<NavigationBarProps> = ({ theme, setTheme }) => {
 
     return (
         <NavWrapper>
-            {isMenuVisible && (
-                <OverlayMenu navItems={navItems} closeMenu={closeMenu} />
-            )}
+            <MobileNavigation navItems={navItems} />
             <div style={{ flex: 1 }}>
                 <HomeNavItem>
                     <span onClick={() => history.push(paths.ROOT)}>
@@ -80,7 +64,6 @@ const Navigation: React.FC<NavigationBarProps> = ({ theme, setTheme }) => {
                         </NavItem>
                     ))}
                 </NavigationBar>
-                <MenuIcon openMenu={openMenu} />
             </RightNavWrapper>
         </NavWrapper>
     )

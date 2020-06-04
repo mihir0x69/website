@@ -16,7 +16,6 @@ const { SITE_URL, DISQUS_SHORT_NAME } = require('config').default
 
 const Container = styled.article`
     margin-bottom: 50px;
-    padding: 0 10px;
 `
 
 const AdblockNotice = styled.div`
@@ -116,9 +115,7 @@ const Blog: React.FC<Props> = ({ metadata, content }: Props) => {
                             .processSync(content).contents
                     }
                 </section>
-                <section>
-                    {tags}
-                </section>
+                <section>{tags}</section>
                 <section>
                     <p>
                         <Link to={paths.BLOGS}>{'← Back to other blogs'}</Link>

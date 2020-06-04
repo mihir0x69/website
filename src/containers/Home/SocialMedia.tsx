@@ -4,7 +4,7 @@ import { TwitterIcon, LinkedinIcon, EmailIcon } from 'react-share'
 
 const DesktopContainer = styled.div`
     position: fixed;
-    right: 20px;
+    left: 40px;
     top: 45%;
     display: flex;
     flex-direction: column;

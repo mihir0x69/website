@@ -1,5 +1,14 @@
 import styled from 'styled-components'
 
+export const NavWrapper = styled.nav`
+    display: flex;
+    margin: 30px 50px;
+
+    @media (max-width: 991px) {
+        margin: 10px;
+    }
+`
+
 export const NavigationBar = styled.div`
     display: flex;
 
@@ -12,13 +21,19 @@ export const NavItem = styled.div`
     padding: 20px 0;
     text-align: center;
     font-family: ${props => props.theme.fonts.heading};
-    color: ${props => props.theme.colors.green};
+    color: ${props => props.color || props.theme.colors.green};
     font-weight: bold;
     flex: 1;
     text-align: right;
     font-size: 20px;
     text-transform: uppercase;
     user-select: none;
+
+    @media (max-width: 991px) {
+        > span:hover {
+            border: 0 !important;
+        }
+    }
 
     > span {
         cursor: pointer;
@@ -53,16 +68,8 @@ export const HomeNavItem = styled(NavItem)`
     }
 `
 
-export const NavWrapper = styled.nav`
-    display: flex;
-    margin: 30px 50px;
-    @media (max-width: 991px) {
-        margin: 10px;
-    }
-`
-
 export const RightNavWrapper = styled.div`
-    flex: 1;
+    flex: 1.5;
 
     @media (max-width: 991px) {
         display: flex;

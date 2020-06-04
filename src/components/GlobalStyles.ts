@@ -10,7 +10,7 @@ const GlobalStyles = createGlobalStyle(
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&display=swap');
         @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Mono:500|IBM+Plex+Serif:400,400i,700,700i&display=swap');
         body {
-            background-color: ${theme.colors.background};
+            background: ${theme.colors.background};
             color: ${theme.colors.foreground};
             font-family: ${theme.fonts.text};
             transition: all 300ms ease-in-out;
@@ -21,9 +21,6 @@ const GlobalStyles = createGlobalStyle(
         ::selection {
             background-color: ${theme.colors.green};
             color: ${theme.colors.white};
-        }
-        a::selection {
-            background-color: ${theme.colors.red};
         }
         a,
         a:link,

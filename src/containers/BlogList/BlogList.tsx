@@ -14,7 +14,6 @@ import allBlogs from './allBlogs'
 
 const Container = styled.div`
     margin: 0 auto;
-    padding: 0 10px;
 `
 
 const BlogTitle = styled(Link)`

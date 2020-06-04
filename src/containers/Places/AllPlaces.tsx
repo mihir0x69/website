@@ -9,7 +9,6 @@ import places from './list'
 
 const Container = styled.div`
     margin-bottom: 50px;
-    padding: 0 10px;
 `
 
 const ImageSet = styled.div`
@@ -28,7 +27,7 @@ const Spinner = styled.div`
     left: 50%;
     margin: 0;
     text-align: center;
-    z-index: 1000;
+    z-index: 444;
     -webkit-transform: translateX(-50%) translateY(-50%);
     transform: translateX(-50%) translateY(-50%);
 
