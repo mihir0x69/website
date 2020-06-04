@@ -12,15 +12,23 @@ export const NavItem = styled.div`
     padding: 20px 0;
     text-align: center;
     font-family: ${props => props.theme.fonts.heading};
-    color: ${props => props.theme.colors.pink};
+    color: ${props => props.theme.colors.green};
     font-weight: bold;
     flex: 1;
     text-align: right;
     font-size: 20px;
     text-transform: uppercase;
+    user-select: none;
 
-    & > span {
+    > span {
         cursor: pointer;
+        padding-bottom: 3px;
+        border-bottom: 3px solid transparent;
+        transition: all 200ms ease-in-out;
+    }
+
+    > span:hover {
+        border-bottom: 3px solid ${props => props.theme.colors.green};
     }
 `
 
@@ -45,7 +53,7 @@ export const HomeNavItem = styled(NavItem)`
     }
 `
 
-export const NavWrapper = styled.div`
+export const NavWrapper = styled.nav`
     display: flex;
     margin: 30px 50px;
     @media (max-width: 991px) {

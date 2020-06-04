@@ -12,7 +12,7 @@ const Container = styled.div`
     margin: 0 auto;
 `
 
-const Footnote = styled.div`
+const Footnote = styled.footer`
     width: 100%;
     height: 50px;
 

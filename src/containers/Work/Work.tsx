@@ -36,7 +36,7 @@ const Words = styled.h2`
 `
 
 const Word = styled.span`
-    color: ${props => props.theme.colors.pink};
+    color: ${props => props.theme.colors.green};
     padding: 3px 5px;
     margin: 3px;
     background-color: rgba(189, 147, 249, 0.2);

@@ -18,20 +18,19 @@ const GlobalStyles = createGlobalStyle(
             padding: 0;
             height: 100%;
         }
-        ::-moz-selection {
-            background: ${theme.colors.selection};
-            color: #edf2f7;
-        }
         ::selection {
-            background: ${theme.colors.selection};
-            color: #edf2f7;
+            background-color: ${theme.colors.green};
+            color: ${theme.colors.white};
+        }
+        a::selection {
+            background-color: ${theme.colors.red};
         }
         a,
         a:link,
         a:visited,
         a:hover,
         a:active {
-            color: ${theme.colors.pink};
+            color: ${theme.colors.green};
             text-decoration: underline;
         }
         p {

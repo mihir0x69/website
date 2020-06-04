@@ -14,7 +14,7 @@ import { Metadata } from 'types'
 import remarkReactComponents from './remarkReactComponents'
 const { SITE_URL, DISQUS_SHORT_NAME } = require('config').default
 
-const Container = styled.div`
+const Container = styled.article`
     margin-bottom: 50px;
     padding: 0 10px;
 `
@@ -98,25 +98,35 @@ const Blog: React.FC<Props> = ({ metadata, content }: Props) => {
                 <meta name="twitter:card" content="summary" />
             </Helmet>
             <Container>
-                <h1>{metadata.title}</h1>
-                <Timestamp
-                    timestamp={metadata.timestamp}
-                    readingStats={metadata.readingStats}
-                />
-                {
-                    unified()
-                        .use(parse)
-                        .use(remark2react, {
-                            sanitize: false,
-                            remarkReactComponents,
-                        })
-                        .processSync(content).contents
-                }
-                {tags}
-                <p>
-                    <Link to={paths.BLOGS}>{'← Back to other blogs'}</Link>
-                </p>
-                <DisqusThread {...disqusConfig} />
+                <header>
+                    <h1>{metadata.title}</h1>
+                    <Timestamp
+                        timestamp={metadata.timestamp}
+                        readingStats={metadata.readingStats}
+                    />
+                </header>
+                <section>
+                    {
+                        unified()
+                            .use(parse)
+                            .use(remark2react, {
+                                sanitize: false,
+                                remarkReactComponents,
+                            })
+                            .processSync(content).contents
+                    }
+                </section>
+                <section>
+                    {tags}
+                </section>
+                <section>
+                    <p>
+                        <Link to={paths.BLOGS}>{'← Back to other blogs'}</Link>
+                    </p>
+                </section>
+                <section>
+                    <DisqusThread {...disqusConfig} />
+                </section>
             </Container>
         </>
     )

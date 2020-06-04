@@ -4,7 +4,7 @@ import { Link, useHistory } from 'react-router-dom'
 import paths from 'constants/paths'
 import { SocialMediaDesktop, SocialMediaMobile } from './SocialMedia'
 
-const Intro = styled.div`
+const Intro = styled.main`
     display: flex;
     align-items: center;
     justify-content: center;
@@ -20,7 +20,7 @@ const Intro = styled.div`
     }
 `
 
-const Avatar = styled.div`
+const Avatar = styled.figure`
     width: 200px;
     height: 200px;
     background-image: url('${require('media/hero.jpeg')}');
@@ -31,14 +31,14 @@ const Avatar = styled.div`
     box-shadow: 0 2px 10px rgba(0,0,0,0.5);
 `
 
-const AvatarWrapper = styled.div`
+const AvatarWrapper = styled.section`
     flex: 1;
     display: flex;
     align-items: center;
     justify-content: center;
 `
 
-const Content = styled.div`
+const Content = styled.section`
     padding: 0 10px;
     flex: 2;
 
@@ -61,7 +61,7 @@ const Latest = styled.div`
     }
 `
 
-const LatestSection = styled.div`
+const LatestSection = styled.section`
     flex: 1;
     cursor: pointer;
     border-radius: 5px;
