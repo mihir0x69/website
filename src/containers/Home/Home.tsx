@@ -23,7 +23,7 @@ const Intro = styled.main`
 const Avatar = styled.figure`
     width: 200px;
     height: 200px;
-    background-image: url('${require('media/hero.jpeg')}');
+    background-image: url('${require('media/hero.jpg')}');
     background-position: center center;
     background-size: cover;
     border-radius: 50%;
