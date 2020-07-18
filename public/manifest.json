@@ -1,6 +1,6 @@
 {
   "short_name": "Mihir ⚡️",
-  "name": "Millennial Programmer: ⚡️ Personal blog by Mihir",
+  "name": "Mihir Karandikar",
   "icons": [
     {
       "src": "godmode.png",
@@ -10,6 +10,6 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#1b262c",
-  "background_color": "#1b262c"
+  "theme_color": "#181818",
+  "background_color": "#181818"
 }
