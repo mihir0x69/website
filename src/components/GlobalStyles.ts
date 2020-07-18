@@ -7,8 +7,6 @@ type Props = {
 
 const GlobalStyles = createGlobalStyle(
     ({ theme }: Props) => css`
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&display=swap');
-        @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Mono:500|IBM+Plex+Serif:400,400i,700,700i&display=swap');
         body {
             background: ${theme.colors.background};
             color: ${theme.colors.foreground};
