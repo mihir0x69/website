@@ -31,7 +31,8 @@
     "test": "craco test",
     "format": "prettier --write \"src/**/*.{js,ts,tsx}\"",
     "updateMetadata": "node ./scripts/updateMetadata.js",
-    "create": "node ./scripts/createNewBlog.js"
+    "create": "node ./scripts/createNewBlog.js",
+    "sitemap": "node ./scripts/updateRoutes.js && npx sitemap --index --index-base-url https://mihir.life/ < routes.txt > ./public/sitemap-index.xml"
   },
   "eslintConfig": {
     "extends": "react-app"
