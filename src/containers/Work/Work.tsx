@@ -110,6 +110,7 @@ const Work: React.FC = () => {
                     </ul>
                 </Section>
                 <Section>
+                    <P><a href="/Mihir-Karandikar-Resume.pdf">{'See My Résumé'}</a>{'↗️'}</P>
                     <Words>
                         {words.map((w, i) => (
                             <Word key={i}>{w} </Word>
