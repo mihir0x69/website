@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { TwitterIcon, LinkedinIcon, EmailIcon } from 'react-share'
+import StackOverflowIconImage from 'media/so-icon.png'
 
 const DesktopContainer = styled.div`
     position: fixed;
@@ -28,6 +29,16 @@ const MobileContainer = styled.div`
     }
 `
 
+const StackOverflowIcon = styled.div`
+    width: 48.44px;
+    height: 48.44px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+`
+
 const icons = [
     {
         icon: TwitterIcon,
@@ -38,6 +49,19 @@ const icons = [
         icon: LinkedinIcon,
         title: 'LinkedIn',
         link: 'https://www.linkedin.com/in/karandikarmihir/',
+    },
+    {
+        icon: () => (
+            <StackOverflowIcon>
+                <img
+                    src={StackOverflowIconImage}
+                    alt="StackOverflow Icon"
+                    style={{ height: 40 }}
+                />
+            </StackOverflowIcon>
+        ),
+        title: 'StackOverflow',
+        link: 'https://stackoverflow.com/users/5241520/mihir',
     },
     {
         icon: EmailIcon,
