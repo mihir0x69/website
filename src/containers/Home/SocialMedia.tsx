@@ -16,11 +16,12 @@ const DesktopContainer = styled.div`
 `
 
 const MobileContainer = styled.div`
-    text-align: center;
     display: none;
 
     @media (max-width: 991px) {
-        display: block;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         margin: 20px 0;
 
         > a {
@@ -37,6 +38,7 @@ const StackOverflowIcon = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-top: -5px;
 `
 
 const icons = [
