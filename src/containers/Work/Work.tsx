@@ -7,6 +7,12 @@ const P = styled.p`
     font-family: ${props => props.theme.fonts.heading};
 `
 
+const ResumeLink = styled(P)`
+    @media (max-width: 991px) {
+        text-align: center;
+    }
+`
+
 const Container = styled.div`
     display: flex;
     flex-direction: row;
@@ -75,47 +81,51 @@ const Work: React.FC = () => {
                     <ul>
                         <li>
                             <P>
-                                {'Associate Tech Lead at '}
-                                <a href="https://harbingergroup.com/lifeatharbinger/">
-                                    {'Harbinger Systems'}
-                                </a>
+                                {'Associate Technical Lead'}
+                                <br />
+                                <small>
+                                    <a href="https://harbingergroup.com/lifeatharbinger/">
+                                        {'Harbinger Systems'}
+                                    </a>
+                                </small>
                             </P>
                         </li>
                     </ul>
-                    <h2>
+                    <h2 style={{ marginTop: 30 }}>
                         <b>{'Past Experience'}</b>
                     </h2>
                     <ul>
                         <li>
                             <P>
-                                {
-                                    'Senior Software Engineer at HCL Technologies (2017)'
-                                }
+                                {'Senior Software Engineer'}
+                                <br />
+                                <small>
+                                    <a href="https://www.hcltech.com/">
+                                        {'HCL Technologies'}
+                                    </a>
+                                </small>
                             </P>
                         </li>
                         <li>
                             <P>
-                                {
-                                    'Software Engineer at Harbinger Systems (2016-2017)'
-                                }
-                            </P>
-                        </li>
-                        <li>
-                            <P>
-                                {
-                                    'Trainee Software Engineer at Harbinger Systems (2016)'
-                                }
+                                {'Software Engineer'}
+                                <br />
+                                <small>
+                                    <a href="https://harbingergroup.com/lifeatharbinger/">
+                                        {'Harbinger Systems'}
+                                    </a>
+                                </small>
                             </P>
                         </li>
                     </ul>
                 </Section>
                 <Section>
-                    <P>
+                    <ResumeLink>
                         <a href="/Mihir-Karandikar-Resume.pdf">
                             {'See My Résumé'}
                         </a>
                         {'↗️'}
-                    </P>
+                    </ResumeLink>
                     <Words>
                         {words.map((w, i) => (
                             <Word key={i}>{w} </Word>
