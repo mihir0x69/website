@@ -12,6 +12,19 @@ import paths from 'constants/paths'
 import { Metadata } from 'types'
 import allBlogs from './allBlogs'
 
+const FEEDLY_URL =
+    'https://feedly.com/i/subscription/feed%2Fhttps%3A%2F%2Fwww.mihir.life%2Frss.xml'
+
+const feedlyButton = (
+    <img
+        id="feedlyFollow"
+        src="http://s3.feedly.com/img/follows/feedly-follow-rectangle-volume-medium_2x.png"
+        alt="Follow us in feedly"
+        width="71"
+        height="28"
+    />
+)
+
 const Container = styled.div`
     margin: 0 auto;
 `
@@ -26,10 +39,16 @@ const Blog: React.FC<RouteComponentProps> = props => {
     const visibleBlogs: Metadata[] = tag
         ? allBlogs.filter(b => find(b.tags, t => includes(kebabCase(t), tag)))
         : allBlogs
+
     return (
         <Container>
-            <h1>{'The Millennial Programmer️️️'}</h1>
-            <p>{'I discuss tech, politics and life.'}</p>
+            <h1>
+                {'The Millennial Programmer️️️'}
+                <a href={FEEDLY_URL} style={{ marginLeft: 15 }}>
+                    {feedlyButton}
+                </a>
+            </h1>
+            <p>{'I discuss tech, politics and life '}</p>
             <Hr />
             {tag && (
                 <p>
