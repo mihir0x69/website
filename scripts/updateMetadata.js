@@ -4,7 +4,7 @@ const find = require('lodash/find')
 const chalk = require('chalk')
 const readingTime = require('reading-time')
 
-const BASE_PATH = './src/containers/Blogs'
+const BASE_PATH = path.join(process.cwd(), 'src', 'containers', 'Blogs')
 const ENCODING = 'UTF-8'
 
 const info = chalk.blue
