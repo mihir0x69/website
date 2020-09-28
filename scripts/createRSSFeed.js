@@ -51,10 +51,9 @@ const traverseDir = (dir) => {
 }
 
 traverseDir(ROOT_FOLDER)
+
 items = _.orderBy(items, x => x.date, ['desc'])
-
 items.forEach(x => feed.item(x))
-
 
 const xml = feed.xml({ indent: true })
 
