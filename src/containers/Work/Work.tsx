@@ -68,15 +68,30 @@ const Work: React.FC = () => {
         <div>
             <h1>{'Work Experience'}</h1>
             <p>
-                {
-                    "I have 4½ years of professional experience in this industry. But my programming journey starts way back in my Dad's office with Visual Basic 98 👨‍💻"
-                }
+                {`I have close to 5 years of professional experience in IT industry.
+                    But my programming journey starts way back in my Dad's office with Visual Basic 98 👨‍💻`}
             </p>
             <Hr margin="20px 0" />
             <Container>
                 <Section>
                     <h2>
                         <b>{'Current Employment'}</b>
+                    </h2>
+                    <ul>
+                        <li>
+                            <P>
+                                {'Frontend Engineer'}
+                                <br />
+                                <small>
+                                    <a href="https://www.aeratechnology.com/">
+                                        {'Aera Technology'}
+                                    </a>
+                                </small>
+                            </P>
+                        </li>
+                    </ul>
+                    <h2 style={{ marginTop: 30 }}>
+                        <b>{'Past Experience'}</b>
                     </h2>
                     <ul>
                         <li>
@@ -90,11 +105,6 @@ const Work: React.FC = () => {
                                 </small>
                             </P>
                         </li>
-                    </ul>
-                    <h2 style={{ marginTop: 30 }}>
-                        <b>{'Past Experience'}</b>
-                    </h2>
-                    <ul>
                         <li>
                             <P>
                                 {'Senior Software Engineer'}
@@ -124,7 +134,7 @@ const Work: React.FC = () => {
                         <a href="/Mihir-Karandikar-Resume.pdf">
                             {'See My Résumé'}
                         </a>
-                        {'↗️'}
+                        {' ↗️'}
                     </ResumeLink>
                     <Words>
                         {words.map((w, i) => (

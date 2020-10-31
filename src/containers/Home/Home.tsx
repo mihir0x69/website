@@ -88,20 +88,19 @@ const Home: React.FC = () => {
                 <Content>
                     <h1 style={{ margin: 0 }}>{"Hey, I'm Mihir!"}</h1>
                     <p>
-                        {'Associate Technical Lead at Harbinger Group.'}
+                        {'Frontend Engineer at '}
+                        <a href="https://www.aeratechnology.com/">
+                            {'Aera Technology'}
+                        </a>
                         <br />
                         {
-                            "I love building systems. I've built this little place from scratch to "
+                            "I love building systems. I've built this little place from scratch to geek out with my fellow programmers :)"
                         }
-                        <Link to={paths.BLOGS}>{'geek out'}</Link>
-                        {' with my fellow programmers :)'}
                     </p>
                     <p>
-                        {
-                            "I write JavaScript and C# for a living. But I've had "
-                        }
+                        {"I'm a full-stack developer. And I've had "}
                         <Link to={paths.WORK}>{'plenty of opportunities'}</Link>
-                        {' to touch many other technologies.'}
+                        {' to work on exciting technology.'}
                     </p>
                     <p>
                         {
