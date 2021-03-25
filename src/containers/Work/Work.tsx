@@ -68,7 +68,7 @@ const Work: React.FC = () => {
         <div>
             <h1>{'Work Experience'}</h1>
             <p>
-                {`I have close to 5 years of professional experience in IT industry.
+                {`I have 5+ years of professional experience in IT industry.
                     But my programming journey starts way back in my Dad's office with Visual Basic 98 👨‍💻`}
             </p>
             <Hr margin="20px 0" />
