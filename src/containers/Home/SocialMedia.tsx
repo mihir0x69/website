@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { TwitterIcon, LinkedinIcon, EmailIcon } from 'react-share'
-import StackOverflowIconImage from 'media/so-icon.png'
+const StackOverflowIconImage = require('media/so-icon.png').default
 
 const DesktopContainer = styled.div`
     position: fixed;

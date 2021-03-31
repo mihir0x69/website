@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { createGlobalStyle, css } from 'styled-components'
 import { DARK, Theme } from 'constants/themes'
 

@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import lanceLyingDown from 'media/LanceLayingDownR.png'
+const lanceLyingDown = require('media/LanceLayingDownR.png').default
 
 const Container = styled.div`
     position: absolute;

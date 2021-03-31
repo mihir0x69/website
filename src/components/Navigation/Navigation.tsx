@@ -37,9 +37,9 @@ const Navigation: React.FC<NavigationBarProps> = ({ theme, setTheme }) => {
     const themeLabel = theme > 0 ? 'Lumos' : 'Nox'
 
     const navItems: Array<NavItemType> = [
-        { label: 'Blog', onClick: () => history.push(paths.BLOGS) },
-        { label: 'Places', onClick: () => history.push(paths.PLACES) },
-        { label: 'Work', onClick: () => history.push(paths.WORK) },
+        { label: 'Blog', onClick: () => console.log(paths.BLOGS) },
+        { label: 'Places', onClick: () => console.log(paths.PLACES) },
+        { label: 'Work', onClick: () => console.log(paths.WORK) },
         { label: themeLabel, onClick: toggleTheme },
     ]
 
@@ -48,7 +48,7 @@ const Navigation: React.FC<NavigationBarProps> = ({ theme, setTheme }) => {
             <MobileNavigation navItems={navItems} />
             <div style={{ flex: 1 }}>
                 <HomeNavItem>
-                    <span onClick={() => history.push(paths.ROOT)}>
+                    <span onClick={() => console.log(paths.ROOT)}>
                         <b>
                             {'Mihir '}
                             {'Karandikar'}

@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import loaderImage from 'media/LanceWalkingR.gif'
+const loaderImage = require('media/LanceWalkingR.gif').default
 
 const Loading = styled.div`
     font-family: ${props => props.theme.fonts.mono};

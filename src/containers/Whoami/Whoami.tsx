@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import hero from 'media/mihir.jpg'
 import quotes from './quotes'
+const hero = require('media/mihir.jpg').default
 
 const Container = styled.div`
     margin-bottom: 50px;
@@ -48,7 +48,7 @@ const Whoami: React.FC = () => {
                     `}
                 </p>
                 <p>
-                    {`I'm a cat lover. Dogs are okay too. I love travelling. I love observing people - 
+                    {`I'm a cat lover. Dogs are okay too. I love travelling. I love observing people -
                     their culture, their way of living. Planning on travelling the world. But
                     duties take precedence ATM.
                     `}
@@ -70,7 +70,7 @@ const Whoami: React.FC = () => {
                     >
                         {'Rakhi Sawant'}
                     </a>
-                    {` in the same breath and still not be overwhelmed. I think I have 
+                    {` in the same breath and still not be overwhelmed. I think I have
                     figured out my life - Just working out a few kinks. Hit me up on `}
                     <a
                         href="https://twitter.com/KarandikarMihir"
