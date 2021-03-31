@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import quotes from './quotes'
-const hero = require('media/mihir.jpg').default
 
 const Container = styled.div`
     margin-bottom: 50px;
@@ -38,7 +37,7 @@ const Whoami: React.FC = () => {
                         {'*Interstellar Organ Theme plays in the background*'}
                     </i>
                 </p>
-                <img src={hero} alt="hero" style={{ width: '100%' }} />
+                <img src="media/mihir.jpg" alt="hero" style={{ width: '100%' }} />
                 <p>
                     {`Mihir. I'm a software developer from Pune, India. I write Javascript,
                     C# and F#. I enjoy working on Microsoft Azure. Working on cool stuff at my day job.

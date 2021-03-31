@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-const lanceLyingDown = require('media/LanceLayingDownR.png').default
 
 const Container = styled.div`
     position: absolute;
@@ -18,7 +17,7 @@ const Title = styled.p`
 const NotFound: React.FC = () => (
     <Container>
         <Title>{'404 Not Found'}</Title>
-        <img src={lanceLyingDown} alt="Not found" />
+        <img src="media/LanceLayingDownR.png" alt="Not found" />
     </Container>
 )
 

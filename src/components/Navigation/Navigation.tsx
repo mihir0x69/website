@@ -12,8 +12,6 @@ import {
 } from './fragments'
 import { Navigation as MobileNavigation } from './MobileNavigation'
 
-// const lumosSoundFile = require('media/lumos_maxima.mp3')
-
 type NavigationBarProps = {
     theme: any
     setTheme: any
@@ -21,7 +19,7 @@ type NavigationBarProps = {
 
 const Navigation: React.FC<NavigationBarProps> = ({ theme, setTheme }) => {
     const history = {}
-    // const [lumos] = useState(new Audio(lumosSoundFile))
+    // const [lumos] = useState(new Audio('media/lumos_maxima.mp3'))
 
     // useEffect(() => {
     //     window.scrollTo(0, 0)

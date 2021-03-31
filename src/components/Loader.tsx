@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-const loaderImage = require('media/LanceWalkingR.gif').default
 
 const Loading = styled.div`
     font-family: ${props => props.theme.fonts.mono};
@@ -15,7 +14,7 @@ const Loading = styled.div`
 `
 
 const LanceWalking = styled.img.attrs({
-    src: loaderImage,
+    src: 'media/LanceWalkingR.gif',
     alt: 'Loading',
 })`
     margin: 0 20px;

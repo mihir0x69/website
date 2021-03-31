@@ -76,82 +76,72 @@ const Spinner = styled.div`
 `
 
 const Places: React.FC = () => {
-    const { hash } = useLocation()
-    const history = useHistory()
-    useEffect(() => {
-        setTimeout(() => {
-            if (hash) {
-                const id = hash.replace('#', '')
-                const element = document.getElementById(id)
-                console.log(id, element)
-                if (element) {
-                    window.scrollTo({
-                        behavior: 'smooth',
-                        top: element.offsetTop,
-                    })
-                }
-            }
-        }, 100)
-    }, [hash])
+    // const { hash } = useLocation()
+    // useEffect(() => {
+    //     setTimeout(() => {
+    //         if (hash) {
+    //             const id = hash.replace('#', '')
+    //             const element = document.getElementById(id)
+    //             console.log(id, element)
+    //             if (element) {
+    //                 window.scrollTo({
+    //                     behavior: 'smooth',
+    //                     top: element.offsetTop,
+    //                 })
+    //             }
+    //         }
+    //     }, 100)
+    // }, [hash])
 
     return (
         <Container>
             <h1>{'The Wanderlust Section'}</h1>
-            <p>
-                {
-                    "I'm a huge sucker for new places. But I don't get as much time."
-                }
-            </p>
+            <p>{"I'm a huge sucker for new places. But I don't get as much time."}</p>
             <Hr />
-            {places.map((place, idx) => {
-                const id = `${camelCase(place.label)}`
-                return (
-                    <React.Fragment key={idx}>
-                        <p id={id}>
-                            <b>{place.label}</b>
-                            <span
-                                style={{ marginLeft: 10, cursor: 'pointer' }}
-                                onClick={() =>
-                                    history.push(`${paths.PLACES}#${id}`)
-                                }
-                            >
-                                {'🔗'}
-                            </span>
-                        </p>
-                        <ImageSet key={idx}>
-                            {place.images.map((photo, i) => (
-                                <div key={i} style={{ flex: 1, padding: 5 }}>
-                                    <ProgressiveImage
-                                        src={photo}
-                                        placeholder=""
-                                    >
-                                        {(src: string, loading: boolean) =>
-                                            loading ? (
-                                                <div
-                                                    style={{
-                                                        position: 'relative',
-                                                        height: 100,
-                                                    }}
-                                                >
-                                                    <Spinner />
-                                                </div>
-                                            ) : (
-                                                <img
-                                                    key={i}
-                                                    src={src}
-                                                    style={{ width: '100%' }}
-                                                    alt={place.label}
-                                                />
-                                            )
-                                        }
-                                    </ProgressiveImage>
-                                </div>
-                            ))}
-                        </ImageSet>
-                        <Hr />
-                    </React.Fragment>
-                )
-            })}
+            <>
+                {places.map((place, idx) => {
+                    const id = `${camelCase(place.label)}`
+                    return (
+                        <React.Fragment key={idx}>
+                            <p id={id}>
+                                <b>{place.label}</b>
+                                <span
+                                    style={{ marginLeft: 10, cursor: 'pointer' }}
+                                    onClick={() => console.log(`${paths.PLACES}#${id}`)}>
+                                    {'🔗'}
+                                </span>
+                            </p>
+                            <ImageSet key={idx}>
+                                {place.images.map((photo, i) => (
+                                    <div key={i} style={{ flex: 1, padding: 5 }}>
+                                        <ProgressiveImage src={photo} placeholder="">
+                                            {(src: string, loading: boolean) =>
+                                                loading ? (
+                                                    <div
+                                                        style={{
+                                                            position: 'relative',
+                                                            height: 100,
+                                                        }}>
+                                                        <Spinner />
+                                                    </div>
+                                                ) : (
+                                                    <img
+                                                        key={i}
+                                                        src={src}
+                                                        style={{ width: '100%' }}
+                                                        alt={place.label}
+                                                    />
+                                                )
+                                            }
+                                        </ProgressiveImage>
+                                    </div>
+                                ))}
+                            </ImageSet>
+                            <Hr />
+                        </React.Fragment>
+                    )
+                })}
+            </>
         </Container>
     )
 }

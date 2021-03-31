@@ -1,8 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Link, useHistory } from 'react-router-dom'
 import paths from 'constants/paths'
 import { SocialMediaDesktop, SocialMediaMobile } from './SocialMedia'
+
+const Link = ({ to }) => null
 
 const Intro = styled.main`
     display: flex;
@@ -23,7 +24,7 @@ const Intro = styled.main`
 const Avatar = styled.figure`
     width: 200px;
     height: 200px;
-    background-image: url('${require('media/hero.jpg')}');
+    background-image: url('media/hero.jpg');
     background-position: center center;
     background-size: cover;
     border-radius: 50%;
@@ -77,7 +78,6 @@ const BLOG_LINK = '/blog/simple-mechanism-to-find-dirty-form-fields'
 const PLACE_LINK = `${paths.PLACES}#nimdariPuneNovember2019`
 
 const Home: React.FC = () => {
-    const history = useHistory()
     return (
         <>
             <Intro>
@@ -113,7 +113,7 @@ const Home: React.FC = () => {
             <SocialMediaMobile />
             {/* TODO: Make this dynamic */}
             <Latest>
-                <LatestSection onClick={() => history.push(BLOG_LINK)}>
+                <LatestSection onClick={() => console.log(BLOG_LINK)}>
                     <h2>{'Latest Blog Post'}</h2>
                     <p>
                         {'Simple mechanism to find dirty form fields'}
@@ -121,7 +121,7 @@ const Home: React.FC = () => {
                         <Link to={BLOG_LINK}>{'Read now →'}</Link>
                     </p>
                 </LatestSection>
-                <LatestSection onClick={() => history.push(PLACE_LINK)}>
+                <LatestSection onClick={() => console.log(PLACE_LINK)}>
                     <h2>{'Last Visited Place'}</h2>
                     <p>
                         {'Nimdari, Pune - November 2019'}
