@@ -6,18 +6,11 @@ import { colors } from 'constants/themes'
 import { NavItemType } from 'types'
 import { NavItem } from './fragments'
 
-const StyledPath = styled(motion.path).attrs(props => ({
+const StyledPath = styled(motion.path).attrs((props) => ({
     stroke: props.theme.colors.background,
 }))``
 
-const Path = (props: any) => (
-    <StyledPath
-        fill="transparent"
-        strokeWidth="3"
-        strokeLinecap="round"
-        {...props}
-    />
-)
+const Path = (props: any) => <StyledPath fill="transparent" strokeWidth="3" strokeLinecap="round" {...props} />
 
 const Icon = styled.div`
     position: absolute;
@@ -45,8 +38,8 @@ const Background = styled(motion.div)`
     left: 0;
     bottom: -200px;
     width: 100%;
-    background-color: ${props => props.theme.colors.pink};
-    color: ${props => props.theme.colors.white};
+    background-color: ${(props) => props.theme.colors.pink};
+    color: ${(props) => props.theme.colors.white};
     z-index: 999;
 `
 
@@ -173,25 +166,18 @@ export const Navigation: React.FC<NavigationProps> = ({ navItems }) => {
     }
 
     return (
-        <MotionNav
-            initial={false}
-            animate={isOpen ? 'open' : 'closed'}
-            custom={height}
-            ref={containerRef}
-        >
+        <MotionNav initial={false} animate={isOpen ? 'open' : 'closed'} custom={height} ref={containerRef}>
             <Background variants={sidebar}>
                 <MenuItems>
                     <MotionList variants={listVariants}>
                         {navItems.map((x, i) => (
                             <motion.li
+                                key={i}
                                 variants={listItemVariants}
                                 whileHover={{ scale: 1.1 }}
-                                whileTap={{ scale: 0.95 }}
-                            >
+                                whileTap={{ scale: 0.95 }}>
                                 <NavItem color={colors.white}>
-                                    <span onClick={handleClick(x.onClick)}>
-                                        {x.label}
-                                    </span>
+                                    <span onClick={handleClick(x.onClick)}>{x.label}</span>
                                 </NavItem>
                             </motion.li>
                         ))}
