@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { TwitterIcon, LinkedinIcon, EmailIcon } from 'react-share'
 import StackOverflowIconImage from 'media/so-icon.png'
+import InstagramIconImage from 'media/instagram.png'
 
 const DesktopContainer = styled.div`
     position: fixed;
@@ -41,6 +42,15 @@ const StackOverflowIcon = styled.div`
     margin-top: -5px;
 `
 
+const InstagramIcon = styled.div`
+    width: 48.44px;
+    height: 48.44px;
+    background-image: url('${InstagramIconImage}');
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+`
+
 const icons = [
     {
         icon: TwitterIcon,
@@ -64,6 +74,11 @@ const icons = [
         ),
         title: 'StackOverflow',
         link: 'https://stackoverflow.com/users/5241520/mihir',
+    },
+    {
+        icon: InstagramIcon,
+        title: 'Instagram',
+        link: 'https://www.instagram.com/mihir.builds/',
     },
     {
         icon: EmailIcon,
