@@ -49,6 +49,10 @@ const InstagramIcon = styled.div`
     background-size: cover;
     background-position: center;
     border-radius: 50%;
+
+    @media (max-width: 991px) {
+        margin-top: -5px;
+    }
 `
 
 const icons = [
