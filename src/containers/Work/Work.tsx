@@ -131,7 +131,7 @@ const Work: React.FC = () => {
                 </Section>
                 <Section>
                     <ResumeLink>
-                        <a href="/Mihir-Karandikar-Resume-Feb-2021.pdf">
+                        <a href="/Mihir-Karandikar-Resume-April-2021.pdf">
                             {'See My Résumé'}
                         </a>
                         {' ↗️'}
