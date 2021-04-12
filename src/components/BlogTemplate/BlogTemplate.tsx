@@ -52,7 +52,7 @@ const DisqusThread: React.FC<DisqusConfig> = config => {
 }
 
 const Blog: React.FC<Props> = ({ metadata, content }: Props) => {
-    useEffect(Prism.highlightAll, [content])
+    useEffect(() => Prism.highlightAll(), [content])
 
     if (!content || !metadata) {
         return null

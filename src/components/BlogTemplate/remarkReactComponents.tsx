@@ -76,9 +76,11 @@ const CustomLink = (props: CustomLinkProps) => {
     )
 }
 
-export default {
+const remarkReactComponents = {
     img: Image,
     pre: Pre,
     code: Code,
     a: CustomLink,
 }
+
+export default remarkReactComponents

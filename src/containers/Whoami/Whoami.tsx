@@ -13,12 +13,12 @@ const SocialLink = styled.a.attrs({ taregt: '_blank' })`
     display: inline-block;
 `
 
-type SocialLink = {
+type SocialLinkType = {
     label: string
     link: string
 }
 
-const socialLinks: Array<SocialLink> = [
+const socialLinks: Array<SocialLinkType> = [
     { label: 'Github', link: 'https://github.com/KarandikarMihir' },
     {
         label: 'StackOverflow',

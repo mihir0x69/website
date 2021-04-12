@@ -12,7 +12,7 @@ import {
 } from './fragments'
 import { Navigation as MobileNavigation } from './MobileNavigation'
 
-const lumosSoundFile = require('media/lumos_maxima.mp3')
+const lumosSoundFile = require('media/lumos_maxima.mp3').default
 
 type NavigationBarProps = {
     theme: any

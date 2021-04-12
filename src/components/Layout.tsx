@@ -3,6 +3,7 @@ import styled, { ThemeProvider } from 'styled-components'
 import GlobalStyles from 'components/GlobalStyles'
 import * as StorageManager from 'utils/StorageManager'
 import themes from 'constants/themes'
+import ParticlesBackground from './Particles'
 import Navigation from './Navigation'
 
 const Container = styled.div`
@@ -34,6 +35,7 @@ const Layout: React.FC<Props> = (props: Props) => {
             <React.Fragment>
                 <GlobalStyles />
                 <base target="_blank" />
+                <ParticlesBackground />
                 <Navigation theme={theme} setTheme={setTheme} />
                 <Container>{props.children}</Container>
                 <Footnote>

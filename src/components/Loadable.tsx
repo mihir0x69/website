@@ -1,8 +1,10 @@
 import Loadable from 'react-loadable'
 import Loader from './Loader'
 
-export default (component: () => Promise<any>) =>
+const LoadableComponent = (component: () => Promise<any>) =>
     Loadable({
         loader: component,
         loading: Loader,
     })
+
+export default LoadableComponent
