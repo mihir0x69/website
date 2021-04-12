@@ -145,7 +145,7 @@ const Home: React.FC = () => {
                         }
                     </p>
                     <p>
-                        {"I'm a full-stack developer. And I've had "}
+                        {"I'm a full-stack developer with 5+ years of experience. And I've had "}
                         <Link to={paths.WORK}>{'plenty of opportunities'}</Link>
                         {' to work on exciting technologies.'}
                     </p>
