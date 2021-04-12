@@ -5,6 +5,13 @@ type Place = {
 
 const places: Array<Place> = [
     {
+        label: 'Mahabaleshwar, Satara - February 2021',
+        images: [
+            require('./photos/mahab2021/1.jpg').default,
+            require('./photos/mahab2021/2.jpg').default,
+        ],
+    },
+    {
         label: 'Nimdari, Pune - November 2019',
         images: [
             require('./photos/nimdari2019/1.jpg').default,
