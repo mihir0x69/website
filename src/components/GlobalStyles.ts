@@ -29,7 +29,7 @@ const GlobalStyles = createGlobalStyle(
             text-decoration: underline;
         }
         p {
-            font-size: 20px;
+            font-size: 18px;
             line-height: 1.5;
             margin: 20px 0;
         }

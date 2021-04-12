@@ -2,7 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 import { Link, useHistory } from 'react-router-dom'
 import paths from 'constants/paths'
-import { SocialMediaDesktop, SocialMediaMobile } from './SocialMedia'
+import useMediaQuery from 'hooks/useMediaQuery'
+import { SocialMediaButtons } from './SocialMedia'
 
 const Intro = styled.main`
     display: flex;
@@ -23,7 +24,7 @@ const Intro = styled.main`
 const Avatar = styled.figure`
     width: 200px;
     height: 200px;
-    background-image: url('${require('media/hero_new.jpg').default}');
+    background-image: url('${require('media/hero.jpg').default}');
     background-position: center center;
     background-size: cover;
     border-radius: 50%;
@@ -39,13 +40,13 @@ const AvatarWrapper = styled.section`
 `
 
 const Content = styled.section`
-    padding: 0 10px;
+    padding: 0 50px 0 10px;
     flex: 2;
 
     @media (max-width: 991px) {
         padding: 0;
-        text-align: center;
         margin-top: 30px;
+        text-align: center;
     }
 `
 
@@ -57,6 +58,7 @@ const Latest = styled.div`
     }
 
     @media (max-width: 991px) {
+        text-align: left;
         flex-direction: column;
     }
 `
@@ -73,34 +75,79 @@ const LatestSection = styled.section`
     }
 `
 
+const WavingHand = styled.img`
+    animation-name: wave-animation;
+    animation-duration: 4s;
+    animation-iteration-count: 1;
+    transform-origin: 70% 70%;
+    display: inline-block;
+    margin-bottom: -3px;
+
+    @keyframes wave-animation {
+        0% {
+            transform: rotate(0deg);
+        }
+        10% {
+            transform: rotate(14deg);
+        }
+        20% {
+            transform: rotate(-8deg);
+        }
+        30% {
+            transform: rotate(14deg);
+        }
+        40% {
+            transform: rotate(-4deg);
+        }
+        50% {
+            transform: rotate(10deg);
+        }
+        60% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(0deg);
+        }
+    }
+`
+
 const BLOG_LINK = '/blog/simple-mechanism-to-find-dirty-form-fields'
 const PLACE_LINK = `${paths.PLACES}#nimdariPuneNovember2019`
 
 const Home: React.FC = () => {
     const history = useHistory()
+    const isMobile = useMediaQuery('(max-width: 991px)')
+    const IntroWrapper = isMobile ? 'p' : 'h2'
+
     return (
         <>
             <Intro>
-                <SocialMediaDesktop />
                 <AvatarWrapper>
                     <Avatar />
                 </AvatarWrapper>
                 <Content>
-                    <h1 style={{ margin: 0 }}>{"Hey, I'm Mihir!"}</h1>
-                    <p>
-                        {'Frontend Engineer at '}
+                    <h1 style={{ margin: 0 }}>
+                        {'Hey '}{' '}
+                        <WavingHand
+                            src={require('media/waving-hand.png').default}
+                            style={{ height: 40 }}
+                        />
+                    </h1>
+                    <IntroWrapper>
+                        {"I'm Mihir. Frontend Engineer at "}
                         <a href="https://www.aeratechnology.com/">
                             {'Aera Technology'}
                         </a>
-                        <br />
+                    </IntroWrapper>
+                    <p>
                         {
-                            "I love building systems. I've built this little place from scratch to geek out with my fellow programmers :)"
+                            "I love building systems. I've built this little place from scratch to fly my pirate flag for potential recruiters :)"
                         }
                     </p>
                     <p>
                         {"I'm a full-stack developer. And I've had "}
                         <Link to={paths.WORK}>{'plenty of opportunities'}</Link>
-                        {' to work on exciting technology.'}
+                        {' to work on exciting technologies.'}
                     </p>
                     <p>
                         {
@@ -108,9 +155,9 @@ const Home: React.FC = () => {
                         }
                         <Link to={paths.WHOAMI}>{'here.'}</Link>
                     </p>
+                    <SocialMediaButtons />
                 </Content>
             </Intro>
-            <SocialMediaMobile />
             {/* TODO: Make this dynamic */}
             <Latest>
                 <LatestSection onClick={() => history.push(BLOG_LINK)}>

@@ -1,124 +1,55 @@
 import React from 'react'
 import styled from 'styled-components'
-import { TwitterIcon, LinkedinIcon, EmailIcon } from 'react-share'
-import StackOverflowIconImage from 'media/so-icon.png'
-import InstagramIconImage from 'media/instagram.png'
 
-const DesktopContainer = styled.div`
-    position: fixed;
-    left: 40px;
-    top: 45%;
-    display: flex;
-    flex-direction: column;
+const Button = styled.button`
+    border: 2px solid ${props => props.theme.colors.foreground};
+    padding: 5px 15px;
+    transition: all 300ms ease-in-out;
+    background-color: transparent;
+    color: ${props => props.theme.colors.foreground};
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    margin-right: 10px;
+    margin-bottom: 15px;
 
-    @media (max-width: 991px) {
-        display: none;
-    }
-`
-
-const MobileContainer = styled.div`
-    display: none;
-
-    @media (max-width: 991px) {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 20px 0;
-
-        > a {
-            margin: 0 5px;
-        }
-    }
-`
-
-const StackOverflowIcon = styled.div`
-    width: 48.44px;
-    height: 48.44px;
-    background-color: white;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: -5px;
-`
-
-const InstagramIcon = styled.div`
-    width: 48.44px;
-    height: 48.44px;
-    background-image: url('${InstagramIconImage}');
-    background-size: cover;
-    background-position: center;
-    border-radius: 50%;
-
-    @media (max-width: 991px) {
-        margin-top: -5px;
+    :hover {
+        background-color: ${props => props.theme.colors.foreground};
+        color: ${props => props.theme.colors.background};
     }
 `
 
 const icons = [
     {
-        icon: TwitterIcon,
         title: 'Twitter',
         link: 'https://twitter.com/KarandikarMihir',
     },
     {
-        icon: LinkedinIcon,
         title: 'LinkedIn',
         link: 'https://www.linkedin.com/in/karandikarmihir/',
     },
     {
-        icon: () => (
-            <StackOverflowIcon>
-                <img
-                    src={StackOverflowIconImage}
-                    alt="StackOverflow Icon"
-                    style={{ height: 40 }}
-                />
-            </StackOverflowIcon>
-        ),
         title: 'StackOverflow',
         link: 'https://stackoverflow.com/users/5241520/mihir',
     },
     {
-        icon: InstagramIcon,
         title: 'Instagram',
         link: 'https://www.instagram.com/mihir.builds/',
     },
     {
-        icon: EmailIcon,
         title: 'Email',
         link: 'mailto:karandikar.mihir@outlook.com',
     },
 ]
 
-type IconProps = {
-    icon: any
-    link: string
-    title: string
-}
-
-const Icon: React.FC<IconProps> = ({ icon: Component, link, title }) => (
-    <a href={link} title={title} style={{ marginBottom: 10 }}>
-        <Component size={50} round />
-    </a>
-)
-
-export const SocialMediaDesktop = () => {
+export const SocialMediaButtons = () => {
     return (
-        <DesktopContainer>
+        <div style={{ marginTop: 25 }}>
             {icons.map((props, i) => (
-                <Icon key={i} {...props} />
+                <a href={props.link} key={props.link}>
+                    <Button key={i}>{props.title}</Button>
+                </a>
             ))}
-        </DesktopContainer>
-    )
-}
-
-export const SocialMediaMobile = () => {
-    return (
-        <MobileContainer>
-            {icons.map((props, i) => (
-                <Icon key={i} {...props} />
-            ))}
-        </MobileContainer>
+        </div>
     )
 }

@@ -19,7 +19,7 @@ export const colors: Dictionary<string> = {
 
 const fonts: Dictionary<string> = {
     heading: "'Inter', sans-serif",
-    text: "'IBM Plex Serif', serif",
+    text: "'Inter', sans-serif",
     mono: "'IBM Plex Mono', monospace",
 }
 
