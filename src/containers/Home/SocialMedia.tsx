@@ -21,16 +21,16 @@ const Button = styled.button`
 
 const icons = [
     {
-        title: 'Twitter',
-        link: 'https://twitter.com/KarandikarMihir',
-    },
-    {
         title: 'LinkedIn',
         link: 'https://www.linkedin.com/in/karandikarmihir/',
     },
     {
         title: 'StackOverflow',
         link: 'https://stackoverflow.com/users/5241520/mihir',
+    },
+    {
+        title: 'Twitter',
+        link: 'https://twitter.com/KarandikarMihir',
     },
     {
         title: 'Instagram',

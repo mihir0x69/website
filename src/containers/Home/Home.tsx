@@ -112,7 +112,7 @@ const WavingHand = styled.img`
 `
 
 const BLOG_LINK = '/blog/simple-mechanism-to-find-dirty-form-fields'
-const PLACE_LINK = `${paths.PLACES}#nimdariPuneNovember2019`
+const PLACE_LINK = `${paths.PLACES}#mahabaleshwarSataraFebruary2021`
 
 const Home: React.FC = () => {
     const history = useHistory()
@@ -171,7 +171,7 @@ const Home: React.FC = () => {
                 <LatestSection onClick={() => history.push(PLACE_LINK)}>
                     <h2>{'Last Visited Place'}</h2>
                     <p>
-                        {'Nimdari, Pune - November 2019'}
+                        {'Mahabaleshwar, Satara - February 2021'}
                         <br />
                         <Link to={PLACE_LINK}>{'Check out →'}</Link>
                     </p>
