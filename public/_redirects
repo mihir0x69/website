@@ -1,4 +1,1 @@
-# Redirect default Netlify subdomain to primary domain
-https://mihirk.netlify.com/* https://www.mihir.life/:splat 301!
-
 /*    /index.html   200
